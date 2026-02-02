@@ -1,6 +1,9 @@
 package com.souls.complexmod;
 
 import com.mojang.logging.LogUtils;
+
+import main.java.com.souls.complexmod.item.ModCreativeModTabs;
+import main.java.com.souls.complexmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -39,7 +42,12 @@ public class ComplexMod
 
     public ComplexMod(FMLJavaModLoadingContext context)
     {
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = context.getModEventBus();   
+
+        //registers
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -56,6 +64,9 @@ public class ComplexMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
