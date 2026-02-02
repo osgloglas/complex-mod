@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "complexmod:item/oak_wood"
+        "layer0": "complexmod:item/flint_hatchet"
     }
 }

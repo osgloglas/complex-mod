@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "tools",
+    "pattern": [
+        "  #",
+        " ##",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:flint"
+        }
+    },
+    "result": {
+        "item": "complexmod:wedge",
+        "count": 1
+    }
+}

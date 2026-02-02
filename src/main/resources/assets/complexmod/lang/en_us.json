@@ -2,5 +2,15 @@
     "creativetab.complexmod": "Complex Mod",
 
     "item.complexmod.twine": "Twine",
-    "item.complexmod.oak_wood": "Oak Wood"
+    "item.complexmod.drill_head": "Drill Head",
+    "item.complexmod.drill_body": "Drill Body",
+    "item.complexmod.hand_drill": "Hand Drill",
+    "item.complexmod.wedge": "Wedge",
+
+    "item.complexmod.flint_hatchet": "Flint Hatchet",
+    "item.complexmod.flint_knife": "Flint Knife",
+    "item.complexmod.wooden_mallet": "Wooden Mallet",
+    "item.complexmod.stone_mallet": "Stone Mallet",
+
+    "block.complexmod.furnace_stack": "Furnace Stack"
 }

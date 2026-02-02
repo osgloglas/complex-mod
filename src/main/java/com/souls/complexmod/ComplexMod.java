@@ -2,8 +2,11 @@ package com.souls.complexmod;
 
 import com.mojang.logging.LogUtils;
 
+import main.java.com.souls.complexmod.block.ModBlocks;
+import main.java.com.souls.complexmod.block.entity.ModBlockEntities;
 import main.java.com.souls.complexmod.item.ModCreativeModTabs;
 import main.java.com.souls.complexmod.item.ModItems;
+import main.java.com.souls.complexmod.util.ModEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -48,12 +51,17 @@ public class ComplexMod
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        MinecraftForge.EVENT_BUS.register(ModEvents.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

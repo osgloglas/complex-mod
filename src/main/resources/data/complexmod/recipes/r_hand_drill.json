@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "tools",
+    "pattern": [
+        " H ",
+        " T ",
+        " B "
+    ],
+    "key": {
+        "H": {
+            "item": "complexmod:drill_head"
+        },
+        "T": {
+            "item": "complexmod:twine"
+        },
+        "B": {
+            "item": "complexmod:drill_body"
+        }
+    },
+    "result": {
+        "item": "complexmod:hand_drill",
+        "count": 1
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "tools",
+    "pattern": [
+        "FT",
+        " S"
+    ],
+    "key": {
+        "F": {
+            "item": "minecraft:flint"
+        },
+        "T": {
+            "item": "complexmod:twine"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "complexmod:flint_hatchet",
+        "count": 1
+    }
+}

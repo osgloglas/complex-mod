@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "minecraft:planks"
+    },
+    "T": {
+      "item": "complexmod:twine"
+    }
+  },
+  "pattern": [
+    "XX",
+    "XT",
+    " #"
+  ],
+  "result": {
+    "item": "minecraft:wooden_axe"
+  },
+  "show_notification": true
+}

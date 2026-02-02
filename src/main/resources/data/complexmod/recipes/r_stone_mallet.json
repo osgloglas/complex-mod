@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "tools",
+    "pattern": [
+        "###",
+        " T ",
+        " S "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stone"
+        },
+        "T": {
+            "item": "complexmod:twine"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "complexmod:stone_mallet",
+        "count": 1
+    }
+}

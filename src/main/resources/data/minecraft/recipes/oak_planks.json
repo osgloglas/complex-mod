@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_wood"
+    },
+    {
+      "item": "complexmod:flint_knife"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "minecraft:oak_planks"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "tools",
+    "pattern": [
+        "###",
+        "  L",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stick"
+        },
+        "L": {
+            "tag": "minecraft:logs"
+        }
+    },
+    "result": {
+        "item": "complexmod:drill_body",
+        "count": 1
+    }
+}

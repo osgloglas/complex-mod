@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.network.chat.Component;
+import main.java.com.souls.complexmod.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -20,8 +21,21 @@ public class ModCreativeModTabs {
                     .icon(() -> ModItems.TWINE.get().getDefaultInstance())
                     .title(Component.translatable("creativetab.complexmod_tab"))
                     .displayItems((parameters, output) -> {
+                        //items
                         output.accept(ModItems.TWINE.get());
-                        output.accept(ModItems.OAK_WOOD.get());
+                        output.accept(ModItems.DRILL_HEAD.get());
+                        output.accept(ModItems.DRILL_BODY.get());
+                        output.accept(ModItems.HAND_DRILL.get());
+                        output.accept(ModItems.WEDGE.get());
+
+                        //tools
+                        output.accept(ModItems.FLINT_HATCHET.get());
+                        output.accept(ModItems.FLINT_KNIFE.get());
+                        output.accept(ModItems.WOODEN_MALLET.get());
+                        output.accept(ModItems.STONE_MALLET.get());
+
+                        //blocks
+                        output.accept(ModBlocks.FURNACE_STACK.get());
                     })
                     .build());
     
