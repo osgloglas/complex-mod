@@ -1,4 +1,4 @@
-package main.java.com.souls.complexmod.block;
+package com.souls.complexmod.block;
 
 import java.rmi.registry.Registry;
 
@@ -12,8 +12,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import main.java.com.souls.complexmod.block.custom.FurnaceStackBlock;
-import main.java.com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.block.custom.FurnaceStackBlock;
+import com.souls.complexmod.item.ModItems;
 import java.util.function.Supplier;
 
 public class ModBlocks {

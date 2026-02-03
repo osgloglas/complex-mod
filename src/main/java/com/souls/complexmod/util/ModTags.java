@@ -1,4 +1,4 @@
-package main.java.com.souls.complexmod.util;
+package com.souls.complexmod.util;
 
 import com.souls.complexmod.ComplexMod;
 import net.minecraft.resources.ResourceLocation;

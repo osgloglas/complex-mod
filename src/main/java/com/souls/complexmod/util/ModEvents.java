@@ -1,4 +1,4 @@
-package main.java.com.souls.complexmod.util;
+package com.souls.complexmod.util;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -7,7 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.AxeItem;
-import main.java.com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.Items;
 

@@ -1,6 +1,4 @@
-package main.java.com.souls.complexmod.item;
-
-import java.rmi.registry.Registry;
+package com.souls.complexmod.item;
 
 import com.souls.complexmod.ComplexMod;
 import net.minecraft.core.registries.Registries;
@@ -9,7 +7,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.network.chat.Component;
-import main.java.com.souls.complexmod.block.ModBlocks;
+import com.souls.complexmod.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =

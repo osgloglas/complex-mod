@@ -2,11 +2,11 @@ package com.souls.complexmod;
 
 import com.mojang.logging.LogUtils;
 
-import main.java.com.souls.complexmod.block.ModBlocks;
-import main.java.com.souls.complexmod.block.entity.ModBlockEntities;
-import main.java.com.souls.complexmod.item.ModCreativeModTabs;
-import main.java.com.souls.complexmod.item.ModItems;
-import main.java.com.souls.complexmod.util.ModEvents;
+import com.souls.complexmod.block.ModBlocks;
+import com.souls.complexmod.block.entity.ModBlockEntities;
+import com.souls.complexmod.item.ModCreativeModTabs;
+import com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.util.ModEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -54,6 +54,7 @@ public class ComplexMod
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

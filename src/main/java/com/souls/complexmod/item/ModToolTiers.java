@@ -1,8 +1,8 @@
-package main.java.com.souls.complexmod.item;
+package com.souls.complexmod.item;
 
 import com.souls.complexmod.ComplexMod;
 
-import main.java.com.souls.complexmod.util.ModTags;
+import com.souls.complexmod.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
