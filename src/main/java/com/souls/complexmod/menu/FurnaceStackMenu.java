@@ -8,7 +8,9 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.FurnaceBlock;
@@ -18,22 +20,23 @@ import net.minecraft.world.level.block.state.BlockState;
 public class FurnaceStackMenu extends AbstractContainerMenu {
     private final FurnaceStackBlockEntity blockEntity;
     private final ContainerLevelAccess levelAccess;
+    private final ContainerData data;
 
     //client constructor
-    public FurnaceStackMenu(int containerId, Inventory pInv, FriendlyByteBuf extraData) {
-        this(containerId, pInv, pInv.player.level().getBlockEntity(extraData.readBlockPos()));
+    public FurnaceStackMenu(int containerId, Inventory pInv, FriendlyByteBuf buf) {
+        this(containerId, pInv, (FurnaceStackBlockEntity) pInv.player.level().getBlockEntity(buf.readBlockPos()),
+                new SimpleContainerData(2));
     }
 
     //server constructor
-    public FurnaceStackMenu(int containerId, Inventory pInv, BlockEntity blockEntity) {
+    public FurnaceStackMenu(int containerId, Inventory pInv, FurnaceStackBlockEntity blockEntity, ContainerData extraData) {
         super(ModMenus.FURNACE_STACK_MENU.get(), containerId);
-        if (blockEntity instanceof FurnaceStackBlockEntity be) {
-            this.blockEntity = be;
-        } else {
-            throw new IllegalStateException("Block entity is not a FurnaceStackBlockEntity");
-        }
 
+        this.blockEntity = blockEntity;
+        this.data = extraData;
         this.levelAccess = ContainerLevelAccess.create(blockEntity.getLevel(), blockEntity.getBlockPos());
+
+        addDataSlots(extraData);
 
         createPlayerHotbar(pInv);
         createPlayerInventory(pInv);
@@ -63,18 +66,34 @@ public class FurnaceStackMenu extends AbstractContainerMenu {
         return stillValid(this.levelAccess, pPlayer, ModBlocks.FURNACE_STACK.get());
     }
 
-    //flame
-    /*public boolean isLit() {
-        return this.blockEntity.getBlockState().getValue(FurnaceBlock.LIT);
+    //burning getters
+    public int getBurnTime() {
+        return data.get(0);
     }
 
-    public int getBurnProgress() {
-        int maxHeight = 14;
-        int burn = blockEntity.getBurnTime();
-        int burnTotal = blockEntity.getBurnTimeTotal();
-        if (burnTotal == 0) return 0;
-        return burn * maxHeight / burnTotal;
-    }*/
+    public int getBurnTimeTotal() {
+        return data.get(1);
+    }
+
+    //flame
+    public boolean isBurning() {
+        return data.get(0) > 0;
+    }
+
+    public int getBurnProgress(int scale) {
+        int burn = data.get(0);
+        int burnTotal = data.get(1);
+
+        if (burnTotal == 0) {
+            return 0;
+        }
+        return burn * scale / burnTotal;
+    }
+
+    //slag tank getter
+    public int getSlagAmount(int scale) {
+        return blockEntity.getSlagAmount() * scale / blockEntity.getTank().getCapacity();
+    }
 
     public FurnaceStackBlockEntity getBlockEntity() {
         return this.blockEntity;

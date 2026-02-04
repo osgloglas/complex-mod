@@ -26,7 +26,7 @@ public class ModBlocks {
 
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",
-            () -> new FurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new FurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

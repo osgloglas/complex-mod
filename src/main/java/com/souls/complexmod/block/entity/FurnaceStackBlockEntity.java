@@ -24,6 +24,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -44,6 +45,8 @@ import net.minecraftforge.fluids.capability.templates.FluidTank;
 
 public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.furnace_stack");
+    private int burnTime = 0;
+    private int burnTimeTotal = 200; //total burn time
     private int ticks = 0;
     private final FluidTank slagTank = new FluidTank(8000); //8 buckets capacity
 
@@ -79,9 +82,13 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
 
         level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0);
 
-
-        //increment tick counter
-        ticks++;
+        //increment burn time and reset if necessary
+        burnTime++;
+        if (burnTime >= burnTimeTotal) {
+            burnTime = 0; //reset burn time
+        }
+        data.set(0, burnTime); //update data container
+        data.set(1, burnTimeTotal); //update data container with total burn time
     }
 
     //fluid tank capability
@@ -110,6 +117,10 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
         return this.slagTank;
     }
 
+    public int getSlagAmount() {
+        return this.slagTank.getFluidAmount();
+    }
+
     //block and chunk update stuff
     @Override
     public CompoundTag getUpdateTag() {
@@ -133,6 +144,30 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInventory, Player player) {
-        return new FurnaceStackMenu(id, playerInventory, this);
+        return new FurnaceStackMenu(id, playerInventory, this, this.data);
     }
+
+    private final ContainerData data = new ContainerData() {
+        @Override
+        public int get(int index) {
+            return switch (index) {
+                case 0 -> burnTime;
+                case 1 -> burnTimeTotal;
+                default -> 0;
+            };
+        }
+
+        @Override
+        public void set(int index, int value) {
+            switch (index) {
+                case 0 -> burnTime = value;
+                case 1 -> burnTimeTotal = value;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    };
 }

@@ -43,11 +43,42 @@ public class FurnaceStackScreen extends AbstractContainerScreen<FurnaceStackMenu
         renderBackground(pGuiGraphics);
         pGuiGraphics.blit(TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-        /*if (this.menu.isLit()) {
-            int burnHeight = this.menu.getBurnProgress();
-            pGuiGraphics.blit(TEXTURE, this.leftPos + 81, this.topPos + 50 + (14 - burnHeight),
-                    176, 14 - burnHeight, 14, burnHeight);
-        }*/
+        renderBurnProgress(pGuiGraphics, this.leftPos, this.topPos);
+        renderSlagProgress(pGuiGraphics, pMouseX, pMouseY);
+
+        pGuiGraphics.drawString(this.font, "Slag: " + menu.getSlagAmount(8000) + "mb", leftPos + 99, topPos + 37, 0xFFFFFF);
+    }
+
+    //burn progress render method
+    private void renderBurnProgress(GuiGraphics pGuiGraphics, int leftPos, int topPos) {
+        if (!menu.isBurning()) return;
+
+        int burnHeight = menu.getBurnProgress(14);
+
+        pGuiGraphics.blit(TEXTURE,
+                leftPos + 81, //x position on screen
+                topPos + 51 + (14 - burnHeight), //y position on screen
+                176, //x position on texture
+                14 - burnHeight, //y position on texture
+                14, //width of the burn icon
+                burnHeight); //height of the burn icon
+    }
+
+    //slag progress render method
+    private void renderSlagProgress(GuiGraphics pGuiGraphics, int leftPos, int topPos) {
+        if (!menu.isBurning()) return;
+        
+        int slagHeight = menu.getSlagAmount(16);
+
+        pGuiGraphics.blit(TEXTURE,
+                leftPos + 80, //x position on screen
+                topPos + 32 + (16 - slagHeight), //y position on screen
+                190, //x position on texture
+                16 - slagHeight, //y position on texture
+                16, //width of the slag icon
+                slagHeight); //height of the slag icon
+
+                //TODO fix texture not displaying properly
     }
 
     @Override
