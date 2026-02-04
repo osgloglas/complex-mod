@@ -1,12 +1,17 @@
 package com.souls.complexmod.item;
 
 import com.souls.complexmod.ComplexMod;
+import com.souls.complexmod.fluid.ModFluids;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BucketItem;
+
 import com.souls.complexmod.item.custom.FlintKnifeItem;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tiers;
@@ -37,6 +42,11 @@ public class ModItems {
             () -> new PickaxeItem(Tiers.WOOD, 1, 2, new Item.Properties()));
     public static final RegistryObject<Item> STONE_MALLET = ITEMS.register("stone_mallet",
             () -> new StoneMalletItem(Tiers.STONE, 2, 3, new Item.Properties()));
+        
+    //bucket items
+    public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",
+            () -> new BucketItem(ModFluids.MIXED_SLAG_SOURCE,
+                new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

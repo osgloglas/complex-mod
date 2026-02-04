@@ -32,6 +32,9 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.WOODEN_MALLET.get());
                         output.accept(ModItems.STONE_MALLET.get());
 
+                        //buckets
+                        output.accept(ModItems.MIXED_SLAG_BUCKET.get());
+
                         //blocks
                         output.accept(ModBlocks.FURNACE_STACK.get());
                     })

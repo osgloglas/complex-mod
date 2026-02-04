@@ -12,5 +12,8 @@
     "item.complexmod.wooden_mallet": "Wooden Mallet",
     "item.complexmod.stone_mallet": "Stone Mallet",
 
+    "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
+    "block.complexmod.mixed_slag_block": "Mixed Slag Block",
+
     "block.complexmod.furnace_stack": "Furnace Stack"
 }

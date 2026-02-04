@@ -1,7 +1,5 @@
 package com.souls.complexmod.block;
 
-import java.rmi.registry.Registry;
-
 import com.souls.complexmod.ComplexMod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,8 +9,12 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.FlowingFluid;
+
 import com.souls.complexmod.block.custom.FurnaceStackBlock;
+import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
 import java.util.function.Supplier;
 
@@ -20,8 +22,15 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ComplexMod.MOD_ID);
 
-    public static final RegistryObject<Block> FURNACE_STACK = registerBlock("furnace_stack",
-            () -> new FurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+    //normal blocks
+
+    //block entities
+    public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",
+            () -> new FurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
+    //fluids
+    public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",
+            () -> new LiquidBlock(ModFluids.MIXED_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

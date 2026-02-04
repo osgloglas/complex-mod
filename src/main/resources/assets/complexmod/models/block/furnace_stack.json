@@ -1,6 +1,11 @@
 {
     "parent": "minecraft:block/cube_all",
     "textures": {
-        "all": "complexmod:block/furnace_stack"
+        "north": "complexmod:block/furnace_stack_output",
+        "south": "complexmod:block/furnace_stack",
+        "east": "complexmod:block/furnace_stack",
+        "west": "complexmod:block/furnace_stack",
+        "up": "complexmod:block/furnace_stack_top",
+        "down": "complexmod:block/furnace_stack"
     }
 }

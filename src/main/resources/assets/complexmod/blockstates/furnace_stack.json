@@ -1,7 +1,19 @@
 {
-    "variants": {
-        "": {
-            "model": "complexmod:block/furnace_stack"
-        }
+  "variants": {
+    "facing=east": {
+      "model": "complexmod:block/furnace_stack",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "complexmod:block/furnace_stack"
+    },
+    "facing=south": {
+      "model": "complexmod:block/furnace_stack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "complexmod:block/furnace_stack",
+      "y": 270
     }
+  }
 }

@@ -4,10 +4,14 @@ import com.mojang.logging.LogUtils;
 
 import com.souls.complexmod.block.ModBlocks;
 import com.souls.complexmod.block.entity.ModBlockEntities;
+import com.souls.complexmod.fluid.ModFluidTypes;
+import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModCreativeModTabs;
 import com.souls.complexmod.item.ModItems;
 import com.souls.complexmod.util.ModEvents;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -56,6 +60,9 @@ public class ComplexMod
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -90,7 +97,8 @@ public class ComplexMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-          
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.translucent());
         }
     }
 }
