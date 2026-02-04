@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.checkerframework.checker.units.qual.s;
 
+import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.menu.FurnaceStackMenu;
 
@@ -13,8 +14,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -37,8 +42,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
 
-public class FurnaceStackBlockEntity extends BlockEntity {
-    private int counter;
+public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider {
+    private static final Component TITLE = Component.translatable("gui.complexmod.furnace_stack");
     private int ticks = 0;
     private final FluidTank slagTank = new FluidTank(8000); //8 buckets capacity
 
@@ -65,6 +70,7 @@ public class FurnaceStackBlockEntity extends BlockEntity {
 
             System.out.println("Generating 100mb of mixed slag. Current slag amount: " + slagTank.getFluidAmount() + "mb");
             setChanged();
+            this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
         }
 
         double x = worldPosition.getX() + 0.5;
@@ -90,29 +96,43 @@ public class FurnaceStackBlockEntity extends BlockEntity {
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        this.counter = nbt.getInt("counter");
         slagTank.readFromNBT(nbt);
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
-        nbt.putInt("counter", this.counter);
         slagTank.writeToNBT(nbt);
-    }
-
-    public int incrementCounter() {
-        this.counter++;
-        setChanged();
-        return this.counter;
-    }
-
-    public int getCounter() {
-        return this.counter;
     }
 
     //fluid getter
     public FluidTank getTank() {
         return this.slagTank;
+    }
+
+    //block and chunk update stuff
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this); //sends the block entity data to the client
+    }
+
+    //menu provider stuff
+    @Override
+    public Component getDisplayName() {
+        return TITLE;
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int id, Inventory playerInventory, Player player) {
+        return new FurnaceStackMenu(id, playerInventory, this);
     }
 }

@@ -1,5 +1,5 @@
 {
-    "creativetab.complexmod": "Complex Mod",
+    "creativetab.complexmod_tab": "Complex Mod",
 
     "item.complexmod.twine": "Twine",
     "item.complexmod.drill_head": "Drill Head",
@@ -15,5 +15,6 @@
     "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
 
-    "block.complexmod.furnace_stack": "Furnace Stack"
+    "block.complexmod.furnace_stack": "Furnace Stack",
+    "gui.complexmod.furnace_stack": "Furnace Stack"
 }

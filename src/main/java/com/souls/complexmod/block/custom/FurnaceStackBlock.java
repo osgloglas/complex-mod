@@ -2,17 +2,20 @@ package com.souls.complexmod.block.custom;
 
 import javax.annotation.Nullable;
 
+import com.google.common.graph.Network;
 import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
 import com.souls.complexmod.block.entity.ModBlockEntities;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
-import com.souls.complexmod.menu.FurnaceStackMenu;
+import com.souls.complexmod.util.ClientHooks;
 
 import io.netty.buffer.Unpooled;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -36,7 +39,10 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.network.NetworkHooks;
 
 public class FurnaceStackBlock extends Block implements EntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -75,9 +81,10 @@ public class FurnaceStackBlock extends Block implements EntityBlock {
 
             ItemStack heldItem = player.getItemInHand(hand);
 
+            BlockEntity entity = level.getBlockEntity(pos);
+
             //if player hold bucket
             if (heldItem.is(Items.BUCKET)) {
-                BlockEntity entity = level.getBlockEntity(pos);
                 if (entity instanceof FurnaceStackBlockEntity stack) {
                     if (stack.getTank().getFluidAmount() >= 1000 && stack.getTank().getFluid().getFluid() == (ModFluids.MIXED_SLAG_SOURCE.get())) {
                         //drain lava
@@ -96,11 +103,17 @@ public class FurnaceStackBlock extends Block implements EntityBlock {
                         player.sendSystemMessage(Component.literal("Not enough slag in the tank to fill a bucket!"));
                         return InteractionResult.sidedSuccess(level.isClientSide());
                     }
-                    //int counter = player.isCrouching() ? blockEntity.getCounter() : blockEntity.incrementCounter(); this is the crouching right click functionality
                 }
             }
+
+            if (entity instanceof FurnaceStackBlockEntity blockEntity) {
+
+                //open gui
+                NetworkHooks.openScreen((ServerPlayer) player, blockEntity, blockEntity.getBlockPos());
+                return InteractionResult.CONSUME;
+            }
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return InteractionResult.CONSUME;
     }
 
     @Nullable

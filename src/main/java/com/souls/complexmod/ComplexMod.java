@@ -8,6 +8,7 @@ import com.souls.complexmod.fluid.ModFluidTypes;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModCreativeModTabs;
 import com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.menu.ModMenus;
 import com.souls.complexmod.util.ModEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -58,7 +59,7 @@ public class ComplexMod
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
+        ModMenus.register(modEventBus);
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
