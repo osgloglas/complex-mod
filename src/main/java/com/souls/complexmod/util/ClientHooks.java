@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.menu.ModMenus;
 import com.souls.complexmod.screen.FurnaceStackScreen;
+import com.souls.complexmod.screen.StencilTableScreen;
 
 @Mod.EventBusSubscriber(modid = ComplexMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientHooks {
@@ -16,6 +17,7 @@ public class ClientHooks {
     public static void clientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(ModMenus.FURNACE_STACK_MENU.get(), FurnaceStackScreen::new);
+            MenuScreens.register(ModMenus.STENCIL_TABLE_MENU.get(), StencilTableScreen::new);
             //TODO: add more screens here later
         });
     }

@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "north": "complexmod:block/stencil_table_side",
+        "south": "complexmod:block/stencil_table_side",
+        "east": "complexmod:block/stencil_table_side",
+        "west": "complexmod:block/stencil_table_side",
+        "up": "complexmod:block/stencil_table_top",
+        "down": "complexmod:block/stencil_table_bottom"
+    }
+}

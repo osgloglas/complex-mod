@@ -6,6 +6,8 @@
     "item.complexmod.drill_body": "Drill Body",
     "item.complexmod.hand_drill": "Hand Drill",
     "item.complexmod.wedge": "Wedge",
+    "item.complexmod.molten_iron_bucket": "Molten Iron Bucket",
+    "item.complexmod.molten_copper_bucket": "Molten Copper Bucket",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -16,5 +18,7 @@
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
 
     "block.complexmod.furnace_stack": "Furnace Stack",
-    "gui.complexmod.furnace_stack": "Furnace Stack"
+    "gui.complexmod.furnace_stack": "Furnace Stack",
+    "block.complexmod.stencil_table": "Stencil Table",
+    "gui.complexmod.stencil_table": "Stencil Table"
 }

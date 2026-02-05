@@ -91,8 +91,22 @@ public class FurnaceStackMenu extends AbstractContainerMenu {
     }
 
     //slag tank getter
-    public int getSlagAmount(int scale) {
-        return blockEntity.getSlagAmount() * scale / blockEntity.getTank().getCapacity();
+    public int getSlagAmount() {
+        return blockEntity.getSlagAmount();
+    }
+
+    public int getSlagCapacity() {
+        return blockEntity.getTank().getCapacity();
+    }
+
+    public int getSlagProgress(int scale) {
+        int slagAmount = getSlagAmount();
+        int slagCapacity = getSlagCapacity();
+
+        if (slagCapacity == 0) {
+            return 0;
+        }
+        return slagAmount * scale / slagCapacity;
     }
 
     public FurnaceStackBlockEntity getBlockEntity() {

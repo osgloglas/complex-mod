@@ -15,6 +15,8 @@ public class ModMenus {
 
     public static final RegistryObject<MenuType<FurnaceStackMenu>> FURNACE_STACK_MENU =
             MENUS.register("furnace_stack_menu", () -> IForgeMenuType.create(FurnaceStackMenu::new));
+    public static final RegistryObject<MenuType<StencilTableMenu>> STENCIL_TABLE_MENU =
+            MENUS.register("stencil_table_menu", () -> IForgeMenuType.create(StencilTableMenu::new));
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);

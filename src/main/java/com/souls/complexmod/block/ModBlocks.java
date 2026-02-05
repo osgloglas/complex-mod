@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 
 import com.souls.complexmod.block.custom.FurnaceStackBlock;
+import com.souls.complexmod.block.custom.StencilTableBlock;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
 import java.util.function.Supplier;
@@ -27,6 +28,8 @@ public class ModBlocks {
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",
             () -> new FurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<StencilTableBlock> STENCIL_TABLE = registerBlock("stencil_table",
+            () -> new StencilTableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

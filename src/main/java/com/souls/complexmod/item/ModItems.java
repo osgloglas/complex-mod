@@ -32,6 +32,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WEDGE = ITEMS.register("wedge",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_IRON_BUCKET = ITEMS.register("molten_iron_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET = ITEMS.register("molten_copper_bucket",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",

@@ -44,9 +44,7 @@ public class FurnaceStackScreen extends AbstractContainerScreen<FurnaceStackMenu
         pGuiGraphics.blit(TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
         renderBurnProgress(pGuiGraphics, this.leftPos, this.topPos);
-        renderSlagProgress(pGuiGraphics, pMouseX, pMouseY);
-
-        pGuiGraphics.drawString(this.font, "Slag: " + menu.getSlagAmount(8000) + "mb", leftPos + 99, topPos + 37, 0xFFFFFF);
+        renderSlagProgress(pGuiGraphics, this.leftPos, this.topPos);
     }
 
     //burn progress render method
@@ -66,9 +64,8 @@ public class FurnaceStackScreen extends AbstractContainerScreen<FurnaceStackMenu
 
     //slag progress render method
     private void renderSlagProgress(GuiGraphics pGuiGraphics, int leftPos, int topPos) {
-        if (!menu.isBurning()) return;
         
-        int slagHeight = menu.getSlagAmount(16);
+        int slagHeight = menu.getSlagProgress(16);
 
         pGuiGraphics.blit(TEXTURE,
                 leftPos + 80, //x position on screen
@@ -78,7 +75,7 @@ public class FurnaceStackScreen extends AbstractContainerScreen<FurnaceStackMenu
                 16, //width of the slag icon
                 slagHeight); //height of the slag icon
 
-                //TODO fix texture not displaying properly
+        pGuiGraphics.drawString(this.font, "Slag: " + menu.getSlagAmount() + "mb", leftPos + 99, topPos + 37, 0xFFFFFF);
     }
 
     @Override

@@ -9,8 +9,11 @@ import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModCreativeModTabs;
 import com.souls.complexmod.item.ModItems;
 import com.souls.complexmod.menu.ModMenus;
+import com.souls.complexmod.screen.FurnaceStackScreen;
+import com.souls.complexmod.screen.StencilTableScreen;
 import com.souls.complexmod.util.ModEvents;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
@@ -98,8 +101,11 @@ public class ComplexMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.translucent());
-            //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.translucent());
+            //menus
+            MenuScreens.register(ModMenus.FURNACE_STACK_MENU.get(), FurnaceStackScreen::new);
+            MenuScreens.register(ModMenus.STENCIL_TABLE_MENU.get(), StencilTableScreen::new);
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.cutout());
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.cutout());
         }
     }
 }

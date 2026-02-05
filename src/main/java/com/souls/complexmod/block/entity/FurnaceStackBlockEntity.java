@@ -20,21 +20,26 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FurnaceBlock;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -42,6 +47,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
+import net.minecraftforge.items.IItemHandler;
 
 public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.furnace_stack");
@@ -57,24 +63,31 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
     public void tick() {
         BlockPos belowPos = this.worldPosition.below();
         BlockState belowState = this.level.getBlockState(belowPos);
+        BlockEntity bentity = level.getBlockEntity(belowPos);
 
-        if (!(belowState.getBlock() instanceof FurnaceBlock)) {
-            return; //no furncace, no ticking
+        if (!(bentity instanceof AbstractFurnaceBlockEntity furnaceBlock)) {
+            return; //not a furnace block
+        }
+
+        Container container = furnaceBlock;
+        ItemStack input = container.getItem(0);
+
+        boolean isOre = input.is(Tags.Items.ORES);
+
+        if(!isOre) {
+            return; //input is not an ore
         }
 
         boolean lit = belowState.getValue(FurnaceBlock.LIT);
-        if (!lit) {
-            return; //furnace not lit, no ticking
-        }
 
-        if(this.ticks++ % 200 == 0) { //every 10 seconds
+        if(this.ticks++ % 200 == 0 && lit) { //every 10 seconds
             FluidStack lava = new FluidStack(ModFluids.MIXED_SLAG_SOURCE.get(), 100);
             slagTank.fill(lava, IFluidHandler.FluidAction.EXECUTE);
 
             System.out.println("Generating 100mb of mixed slag. Current slag amount: " + slagTank.getFluidAmount() + "mb");
             setChanged();
-            this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
         }
+        this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
 
         double x = worldPosition.getX() + 0.5;
         double y = worldPosition.getY() + 1.0;
@@ -92,10 +105,16 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
     }
 
     //fluid tank capability
+    private final LazyOptional<IFluidHandler> slagTankOptional = LazyOptional.of(() -> slagTank);
+
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.FLUID_HANDLER) {
-            return LazyOptional.of(() -> slagTank).cast();
+
+            if (side == Direction.NORTH) {
+                return slagTankOptional.cast();
+            }
+            return LazyOptional.empty();
         }
         return super.getCapability(cap, side);
     }
