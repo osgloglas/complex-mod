@@ -1,6 +1,9 @@
 package com.souls.complexmod.util;
 
+import org.checkerframework.checker.units.qual.s;
+
 import com.souls.complexmod.ComplexMod;
+import com.souls.complexmod.recipe.IronFurnaceRecipe;
 import com.souls.complexmod.recipe.StencilShapedRecipe;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -15,6 +18,8 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<StencilShapedRecipe>> STENCIL_SHAPED_RECIPE_SERIALIZER =
             SERIALIZERS.register("stencil_shaped", () -> StencilShapedRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<IronFurnaceRecipe>> IRON_FURNACE_RECIPE_SERIALIZER =
+            SERIALIZERS.register("iron_furnace_recipe", () -> IronFurnaceRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

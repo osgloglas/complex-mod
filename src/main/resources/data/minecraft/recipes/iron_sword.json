@@ -6,10 +6,10 @@
       "item": "minecraft:stick"
     },
     "X": {
-      "tag": "minecraft:planks"
+      "item": "minecraft:iron_ingot"
     },
     "T": {
-      "item": "complexmod:twine"
+      "item": "minecraft:string"
     }
   },
   "pattern": [
@@ -18,7 +18,7 @@
     "  #"
   ],
   "result": {
-    "item": "minecraft:wooden_sword"
+    "item": "minecraft:iron_sword"
   },
   "show_notification": true
 }

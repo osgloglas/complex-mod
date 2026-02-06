@@ -22,6 +22,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("stencil_table_block_entity",
                     () -> BlockEntityType.Builder.of(StencilTableBlockEntity::new,
                             ModBlocks.STENCIL_TABLE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<IronFurnaceBlockEntity>> IRON_FURNACE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("iron_furnace_block_entity",
+                    () -> BlockEntityType.Builder.of(IronFurnaceBlockEntity::new,
+                            ModBlocks.IRON_FURNACE.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

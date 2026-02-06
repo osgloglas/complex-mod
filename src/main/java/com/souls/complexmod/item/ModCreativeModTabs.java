@@ -27,6 +27,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.WEDGE.get());
                         output.accept(ModItems.MOLTEN_IRON_BUCKET.get());
                         output.accept(ModItems.MOLTEN_COPPER_BUCKET.get());
+                        output.accept(ModItems.MOLTEN_DIAMOND_BUCKET.get());
+                        output.accept(ModItems.MOLTEN_GOLD_BUCKET.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -40,6 +42,7 @@ public class ModCreativeModTabs {
                         //blocks
                         output.accept(ModBlocks.FURNACE_STACK.get());
                         output.accept(ModBlocks.STENCIL_TABLE.get());
+                        output.accept(ModBlocks.IRON_FURNACE.get());
                     })
                     .build());
     

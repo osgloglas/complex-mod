@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "X",
-    "T",
-    "#"
+    "X  ",
+    " T ",
+    "  #"
   ],
   "result": {
     "item": "minecraft:stone_sword"

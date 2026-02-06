@@ -8,6 +8,8 @@
     "item.complexmod.wedge": "Wedge",
     "item.complexmod.molten_iron_bucket": "Molten Iron Bucket",
     "item.complexmod.molten_copper_bucket": "Molten Copper Bucket",
+    "item.complexmod.molten_diamond_bucket": "Molten Diamond Bucket",
+    "item.complexmod.molten_gold_bucket": "Molten Gold Bucket",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -20,5 +22,7 @@
     "block.complexmod.furnace_stack": "Furnace Stack",
     "gui.complexmod.furnace_stack": "Furnace Stack",
     "block.complexmod.stencil_table": "Stencil Table",
-    "gui.complexmod.stencil_table": "Stencil Table"
+    "gui.complexmod.stencil_table": "Stencil Table",
+    "block.complexmod.iron_furnace": "Iron Furnace",
+    "gui.complexmod.iron_furnace": "Iron Furnace"
 }
