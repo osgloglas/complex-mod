@@ -49,12 +49,12 @@ public class IronFurnaceScreen extends AbstractContainerScreen<IronFurnaceMenu> 
         int burnHeight = menu.getBurnProgress(14);
 
         pGuiGraphics.blit(TEXTURE,
-                leftPos + 81, //x position on screen
-                topPos + 51 + (14 - burnHeight), //y position on screen
+                leftPos + 57, //x position on screen
+                topPos + 37 + (14 - burnHeight), //y position on screen
                 176, //x position on texture
-                burnHeight, //y position on texture
+                14 - burnHeight, //y position on texture
                 14, //width of the burn icon
-                14 - burnHeight); //height of the burn icon
+                burnHeight); //height of the burn icon
     }
 
     @Override

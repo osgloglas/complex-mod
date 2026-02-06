@@ -24,15 +24,13 @@ import net.minecraft.world.level.Level;
 
 public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
-    private final Ingredient input;
-    private final Ingredient inputFuel;
+    private final NonNullList<Ingredient> inputs;
     private final ItemStack output;
     private final float experience;
 
-    public IronFurnaceRecipe(ResourceLocation id, Ingredient input, Ingredient inputFuel, ItemStack output, float experience) {
+    public IronFurnaceRecipe(ResourceLocation id, NonNullList<Ingredient> inputs, ItemStack output, float experience) {
         this.id = id;
-        this.input = input;
-        this.inputFuel = inputFuel;
+        this.inputs = inputs;
         this.output = output;
         this.experience = experience;
     }
@@ -44,7 +42,7 @@ public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        return input.test(container.getItem(0)) && inputFuel.test(container.getItem(1));
+        return inputs.get(0).test(container.getItem(0)) && inputs.get(1).test(container.getItem(1));
     }
 
     @Override
@@ -65,6 +63,10 @@ public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
     @Override
     public boolean canCraftInDimensions(int width, int height) {
         return true;
+    }
+
+    public float getXP() {
+        return experience;
     }
 
     @Override
@@ -92,30 +94,39 @@ public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
             Ingredient fuel = Ingredient.fromJson(json.get("input_fuel"));
             
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
-            float experience = json.has("xp") ? json.get("xp").getAsFloat() : 0.0f;
+            float experience = json.get("xp").getAsFloat();
 
-            return new IronFurnaceRecipe(recipeId, main, fuel, output, experience);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
+            inputs.set(0, main);
+            inputs.set(1, fuel);
+
+            return new IronFurnaceRecipe(recipeId, inputs, output, experience);
         }
 
         @Override
         public IronFurnaceRecipe fromNetwork(ResourceLocation recipeId, net.minecraft.network.FriendlyByteBuf buffer) {
-            Ingredient main = Ingredient.fromNetwork(buffer);
-            Ingredient fuel = Ingredient.fromNetwork(buffer);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(buffer.readInt(), Ingredient.EMPTY);
+
+            for (int i = 0; i < inputs.size(); i++) {
+                inputs.set(i, Ingredient.fromNetwork(buffer));
+            }
 
             ItemStack output = buffer.readItem();
             float experience = buffer.readFloat();
 
-            return new IronFurnaceRecipe(recipeId, main, fuel, output, experience);
+            return new IronFurnaceRecipe(recipeId, inputs, output, experience);
         }
 
         @Override
         public void toNetwork(net.minecraft.network.FriendlyByteBuf buffer, IronFurnaceRecipe recipe) {
             // Serialization logic would go here
-            recipe.input.toNetwork(buffer);
-            recipe.inputFuel.toNetwork(buffer);
-            
-            buffer.writeItemStack(recipe.output, false);
-            buffer.writeFloat(recipe.experience);
+            buffer.writeInt(recipe.inputs.size());
+
+            for (Ingredient ingredient : recipe.inputs) {
+                ingredient.toNetwork(buffer);
+            }
+
+            buffer.writeItemStack(recipe.getResultItem(null), false);
         }
     }
 }

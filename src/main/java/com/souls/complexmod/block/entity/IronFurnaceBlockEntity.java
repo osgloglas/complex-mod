@@ -4,14 +4,9 @@ import java.util.Optional;
 
 import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.souls.complexmod.block.custom.IronFurnaceBlock;
-import com.souls.complexmod.fluid.ModFluids;
-import com.souls.complexmod.menu.FurnaceStackMenu;
 import com.souls.complexmod.menu.IronFurnaceMenu;
 import com.souls.complexmod.recipe.IronFurnaceRecipe;
-import com.souls.complexmod.recipe.StencilShapedRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,10 +15,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -31,17 +26,11 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.FurnaceBlock;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class IronFurnaceBlockEntity extends BlockEntity implements MenuProvider {
@@ -65,23 +54,32 @@ public class IronFurnaceBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (isBurning != level.getBlockState(worldPosition).getValue(IronFurnaceBlock.LIT)) {
-            level.setBlock(worldPosition, level.getBlockState(worldPosition).setValue(IronFurnaceBlock.LIT, isBurning), 3);
-        }
+        level.setBlock(pos, state.setValue(IronFurnaceBlock.LIT, isBurning), 3);
 
         if (hasRecipe()) {
-            if(this.ticks++ % burnTimeTotal == 0) { //every 10 seconds
-                craftItem();
-            }
-        }
+            isBurning = true;
+            this.ticks++;
 
-        //increment burn time and reset if necessary
-        burnTime++;
-        if (burnTime >= burnTimeTotal) {
-            burnTime = 0; //reset burn time
+            if(this.ticks >= burnTimeTotal) { //every 9 seconds
+                craftItem();
+                dropXP();
+                this.ticks = 0;
+            }
+
+            //increment burn time and reset if necessary
+            burnTime++;
+            if (burnTime >= burnTimeTotal) {
+                burnTime = 0; //reset burn time
+            }
+
+            data.set(0, burnTime); //update data container
+            data.set(1, burnTimeTotal); //update data container with total burn time
+
+            System.out.println("recipe found");
+        } else {
+            isBurning = false;
+            this.ticks = 0;
         }
-        data.set(0, burnTime); //update data container
-        data.set(1, burnTimeTotal); //update data container with total burn time
     }
 
     @Override
@@ -214,5 +212,21 @@ public class IronFurnaceBlockEntity extends BlockEntity implements MenuProvider 
 
     private boolean canInsertAmountIntoOutputSlot(int amount) {
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + amount <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+    }
+
+    private void dropXP() {
+        Optional<IronFurnaceRecipe> recipe = getCurrentRecipe();
+        if (recipe.isPresent()) {
+            float xp = recipe.get().getXP();
+            if (xp > 0) {
+                int xpToDrop = (int) Math.round(xp);
+                while (xpToDrop > 0) {
+                    int xpOrbValue = ExperienceOrb.getExperienceValue(xpToDrop);
+                    xpToDrop -= xpOrbValue;
+                    ExperienceOrb orb = new ExperienceOrb(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1, worldPosition.getZ() + 0.5, xpOrbValue);
+                    level.addFreshEntity(orb);
+                }
+            }
+        }
     }
 }

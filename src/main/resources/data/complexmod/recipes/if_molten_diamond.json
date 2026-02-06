@@ -7,7 +7,8 @@
         "item": "minecraft:lava_bucket"
     },
     "output": {
-        "item": "complexmod:molten_diamond_bucket"
+        "item": "complexmod:molten_diamond_bucket",
+        "count": 1
     },
     "xp": 0.9
 }

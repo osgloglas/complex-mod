@@ -1,9 +1,9 @@
 package com.souls.complexmod.menu;
 
+import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
 import com.souls.complexmod.block.entity.IronFurnaceBlockEntity;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -48,7 +48,7 @@ public class IronFurnaceMenu extends AbstractContainerMenu {
         this.addSlot(new SlotItemHandler(this.items, 0, 56, 17));
         this.addSlot(new SlotItemHandler(this.items, 1, 56, 53));
 
-        this.addSlot(new SlotItemHandler(this.items, 9, 116, 35) {
+        this.addSlot(new SlotItemHandler(this.items, 2, 116, 35) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
@@ -114,7 +114,7 @@ public class IronFurnaceMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -146,5 +146,9 @@ public class IronFurnaceMenu extends AbstractContainerMenu {
         }
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
+    }
+
+    public IronFurnaceBlockEntity getBlockEntity() {
+        return this.blockEntity;
     }
 }

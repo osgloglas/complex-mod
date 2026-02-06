@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.menu.ModMenus;
 import com.souls.complexmod.screen.FurnaceStackScreen;
+import com.souls.complexmod.screen.IronFurnaceScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
 
 @Mod.EventBusSubscriber(modid = ComplexMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -18,6 +19,7 @@ public class ClientHooks {
         event.enqueueWork(() -> {
             MenuScreens.register(ModMenus.FURNACE_STACK_MENU.get(), FurnaceStackScreen::new);
             MenuScreens.register(ModMenus.STENCIL_TABLE_MENU.get(), StencilTableScreen::new);
+            MenuScreens.register(ModMenus.IRON_FURNACE_MENU.get(), IronFurnaceScreen::new); //TODO: make iron furnace screen and change this later, for now just reuse furnace stack screen
             //TODO: add more screens here later
         });
     }

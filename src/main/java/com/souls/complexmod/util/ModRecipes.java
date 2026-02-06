@@ -19,7 +19,7 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<StencilShapedRecipe>> STENCIL_SHAPED_RECIPE_SERIALIZER =
             SERIALIZERS.register("stencil_shaped", () -> StencilShapedRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<IronFurnaceRecipe>> IRON_FURNACE_RECIPE_SERIALIZER =
-            SERIALIZERS.register("iron_furnace_recipe", () -> IronFurnaceRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("iron_furnace", () -> IronFurnaceRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

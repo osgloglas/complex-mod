@@ -79,13 +79,15 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
         }
 
         boolean lit = belowState.getValue(FurnaceBlock.LIT);
+        this.ticks++;
 
-        if(this.ticks++ % 200 == 0 && lit) { //every 10 seconds
+        if(this.ticks >= burnTimeTotal && lit) { //every 10 seconds
             FluidStack lava = new FluidStack(ModFluids.MIXED_SLAG_SOURCE.get(), 100);
             slagTank.fill(lava, IFluidHandler.FluidAction.EXECUTE);
 
             System.out.println("Generating 100mb of mixed slag. Current slag amount: " + slagTank.getFluidAmount() + "mb");
             setChanged();
+            this.ticks = 0;
         }
         this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
 
@@ -93,7 +95,7 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
         double y = worldPosition.getY() + 1.0;
         double z = worldPosition.getZ() + 0.5;
 
-        //level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0); //smoke particle effect needs to be added on the client side, this is just for testing
+        level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0); //smoke particle effect needs to be added on the client side, this is just for testing
 
         //increment burn time and reset if necessary
         burnTime++;

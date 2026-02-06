@@ -2,22 +2,15 @@ package com.souls.complexmod.block.custom;
 
 import javax.annotation.Nullable;
 
-import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
+import com.souls.complexmod.block.entity.IronFurnaceBlockEntity;
 import com.souls.complexmod.block.entity.ModBlockEntities;
-import com.souls.complexmod.fluid.ModFluids;
-import com.souls.complexmod.item.ModItems;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -31,7 +24,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.network.NetworkHooks;
 
 public class IronFurnaceBlock extends Block implements EntityBlock {
@@ -49,13 +41,6 @@ public class IronFurnaceBlock extends Block implements EntityBlock {
         return ModBlockEntities.IRON_FURNACE_BLOCK_ENTITY.get().create(pos, state);
     }
 
-    //facing property stuff
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(FACING, LIT);
-    }
-
     //right click interaction stuff
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
@@ -66,7 +51,7 @@ public class IronFurnaceBlock extends Block implements EntityBlock {
 
             BlockEntity entity = level.getBlockEntity(pos);
 
-            if (entity instanceof FurnaceStackBlockEntity blockEntity) {
+            if (entity instanceof IronFurnaceBlockEntity blockEntity) {
 
                 //open gui
                 NetworkHooks.openScreen((ServerPlayer) player, blockEntity, blockEntity.getBlockPos());
@@ -80,6 +65,12 @@ public class IronFurnaceBlock extends Block implements EntityBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    //facing property stuff
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING, LIT);
     }
 
     //ticking
