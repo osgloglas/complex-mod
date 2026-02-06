@@ -12,6 +12,8 @@ import com.souls.complexmod.menu.ModMenus;
 import com.souls.complexmod.screen.FurnaceStackScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
 import com.souls.complexmod.util.ModEvents;
+import com.souls.complexmod.util.ModRecipes;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -67,6 +69,8 @@ public class ComplexMod
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
 
+        ModRecipes.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -102,8 +106,6 @@ public class ComplexMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             //menus
-            MenuScreens.register(ModMenus.FURNACE_STACK_MENU.get(), FurnaceStackScreen::new);
-            MenuScreens.register(ModMenus.STENCIL_TABLE_MENU.get(), StencilTableScreen::new);
             //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.cutout());
             //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.cutout());
         }

@@ -1,28 +1,44 @@
 package com.souls.complexmod.menu;
 
+import java.lang.StackWalker.Option;
+import java.util.Optional;
+
 import com.souls.complexmod.block.ModBlocks;
 import com.souls.complexmod.block.entity.StencilTableBlockEntity;
+import com.souls.complexmod.recipe.StencilShapedRecipe;
 
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.CraftingContainer;
+import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.ResultSlot;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.TransientCraftingContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class StencilTableMenu extends AbstractContainerMenu {
     private final StencilTableBlockEntity blockEntity;
     private final Level level;
-    private final ItemStackHandler itemHandler;
+    private final ItemStackHandler items;
+    private final Player player;
+
+    private final CraftingContainer craftSlots = new TransientCraftingContainer(this, 3, 3);
+    private final ResultContainer outputSlot = new ResultContainer();
 
     public StencilTableMenu(int containerId, Inventory pInv, FriendlyByteBuf buf) {
         this(containerId, pInv,
@@ -31,10 +47,11 @@ public class StencilTableMenu extends AbstractContainerMenu {
 
     public StencilTableMenu(int id, Inventory pInv, StencilTableBlockEntity bEntity) {
         super(ModMenus.STENCIL_TABLE_MENU.get(), id);
-        checkContainerSize(pInv, 10);
-        blockEntity = bEntity;
+
+        this.blockEntity = bEntity;
         this.level = blockEntity.getLevel();
-        this.itemHandler = blockEntity.getItemHandler();
+        this.items = blockEntity.getItemHandler();
+        this.player = pInv.player;
 
         addCraftingGrid();
         addPlayerInventory(pInv);
@@ -42,20 +59,18 @@ public class StencilTableMenu extends AbstractContainerMenu {
     }
 
     private void addCraftingGrid() {
-        this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(itemHandler -> {
-            int index = 0;
+        int index = 0;
 
-            for (int row = 0; row < 3; row++) {
-                for (int column = 0; column < 3; column++) {
-                    this.addSlot(new SlotItemHandler(itemHandler, index,
-                            30 + (column * 18),
-                            17 + (row * 18)));
-                    index++;
-                }
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+                this.addSlot(new Slot(this.craftSlots, index,
+                        30 + (column * 18),
+                        17 + (row * 18)));
+                index++;
             }
+        }
 
-            this.addSlot(new SlotItemHandler(itemHandler, 9, 120, 31));
-        });
+        this.addSlot(new Slot(this.outputSlot, 9, 124, 35));
     }
 
     private void addPlayerHotbar(Inventory pInv) {
@@ -73,8 +88,56 @@ public class StencilTableMenu extends AbstractContainerMenu {
     }
 
     @Override
+    public void slotsChanged(Container inventory) {
+        super.slotsChanged(inventory);
+        // Update the output slot based on the current input items
+        updateCraftingResult();
+    }
+
+    //crafting logic
+    public void updateCraftingResult() {
+        outputSlot.setItem(0, ItemStack.EMPTY);
+
+        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
+
+        recipe.ifPresent(r -> {
+            ItemStack result = r.getResultItem(level.registryAccess());
+            outputSlot.setItem(0, result.copy());
+        });
+    }
+
+    private boolean canCraft() {
+        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
+        return recipe.isPresent();
+    }
+
+    private Optional<StencilShapedRecipe> getCurrentRecipe() {
+        return level.getRecipeManager()
+                .getRecipeFor(StencilShapedRecipe.Type.INSTANCE, craftSlots, level);
+    }
+
+    private void craftItem() {
+        Optional<StencilShapedRecipe> recipeOpt = getCurrentRecipe();
+        if (recipeOpt.isEmpty()) {
+            return;
+        }
+
+        StencilShapedRecipe recipe = recipeOpt.get();
+
+        ItemStack resultItem = recipe.getResultItem(level.registryAccess());
+        this.outputSlot.setItem(0, resultItem.copy());
+
+        for (int i = 0; i < craftSlots.getContainerSize(); i++) {
+            ItemStack slotStack = craftSlots.getItem(i);
+            if (!slotStack.isEmpty()) {
+                craftSlots.removeItem(i, 1);
+            }
+        }
+    }
+
+    @Override
     public boolean stillValid(Player player) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, ModBlocks.STENCIL_TABLE.get());
+        return true;
     }
 
     // must assign a slot number to each of the slots used by the GUI.

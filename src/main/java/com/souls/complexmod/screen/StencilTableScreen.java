@@ -3,7 +3,6 @@ package com.souls.complexmod.screen;
 import org.jetbrains.annotations.NotNull;
 
 import com.souls.complexmod.ComplexMod;
-import com.souls.complexmod.menu.FurnaceStackMenu;
 import com.souls.complexmod.menu.StencilTableMenu;
 
 import net.minecraft.client.gui.GuiGraphics;

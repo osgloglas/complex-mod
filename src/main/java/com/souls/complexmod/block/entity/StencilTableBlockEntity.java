@@ -1,8 +1,11 @@
 package com.souls.complexmod.block.entity;
 
+import java.util.Optional;
+
 import javax.annotation.Nullable;
 
 import com.souls.complexmod.menu.StencilTableMenu;
+import com.souls.complexmod.recipe.StencilShapedRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +20,8 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -29,6 +34,8 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(10);
 
+    //this is for a FURNACE
+    /*
     private static final int INPUT_1_SLOT = 0;
     private static final int INPUT_2_SLOT = 1;
     private static final int INPUT_3_SLOT = 2;
@@ -39,6 +46,7 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
     private static final int INPUT_8_SLOT = 7;
     private static final int INPUT_9_SLOT = 8;
     private static final int OUTPUT_SLOT = 9;
+    */
 
     private LazyOptional<ItemStackHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -99,4 +107,65 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
         nbt.put("Items", itemHandler.serializeNBT());
         super.saveAdditional(nbt);
     }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        lazyItemHandler = LazyOptional.of(() -> itemHandler);
+    }
+
+    //this is crafting logic for a FURNACE
+    /*
+    public void tick() {
+        if (hasRecipe()) {
+            craftItem();
+        }
+    }
+
+    private void craftItem() {
+        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
+        ItemStack resultItem = recipe.get().getResultItem(null);
+
+        this.itemHandler.extractItem(INPUT_1_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_2_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_3_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_4_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_5_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_6_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_7_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_8_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_9_SLOT, 1, false);
+
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(resultItem.getItem(),
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + resultItem.getCount()));
+    }
+
+    private boolean hasRecipe() {
+        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        ItemStack resultItem = recipe.get().getResultItem(null);
+
+        return canInsertAmountIntoOutputSlot(resultItem.getCount()) && canInsertItemIntoOutputSlot(resultItem.getItem());
+    }
+
+    private Optional<StencilShapedRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(StencilShapedRecipe.Type.INSTANCE, inventory, level);
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item) {
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(item);
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int amount) {
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + amount <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+    }*/
 }
