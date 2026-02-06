@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:block/cube",
     "textures": {
-        "north": "complexmod:block/iron_furnace_front_on",
+        "north": "complexmod:block/iron_furnace_front_lit",
         "south": "complexmod:block/iron_furnace_side",
         "east": "complexmod:block/iron_furnace_side",
         "west": "complexmod:block/iron_furnace_side",

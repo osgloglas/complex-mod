@@ -1,0 +1,20 @@
+{
+    "type": "complexmod:iron_stencil_shaped",
+    "pattern": [
+        "## ",
+        "#S ",
+        " S "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "minecraft:diamond_axe",
+        "count": 1
+    }
+}

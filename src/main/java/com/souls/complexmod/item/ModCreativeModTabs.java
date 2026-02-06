@@ -43,6 +43,8 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.FURNACE_STACK.get());
                         output.accept(ModBlocks.STENCIL_TABLE.get());
                         output.accept(ModBlocks.IRON_FURNACE.get());
+                        output.accept(ModBlocks.IRON_FURNACE_STACK.get());
+                        output.accept(ModBlocks.IRON_STENCIL_TABLE.get());
                     })
                     .build());
     

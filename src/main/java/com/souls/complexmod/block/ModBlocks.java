@@ -15,6 +15,8 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 import com.souls.complexmod.block.custom.FurnaceStackBlock;
 import com.souls.complexmod.block.custom.IronFurnaceBlock;
+import com.souls.complexmod.block.custom.IronFurnaceStackBlock;
+import com.souls.complexmod.block.custom.IronStencilTableBlock;
 import com.souls.complexmod.block.custom.StencilTableBlock;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
@@ -33,6 +35,10 @@ public class ModBlocks {
             () -> new StencilTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<IronFurnaceBlock> IRON_FURNACE = registerBlock("iron_furnace",
             () -> new IronFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<IronFurnaceStackBlock> IRON_FURNACE_STACK = registerBlock("iron_furnace_stack",
+            () -> new IronFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<IronStencilTableBlock> IRON_STENCIL_TABLE = registerBlock("iron_stencil_table",
+            () -> new IronStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

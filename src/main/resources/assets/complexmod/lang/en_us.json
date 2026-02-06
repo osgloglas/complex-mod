@@ -24,5 +24,9 @@
     "block.complexmod.stencil_table": "Stencil Table",
     "gui.complexmod.stencil_table": "Stencil Table",
     "block.complexmod.iron_furnace": "Iron Furnace",
-    "gui.complexmod.iron_furnace": "Iron Furnace"
+    "gui.complexmod.iron_furnace": "Iron Furnace",
+    "block.complexmod.iron_furnace_stack": "Iron Furnace Stack",
+    "gui.complexmod.iron_furnace_stack": "Iron Furnace Stack",
+    "block.complexmod.iron_stencil_table": "Iron Stencil Table",
+    "gui.complexmod.iron_stencil_table": "Iron Stencil Table"
 }

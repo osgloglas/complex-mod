@@ -1,0 +1,20 @@
+{
+    "type": "complexmod:iron_stencil_shaped",
+    "pattern": [
+        "###",
+        "#M#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:glass"
+        },
+        "M": {
+            "item": "complexmod:molten_diamond_bucket"
+        }
+    },
+    "result": {
+        "item": "minecraft:diamond",
+        "count": 1
+    }
+}
