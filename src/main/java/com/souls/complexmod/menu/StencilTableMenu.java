@@ -18,6 +18,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.CraftingContainer;
+import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.ResultSlot;
 import net.minecraft.world.inventory.SimpleContainerData;
@@ -25,6 +26,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.TransientCraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
@@ -35,10 +37,6 @@ public class StencilTableMenu extends AbstractContainerMenu {
     private final StencilTableBlockEntity blockEntity;
     private final Level level;
     private final ItemStackHandler items;
-    private final Player player;
-
-    private final CraftingContainer craftSlots = new TransientCraftingContainer(this, 3, 3);
-    private final ResultContainer outputSlot = new ResultContainer();
 
     public StencilTableMenu(int containerId, Inventory pInv, FriendlyByteBuf buf) {
         this(containerId, pInv,
@@ -51,7 +49,6 @@ public class StencilTableMenu extends AbstractContainerMenu {
         this.blockEntity = bEntity;
         this.level = blockEntity.getLevel();
         this.items = blockEntity.getItemHandler();
-        this.player = pInv.player;
 
         addCraftingGrid();
         addPlayerInventory(pInv);
@@ -63,14 +60,19 @@ public class StencilTableMenu extends AbstractContainerMenu {
 
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
-                this.addSlot(new Slot(this.craftSlots, index,
+                this.addSlot(new SlotItemHandler(this.items, index,
                         30 + (column * 18),
                         17 + (row * 18)));
                 index++;
             }
         }
 
-        this.addSlot(new Slot(this.outputSlot, 9, 124, 35));
+        this.addSlot(new SlotItemHandler(this.items, 9, 124, 35) {
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false;
+            }
+        });
     }
 
     private void addPlayerHotbar(Inventory pInv) {
@@ -83,54 +85,6 @@ public class StencilTableMenu extends AbstractContainerMenu {
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 9; column++) {
                 addSlot(new Slot(pInv, 9 + column + (row * 9), 8 + (column * 18), 84 + (row * 18)));
-            }
-        }
-    }
-
-    @Override
-    public void slotsChanged(Container inventory) {
-        super.slotsChanged(inventory);
-        // Update the output slot based on the current input items
-        updateCraftingResult();
-    }
-
-    //crafting logic
-    public void updateCraftingResult() {
-        outputSlot.setItem(0, ItemStack.EMPTY);
-
-        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
-
-        recipe.ifPresent(r -> {
-            ItemStack result = r.getResultItem(level.registryAccess());
-            outputSlot.setItem(0, result.copy());
-        });
-    }
-
-    private boolean canCraft() {
-        Optional<StencilShapedRecipe> recipe = getCurrentRecipe();
-        return recipe.isPresent();
-    }
-
-    private Optional<StencilShapedRecipe> getCurrentRecipe() {
-        return level.getRecipeManager()
-                .getRecipeFor(StencilShapedRecipe.Type.INSTANCE, craftSlots, level);
-    }
-
-    private void craftItem() {
-        Optional<StencilShapedRecipe> recipeOpt = getCurrentRecipe();
-        if (recipeOpt.isEmpty()) {
-            return;
-        }
-
-        StencilShapedRecipe recipe = recipeOpt.get();
-
-        ItemStack resultItem = recipe.getResultItem(level.registryAccess());
-        this.outputSlot.setItem(0, resultItem.copy());
-
-        for (int i = 0; i < craftSlots.getContainerSize(); i++) {
-            ItemStack slotStack = craftSlots.getItem(i);
-            if (!slotStack.isEmpty()) {
-                craftSlots.removeItem(i, 1);
             }
         }
     }

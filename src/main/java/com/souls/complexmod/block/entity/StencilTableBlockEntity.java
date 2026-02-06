@@ -22,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -35,7 +36,6 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
     private final ItemStackHandler itemHandler = new ItemStackHandler(10);
 
     //this is for a FURNACE
-    /*
     private static final int INPUT_1_SLOT = 0;
     private static final int INPUT_2_SLOT = 1;
     private static final int INPUT_3_SLOT = 2;
@@ -46,7 +46,7 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
     private static final int INPUT_8_SLOT = 7;
     private static final int INPUT_9_SLOT = 8;
     private static final int OUTPUT_SLOT = 9;
-    */
+    
 
     private LazyOptional<ItemStackHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -115,8 +115,7 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
     }
 
     //this is crafting logic for a FURNACE
-    /*
-    public void tick() {
+    public void tick(Level level, BlockPos pos, BlockState state) {
         if (hasRecipe()) {
             craftItem();
         }
@@ -167,5 +166,5 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
 
     private boolean canInsertAmountIntoOutputSlot(int amount) {
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + amount <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
-    }*/
+    }
 }

@@ -1,0 +1,20 @@
+{
+    "type": "complexmod:stencil_shaped",
+    "pattern": [
+        "###",
+        "#M#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stick"
+        },
+        "M": {
+            "item": "complexmod:molten_copper_bucket"
+        }
+    },
+    "result": {
+        "item": "minecraft:copper_ingot",
+        "count": 1
+    }
+}

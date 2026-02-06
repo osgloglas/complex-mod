@@ -2,7 +2,10 @@ package com.souls.complexmod.block.custom;
 
 import javax.annotation.Nullable;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
+import com.souls.complexmod.block.entity.ModBlockEntities;
 import com.souls.complexmod.block.entity.StencilTableBlockEntity;
 
 import net.minecraft.core.BlockPos;
@@ -52,5 +55,23 @@ public class StencilTableBlock extends Block implements EntityBlock {
             }
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (level.isClientSide()) {
+            return null;
+        }
+
+        return createTickerHelper(type, ModBlockEntities.STENCIL_TABLE_BLOCK_ENTITY.get(),
+                (level1, pos1, state1, entity) -> entity.tick(level1, pos1, state1));
+    }
+
+    private static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<E> createTickerHelper(
+        BlockEntityType<E> givenType,
+        BlockEntityType<A> expectedType,
+        BlockEntityTicker<? super A> ticker) {
+        // TODO Auto-generated method stub
+        return givenType == expectedType ? (BlockEntityTicker<E>) ticker : null;
     }
 }

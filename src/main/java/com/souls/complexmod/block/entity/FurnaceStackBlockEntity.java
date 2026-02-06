@@ -93,7 +93,7 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
         double y = worldPosition.getY() + 1.0;
         double z = worldPosition.getZ() + 0.5;
 
-        level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0);
+        //level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0); //smoke particle effect needs to be added on the client side, this is just for testing
 
         //increment burn time and reset if necessary
         burnTime++;
@@ -110,11 +110,7 @@ public class FurnaceStackBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.FLUID_HANDLER) {
-
-            if (side == Direction.NORTH) {
-                return slagTankOptional.cast();
-            }
-            return LazyOptional.empty();
+            return slagTankOptional.cast();
         }
         return super.getCapability(cap, side);
     }
