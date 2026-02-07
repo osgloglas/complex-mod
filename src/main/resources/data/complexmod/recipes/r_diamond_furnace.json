@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "create:blaze_burner"
+    },
+    "I": {
+      "item": "minecraft:nether_brick"
+    },
+    "B": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "I#I",
+    "#L#",
+    "B#B"
+  ],
+  "result": {
+    "item": "complexmod:diamond_furnace",
+    "count": 1
+  },
+  "show_notification": true
+}

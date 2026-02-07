@@ -40,6 +40,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET = ITEMS.register("molten_gold_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_ESSENCE_BUCKET = ITEMS.register("ender_essence_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLAZE_ESSENCE_BUCKET = ITEMS.register("blaze_essence_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_FRAME = ITEMS.register("diamond_frame",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET = ITEMS.register("molten_tungsten_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET = ITEMS.register("molten_amethyst_bucket",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
@@ -54,6 +64,9 @@ public class ModItems {
     //bucket items
     public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",
             () -> new BucketItem(ModFluids.MIXED_SLAG_SOURCE,
+                new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> NETHERITE_SLAG_BUCKET = ITEMS.register("netherite_slag_bucket",
+            () -> new BucketItem(ModFluids.NETHERITE_SLAG_SOURCE,
                 new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {

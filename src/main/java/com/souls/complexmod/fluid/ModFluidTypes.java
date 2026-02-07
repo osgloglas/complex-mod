@@ -14,16 +14,33 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModFluidTypes {
-    public static final ResourceLocation MIXED_SLAG_STILL_RL =
+        public static final ResourceLocation MIXED_SLAG_STILL_RL =
             new ResourceLocation(ComplexMod.MOD_ID, "block/mixed_slag");
-    public static final ResourceLocation MIXED_SLAG_FLOWING_RL =
+        public static final ResourceLocation MIXED_SLAG_FLOWING_RL =
             new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_mixed_slag");
 
-    public static final DeferredRegister<FluidType> FLUID_TYPES =
+        public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, ComplexMod.MOD_ID);
 
-    public static final RegistryObject<FluidType> MIXED_SLAG_TYPE =
+        public static final RegistryObject<FluidType> MIXED_SLAG_TYPE =
             register("mixed_slag_type", 
+                    FluidType.Properties.create()
+                            .density(3000)
+                            .viscosity(3000)
+                            .temperature(1300)
+                            .lightLevel(8)
+                            .canDrown(false)
+                            .supportsBoating(false)
+                            .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA) 
+                            .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA));
+
+        public static final ResourceLocation NETHERITE_SLAG_STILL_RL =
+            new ResourceLocation(ComplexMod.MOD_ID, "block/netherite_slag");
+        public static final ResourceLocation NETHERITE_SLAG_FLOWING_RL =
+            new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_netherite_slag");
+
+        public static final RegistryObject<FluidType> NETHERITE_SLAG_TYPE =
+            register("netherite_slag_type", 
                     FluidType.Properties.create()
                             .density(3000)
                             .viscosity(3000)

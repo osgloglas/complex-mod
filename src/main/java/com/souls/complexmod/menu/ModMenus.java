@@ -23,6 +23,14 @@ public class ModMenus {
             MENUS.register("iron_furnace_stack_menu", () -> IForgeMenuType.create(IronFurnaceStackMenu::new));
         public static final RegistryObject<MenuType<IronStencilTableMenu>> IRON_STENCIL_TABLE_MENU =
             MENUS.register("iron_stencil_table_menu", () -> IForgeMenuType.create(IronStencilTableMenu::new));
+        public static final RegistryObject<MenuType<DiamondFurnaceMenu>> DIAMOND_FURNACE_MENU =
+            MENUS.register("diamond_furnace_menu", () -> IForgeMenuType.create(DiamondFurnaceMenu::new));
+        public static final RegistryObject<MenuType<DiamondStencilTableMenu>> DIAMOND_STENCIL_TABLE_MENU =
+            MENUS.register("diamond_stencil_table_menu", () -> IForgeMenuType.create(DiamondStencilTableMenu::new));
+        public static final RegistryObject<MenuType<EmeraldFurnaceMenu>> EMERALD_FURNACE_MENU =
+            MENUS.register("emerald_furnace_menu", () -> IForgeMenuType.create(EmeraldFurnaceMenu::new));
+        public static final RegistryObject<MenuType<EmeraldFurnaceStackMenu>> EMERALD_FURNACE_STACK_MENU =
+            MENUS.register("emerald_furnace_stack_menu", () -> IForgeMenuType.create(EmeraldFurnaceStackMenu::new));
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);

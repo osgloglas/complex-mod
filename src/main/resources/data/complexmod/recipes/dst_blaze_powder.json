@@ -1,0 +1,20 @@
+{
+    "type": "complexmod:diamond_stencil_shaped",
+    "pattern": [
+        " # ",
+        " R ",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:blaze_essence_bucket"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "minecraft:blaze_powder",
+        "count": 1
+    }
+}

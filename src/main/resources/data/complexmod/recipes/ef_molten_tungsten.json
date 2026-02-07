@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:emerald_furnace",
+    "input_main": {
+        "item": "minecraft:netherite_scrap"
+    },
+    "input_fuel": {
+        "item": "minecraft:lava_bucket"
+    },
+    "output": {
+        "item": "complexmod:molten_tungsten_bucket",
+        "count": 2
+    },
+    "xp": 1.5
+}

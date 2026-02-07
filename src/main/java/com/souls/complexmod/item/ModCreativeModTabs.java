@@ -29,6 +29,11 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.MOLTEN_COPPER_BUCKET.get());
                         output.accept(ModItems.MOLTEN_DIAMOND_BUCKET.get());
                         output.accept(ModItems.MOLTEN_GOLD_BUCKET.get());
+                        output.accept(ModItems.ENDER_ESSENCE_BUCKET.get());
+                        output.accept(ModItems.BLAZE_ESSENCE_BUCKET.get());
+                        output.accept(ModItems.DIAMOND_FRAME.get());
+                        output.accept(ModItems.MOLTEN_TUNGSTEN_BUCKET.get());
+                        output.accept(ModItems.MOLTEN_AMETHYST_BUCKET.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -38,6 +43,7 @@ public class ModCreativeModTabs {
 
                         //buckets
                         output.accept(ModItems.MIXED_SLAG_BUCKET.get());
+                        output.accept(ModItems.NETHERITE_SLAG_BUCKET.get());
 
                         //blocks
                         output.accept(ModBlocks.FURNACE_STACK.get());
@@ -45,6 +51,11 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.IRON_FURNACE.get());
                         output.accept(ModBlocks.IRON_FURNACE_STACK.get());
                         output.accept(ModBlocks.IRON_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.DIAMOND_FURNACE.get());
+                        output.accept(ModBlocks.DIAMOND_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.EMERALD_FURNACE.get());
+                        output.accept(ModBlocks.EMERALD_FURNACE_STACK.get());
+                        //output.accept(ModBlocks.EMERALD_STENCIL_TABLE.get());
                     })
                     .build());
     

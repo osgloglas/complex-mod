@@ -8,6 +8,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.menu.ModMenus;
+import com.souls.complexmod.screen.DiamondFurnaceScreen;
+import com.souls.complexmod.screen.DiamondStencilTableScreen;
+import com.souls.complexmod.screen.EmeraldFurnaceScreen;
+import com.souls.complexmod.screen.EmeraldFurnaceStackScreen;
 import com.souls.complexmod.screen.FurnaceStackScreen;
 import com.souls.complexmod.screen.IronFurnaceScreen;
 import com.souls.complexmod.screen.IronFurnaceStackScreen;
@@ -24,6 +28,10 @@ public class ClientHooks {
             MenuScreens.register(ModMenus.IRON_FURNACE_MENU.get(), IronFurnaceScreen::new);
             MenuScreens.register(ModMenus.IRON_FURNACE_STACK_MENU.get(), IronFurnaceStackScreen::new);
             MenuScreens.register(ModMenus.IRON_STENCIL_TABLE_MENU.get(), IronStencilTableScreen::new);
+            MenuScreens.register(ModMenus.DIAMOND_FURNACE_MENU.get(), DiamondFurnaceScreen::new);
+            MenuScreens.register(ModMenus.DIAMOND_STENCIL_TABLE_MENU.get(), DiamondStencilTableScreen::new);
+            MenuScreens.register(ModMenus.EMERALD_FURNACE_MENU.get(), EmeraldFurnaceScreen::new);
+            MenuScreens.register(ModMenus.EMERALD_FURNACE_STACK_MENU.get(), EmeraldFurnaceStackScreen::new);
             //TODO: add more screens here later
         });
     }

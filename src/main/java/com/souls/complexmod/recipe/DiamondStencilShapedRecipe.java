@@ -23,13 +23,13 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
 
-public class IronStencilShapedRecipe implements Recipe<SimpleContainer> {
+public class DiamondStencilShapedRecipe implements Recipe<SimpleContainer> {
     // Implementation details would go here
     private final ResourceLocation id;
     private final NonNullList<Ingredient> inputs;
     private final ItemStack output;
 
-    public IronStencilShapedRecipe(ResourceLocation id, String group, int width, int height,
+    public DiamondStencilShapedRecipe(ResourceLocation id, String group, int width, int height,
             NonNullList<Ingredient> inputs, ItemStack output) {
         this.id = id;
         this.inputs = inputs;
@@ -80,17 +80,17 @@ public class IronStencilShapedRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<IronStencilShapedRecipe> {
+    public static class Type implements RecipeType<DiamondStencilShapedRecipe> {
         public static final Type INSTANCE = new Type();
-        public static final String ID = "complexmod:stencil_shaped";
+        public static final String ID = "complexmod:diamond_stencil_shaped";
     }
 
-    public static class Serializer implements RecipeSerializer<IronStencilShapedRecipe> {
+    public static class Serializer implements RecipeSerializer<DiamondStencilShapedRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(ComplexMod.MOD_ID, "iron_stencil_shaped");
+        public static final ResourceLocation ID = new ResourceLocation(ComplexMod.MOD_ID, "diamond_stencil_shaped");
 
         @Override
-        public IronStencilShapedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+        public DiamondStencilShapedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String group = GsonHelper.getAsString(json, "group", "");
 
             JsonArray patternArray = GsonHelper.getAsJsonArray(json, "pattern");
@@ -127,11 +127,11 @@ public class IronStencilShapedRecipe implements Recipe<SimpleContainer> {
             
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
 
-            return new IronStencilShapedRecipe(recipeId, "", 3, 3, inputs, output);
+            return new DiamondStencilShapedRecipe(recipeId, "", 3, 3, inputs, output);
         }
 
         @Override
-        public IronStencilShapedRecipe fromNetwork(ResourceLocation recipeId, net.minecraft.network.FriendlyByteBuf buffer) {
+        public DiamondStencilShapedRecipe fromNetwork(ResourceLocation recipeId, net.minecraft.network.FriendlyByteBuf buffer) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buffer.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -139,11 +139,11 @@ public class IronStencilShapedRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = buffer.readItem();
-            return new IronStencilShapedRecipe(recipeId, "", 3, 3, inputs, output);
+            return new DiamondStencilShapedRecipe(recipeId, "", 3, 3, inputs, output);
         }
 
         @Override
-        public void toNetwork(net.minecraft.network.FriendlyByteBuf buffer, IronStencilShapedRecipe recipe) {
+        public void toNetwork(net.minecraft.network.FriendlyByteBuf buffer, DiamondStencilShapedRecipe recipe) {
             // Serialization logic would go here
             buffer.writeInt(recipe.inputs.size());
 

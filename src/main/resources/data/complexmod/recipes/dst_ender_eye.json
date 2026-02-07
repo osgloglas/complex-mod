@@ -1,0 +1,23 @@
+{
+    "type": "complexmod:diamond_stencil_shaped",
+    "pattern": [
+        "#R#",
+        "RMR",
+        "#R#"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:blaze_essence_bucket"
+        },
+        "M": {
+            "item": "complexmod:ender_essence_bucket"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "minecraft:ender_eye",
+        "count": 1
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/diamond_furnace_front_lit",
+        "south": "complexmod:block/diamond_furnace_side",
+        "east": "complexmod:block/diamond_furnace_side",
+        "west": "complexmod:block/diamond_furnace_side",
+        "up": "complexmod:block/diamond_furnace_top",
+        "down": "complexmod:block/diamond_furnace_top"
+    }
+}

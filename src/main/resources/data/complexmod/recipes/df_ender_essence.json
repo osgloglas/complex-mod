@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:diamond_furnace",
+    "input_main": {
+        "item": "minecraft:ender_pearl"
+    },
+    "input_fuel": {
+        "item": "minecraft:lava_bucket"
+    },
+    "output": {
+        "item": "complexmod:ender_essence_bucket",
+        "count": 1
+    },
+    "xp": 0.9
+}

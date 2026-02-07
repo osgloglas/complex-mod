@@ -13,6 +13,10 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 
+import com.souls.complexmod.block.custom.DiamondFurnaceBlock;
+import com.souls.complexmod.block.custom.DiamondStencilTableBlock;
+import com.souls.complexmod.block.custom.EmeraldFurnaceBlock;
+import com.souls.complexmod.block.custom.EmeraldFurnaceStackBlock;
 import com.souls.complexmod.block.custom.FurnaceStackBlock;
 import com.souls.complexmod.block.custom.IronFurnaceBlock;
 import com.souls.complexmod.block.custom.IronFurnaceStackBlock;
@@ -39,10 +43,20 @@ public class ModBlocks {
             () -> new IronFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<IronStencilTableBlock> IRON_STENCIL_TABLE = registerBlock("iron_stencil_table",
             () -> new IronStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<DiamondFurnaceBlock> DIAMOND_FURNACE = registerBlock("diamond_furnace",
+            () -> new DiamondFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<DiamondStencilTableBlock> DIAMOND_STENCIL_TABLE = registerBlock("diamond_stencil_table",
+            () -> new DiamondStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<EmeraldFurnaceBlock> EMERALD_FURNACE = registerBlock("emerald_furnace",
+            () -> new EmeraldFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<EmeraldFurnaceStackBlock> EMERALD_FURNACE_STACK = registerBlock("emerald_furnace_stack",
+            () -> new EmeraldFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",
             () -> new LiquidBlock(ModFluids.MIXED_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
+    public static final RegistryObject<LiquidBlock> NETHERITE_SLAG_BLOCK = BLOCKS.register("netherite_slag_block",
+            () -> new LiquidBlock(ModFluids.NETHERITE_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -3,6 +3,9 @@ package com.souls.complexmod.util;
 import org.checkerframework.checker.units.qual.s;
 
 import com.souls.complexmod.ComplexMod;
+import com.souls.complexmod.recipe.DiamondFurnaceRecipe;
+import com.souls.complexmod.recipe.DiamondStencilShapedRecipe;
+import com.souls.complexmod.recipe.EmeraldFurnaceRecipe;
 import com.souls.complexmod.recipe.IronFurnaceRecipe;
 import com.souls.complexmod.recipe.IronStencilShapedRecipe;
 import com.souls.complexmod.recipe.StencilShapedRecipe;
@@ -23,6 +26,12 @@ public class ModRecipes {
             SERIALIZERS.register("iron_furnace", () -> IronFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<IronStencilShapedRecipe>> IRON_STENCIL_SHAPED_RECIPE_SERIALIZER =
             SERIALIZERS.register("iron_stencil_shaped", () -> IronStencilShapedRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<DiamondFurnaceRecipe>> DIAMOND_FURNACE_RECIPE_SERIALIZER =
+            SERIALIZERS.register("diamond_furnace", () -> DiamondFurnaceRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<DiamondStencilShapedRecipe>> DIAMOND_STENCIL_SHAPED_RECIPE_SERIALIZER =
+            SERIALIZERS.register("diamond_stencil_shaped", () -> DiamondStencilShapedRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<EmeraldFurnaceRecipe>> EMERALD_FURNACE_RECIPE_SERIALIZER =
+            SERIALIZERS.register("emerald_furnace", () -> EmeraldFurnaceRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

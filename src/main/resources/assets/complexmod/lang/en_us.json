@@ -10,6 +10,11 @@
     "item.complexmod.molten_copper_bucket": "Molten Copper Bucket",
     "item.complexmod.molten_diamond_bucket": "Molten Diamond Bucket",
     "item.complexmod.molten_gold_bucket": "Molten Gold Bucket",
+    "item.complexmod.ender_essence_bucket": "Ender Essence Bucket",
+    "item.complexmod.blaze_essence_bucket": "Blaze Essence Bucket",
+    "item.complexmod.diamond_frame": "Diamond Frame",
+    "item.complexmod.molten_tungsten_bucket": "Molten Tungsten Bucket",
+    "item.complexmod.molten_amethyst_bucket": "Molten Amethyst Bucket",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -18,6 +23,8 @@
 
     "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
+    "item.complexmod.netherite_slag_bucket": "Netherite Slag Bucket",
+    "block.complexmod.netherite_slag_block": "Netherite Slag Block",
 
     "block.complexmod.furnace_stack": "Furnace Stack",
     "gui.complexmod.furnace_stack": "Furnace Stack",
@@ -28,5 +35,13 @@
     "block.complexmod.iron_furnace_stack": "Iron Furnace Stack",
     "gui.complexmod.iron_furnace_stack": "Iron Furnace Stack",
     "block.complexmod.iron_stencil_table": "Iron Stencil Table",
-    "gui.complexmod.iron_stencil_table": "Iron Stencil Table"
+    "gui.complexmod.iron_stencil_table": "Iron Stencil Table",
+    "block.complexmod.diamond_furnace": "Diamond Furnace",
+    "gui.complexmod.diamond_furnace": "Diamond Furnace",
+    "block.complexmod.diamond_stencil_table": "Diamond Stencil Table",
+    "gui.complexmod.diamond_stencil_table": "Diamond Stencil Table",
+    "block.complexmod.emerald_furnace": "Emerald Furnace",
+    "gui.complexmod.emerald_furnace": "Emerald Furnace",
+    "block.complexmod.emerald_furnace_stack": "Emerald Furnace Stack",
+    "gui.complexmod.emerald_furnace_stack": "Emerald Furnace Stack"
 }

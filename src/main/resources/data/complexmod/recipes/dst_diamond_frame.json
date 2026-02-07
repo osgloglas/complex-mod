@@ -1,0 +1,20 @@
+{
+    "type": "complexmod:diamond_stencil_shaped",
+    "pattern": [
+        "###",
+        "#I#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:molten_diamond_bucket"
+        },
+        "I": {
+            "item": "complexmod:iron_block"
+        }
+    },
+    "result": {
+        "item": "complexmod:diamond_frame",
+        "count": 1
+    }
+}

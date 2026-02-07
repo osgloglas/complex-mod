@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "complexmod:diamond_frame"
+    },
+    "L": {
+      "item": "create:blaze_burner"
+    },
+    "I": {
+      "item": "minecraft:emerald_block"
+    },
+    "B": {
+      "item": "minecraft:endstone"
+    }
+  },
+  "pattern": [
+    "I#I",
+    "#L#",
+    "B#B"
+  ],
+  "result": {
+    "item": "complexmod:emerald_furnace",
+    "count": 1
+  },
+  "show_notification": true
+}

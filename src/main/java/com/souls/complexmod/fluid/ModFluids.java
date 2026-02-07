@@ -35,6 +35,23 @@ public class ModFluids {
                     .block(() -> ModBlocks.MIXED_SLAG_BLOCK.get())
                     .bucket(() -> ModItems.MIXED_SLAG_BUCKET.get());
 
+        //netherite slag
+        public static final RegistryObject<FlowingFluid> NETHERITE_SLAG_SOURCE = FLUIDS.register("netherite_slag_source",
+                () -> new ForgeFlowingFluid.Source(ModFluids.NETHERITE_SLAG_PROPERTIES));
+        public static final RegistryObject<FlowingFluid> FLOWING_NETHERITE_SLAG = FLUIDS.register("flowing_netherite_slag",
+                () -> new ForgeFlowingFluid.Flowing(ModFluids.NETHERITE_SLAG_PROPERTIES));
+
+        public static final ForgeFlowingFluid.Properties NETHERITE_SLAG_PROPERTIES =
+                new ForgeFlowingFluid.Properties(
+                        ModFluidTypes.NETHERITE_SLAG_TYPE,
+                        ModFluids.NETHERITE_SLAG_SOURCE,
+                        ModFluids.FLOWING_NETHERITE_SLAG)
+                        .slopeFindDistance(4)
+                        .levelDecreasePerBlock(1)
+                        .tickRate(30)
+                        .block(() -> ModBlocks.NETHERITE_SLAG_BLOCK.get())
+                        .bucket(() -> ModItems.NETHERITE_SLAG_BUCKET.get());
+
     public static void register (IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }

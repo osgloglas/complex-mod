@@ -34,6 +34,22 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("iron_stencil_table_block_entity",
                     () -> BlockEntityType.Builder.of(IronStencilTableBlockEntity::new,
                             ModBlocks.IRON_STENCIL_TABLE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<DiamondFurnaceBlockEntity>> DIAMOND_FURNACE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("diamond_furnace_block_entity",
+                    () -> BlockEntityType.Builder.of(DiamondFurnaceBlockEntity::new,
+                            ModBlocks.DIAMOND_FURNACE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<DiamondStencilTableBlockEntity>> DIAMOND_STENCIL_TABLE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("diamond_stencil_table_block_entity",
+                    () -> BlockEntityType.Builder.of(DiamondStencilTableBlockEntity::new,
+                            ModBlocks.DIAMOND_STENCIL_TABLE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<EmeraldFurnaceBlockEntity>> EMERALD_FURNACE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("emerald_furnace_block_entity",
+                    () -> BlockEntityType.Builder.of(EmeraldFurnaceBlockEntity::new,
+                            ModBlocks.EMERALD_FURNACE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<EmeraldFurnaceStackBlockEntity>> EMERALD_FURNACE_STACK_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("emerald_furnace_stack_block_entity",
+                    () -> BlockEntityType.Builder.of(EmeraldFurnaceStackBlockEntity::new,
+                            ModBlocks.EMERALD_FURNACE_STACK.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

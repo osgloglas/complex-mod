@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:emerald_furnace",
+    "input_main": {
+        "item": "minecraft:amethyst_shard"
+    },
+    "input_fuel": {
+        "item": "complexmod:blaze_essence_bucket"
+    },
+    "output": {
+        "item": "complexmod:molten_amethyst_bucket",
+        "count": 2
+    },
+    "xp": 1.5
+}
