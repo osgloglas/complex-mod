@@ -50,6 +50,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("emerald_furnace_stack_block_entity",
                     () -> BlockEntityType.Builder.of(EmeraldFurnaceStackBlockEntity::new,
                             ModBlocks.EMERALD_FURNACE_STACK.get()).build(null));
+        public static final RegistryObject<BlockEntityType<EmeraldStencilTableBlockEntity>> EMERALD_STENCIL_TABLE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("emerald_stencil_table_block_entity",
+                    () -> BlockEntityType.Builder.of(EmeraldStencilTableBlockEntity::new,
+                            ModBlocks.EMERALD_STENCIL_TABLE.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

@@ -16,7 +16,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> COMPLEXMOD_TAB = CREATIVE_MODE_TABS.register("complexmod_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> ModItems.TWINE.get().getDefaultInstance())
+                    .icon(() -> ModItems.AMETHINE_INGOT.get().getDefaultInstance())
                     .title(Component.translatable("creativetab.complexmod_tab"))
                     .displayItems((parameters, output) -> {
                         //items
@@ -34,18 +34,27 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.DIAMOND_FRAME.get());
                         output.accept(ModItems.MOLTEN_TUNGSTEN_BUCKET.get());
                         output.accept(ModItems.MOLTEN_AMETHYST_BUCKET.get());
+                        output.accept(ModItems.AMETHINE_INGOT.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
                         output.accept(ModItems.FLINT_KNIFE.get());
                         output.accept(ModItems.WOODEN_MALLET.get());
                         output.accept(ModItems.STONE_MALLET.get());
+                        output.accept(ModItems.AMETHINE_SWORD.get());
+                        output.accept(ModItems.AMETHINE_PICKAXE.get());
+                        output.accept(ModItems.AMETHINE_AXE.get());
+                        output.accept(ModItems.AMETHINE_SHOVEL.get());
+                        output.accept(ModItems.AMETHINE_HOE.get());
 
                         //buckets
                         output.accept(ModItems.MIXED_SLAG_BUCKET.get());
                         output.accept(ModItems.NETHERITE_SLAG_BUCKET.get());
 
                         //blocks
+                        output.accept(ModBlocks.AMETHINE_BLOCK.get());
+
+                        //block entities
                         output.accept(ModBlocks.FURNACE_STACK.get());
                         output.accept(ModBlocks.STENCIL_TABLE.get());
                         output.accept(ModBlocks.IRON_FURNACE.get());
@@ -55,7 +64,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.DIAMOND_STENCIL_TABLE.get());
                         output.accept(ModBlocks.EMERALD_FURNACE.get());
                         output.accept(ModBlocks.EMERALD_FURNACE_STACK.get());
-                        //output.accept(ModBlocks.EMERALD_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.EMERALD_STENCIL_TABLE.get());
                     })
                     .build());
     

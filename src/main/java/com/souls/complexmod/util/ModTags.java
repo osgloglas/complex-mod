@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_FLINT_TOOL = tag("needs_flint_tool");
+        public static final TagKey<Block> NEEDS_AMETHINE_TOOL = tag("needs_amethine_tool");
+        public static final TagKey<Block> NEEDS_PURPOSDALITE_TOOL = tag("needs_purposdalite_tool");
+        public static final TagKey<Block> NEEDS_BEDROCK_TOOL = tag("needs_bedrock_tool");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(ComplexMod.MOD_ID, name));

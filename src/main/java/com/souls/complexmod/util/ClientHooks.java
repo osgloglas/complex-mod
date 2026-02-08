@@ -12,6 +12,7 @@ import com.souls.complexmod.screen.DiamondFurnaceScreen;
 import com.souls.complexmod.screen.DiamondStencilTableScreen;
 import com.souls.complexmod.screen.EmeraldFurnaceScreen;
 import com.souls.complexmod.screen.EmeraldFurnaceStackScreen;
+import com.souls.complexmod.screen.EmeraldStencilTableScreen;
 import com.souls.complexmod.screen.FurnaceStackScreen;
 import com.souls.complexmod.screen.IronFurnaceScreen;
 import com.souls.complexmod.screen.IronFurnaceStackScreen;
@@ -32,6 +33,7 @@ public class ClientHooks {
             MenuScreens.register(ModMenus.DIAMOND_STENCIL_TABLE_MENU.get(), DiamondStencilTableScreen::new);
             MenuScreens.register(ModMenus.EMERALD_FURNACE_MENU.get(), EmeraldFurnaceScreen::new);
             MenuScreens.register(ModMenus.EMERALD_FURNACE_STACK_MENU.get(), EmeraldFurnaceStackScreen::new);
+            MenuScreens.register(ModMenus.EMERALD_STENCIL_TABLE_MENU.get(), EmeraldStencilTableScreen::new);
             //TODO: add more screens here later
         });
     }

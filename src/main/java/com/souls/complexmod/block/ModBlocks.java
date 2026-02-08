@@ -17,6 +17,7 @@ import com.souls.complexmod.block.custom.DiamondFurnaceBlock;
 import com.souls.complexmod.block.custom.DiamondStencilTableBlock;
 import com.souls.complexmod.block.custom.EmeraldFurnaceBlock;
 import com.souls.complexmod.block.custom.EmeraldFurnaceStackBlock;
+import com.souls.complexmod.block.custom.EmeraldStencilTableBlock;
 import com.souls.complexmod.block.custom.FurnaceStackBlock;
 import com.souls.complexmod.block.custom.IronFurnaceBlock;
 import com.souls.complexmod.block.custom.IronFurnaceStackBlock;
@@ -31,6 +32,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ComplexMod.MOD_ID);
 
     //normal blocks
+    public static final RegistryObject<Block> AMETHINE_BLOCK = registerBlock("amethine_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
 
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",
@@ -51,6 +54,8 @@ public class ModBlocks {
             () -> new EmeraldFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<EmeraldFurnaceStackBlock> EMERALD_FURNACE_STACK = registerBlock("emerald_furnace_stack",
             () -> new EmeraldFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<EmeraldStencilTableBlock> EMERALD_STENCIL_TABLE = registerBlock("emerald_stencil_table",
+            () -> new EmeraldStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

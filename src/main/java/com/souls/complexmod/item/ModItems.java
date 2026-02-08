@@ -11,9 +11,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.HoeItem;
 
 import com.souls.complexmod.item.custom.FlintKnifeItem;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import com.souls.complexmod.item.custom.StoneMalletItem;
 
@@ -50,6 +53,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET = ITEMS.register("molten_amethyst_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_INGOT = ITEMS.register("amethine_ingot",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
@@ -60,6 +65,18 @@ public class ModItems {
             () -> new PickaxeItem(Tiers.WOOD, 1, 2, new Item.Properties()));
     public static final RegistryObject<Item> STONE_MALLET = ITEMS.register("stone_mallet",
             () -> new StoneMalletItem(Tiers.STONE, 2, 3, new Item.Properties()));
+
+    //amethine tier
+    public static final RegistryObject<Item> AMETHINE_SWORD = ITEMS.register("amethine_sword",
+            () -> new SwordItem(ModToolTiers.AMETHINE, 4, 2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_PICKAXE = ITEMS.register("amethine_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.AMETHINE, 2, 1, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_AXE = ITEMS.register("amethine_axe",
+            () -> new AxeItem(ModToolTiers.AMETHINE, 6, 3, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_SHOVEL = ITEMS.register("amethine_shovel",
+            () -> new ShovelItem(ModToolTiers.AMETHINE, 1.5F, 1, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_HOE = ITEMS.register("amethine_hoe",
+            () -> new HoeItem(ModToolTiers.AMETHINE, 1, 1, new Item.Properties()));
         
     //bucket items
     public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",

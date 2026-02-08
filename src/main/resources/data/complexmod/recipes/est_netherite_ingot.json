@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:emerald_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#   G",
+        "# L G",
+        "#   G",
+        "GGGGG"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:molten_tungsten_bucket"
+        },
+        "L": {
+            "item": "minecraft:lava_bucket"
+        },
+        "G": {
+            "item": "complexmod:molten_gold_bucket"
+        }
+    },
+    "result": {
+        "item": "minecraft:netherite_ingot",
+        "count": 1
+    }
+}

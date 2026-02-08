@@ -15,16 +15,24 @@
     "item.complexmod.diamond_frame": "Diamond Frame",
     "item.complexmod.molten_tungsten_bucket": "Molten Tungsten Bucket",
     "item.complexmod.molten_amethyst_bucket": "Molten Amethyst Bucket",
+    "item.complexmod.amethine_ingot": "Amethine Ingot",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
     "item.complexmod.wooden_mallet": "Wooden Mallet",
     "item.complexmod.stone_mallet": "Stone Mallet",
+    "item.complexmod.amethine_sword": "Amethine Sword",
+    "item.complexmod.amethine_pickaxe": "Amethine Pickaxe",
+    "item.complexmod.amethine_axe": "Amethine Axe",
+    "item.complexmod.amethine_shovel": "Amethine Shovel",
+    "item.complexmod.amethine_hoe": "Amethine Hoe",
 
     "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
     "item.complexmod.netherite_slag_bucket": "Netherite Slag Bucket",
     "block.complexmod.netherite_slag_block": "Netherite Slag Block",
+
+    "block.complexmod.amethine_block": "Amethine Block",
 
     "block.complexmod.furnace_stack": "Furnace Stack",
     "gui.complexmod.furnace_stack": "Furnace Stack",
@@ -43,5 +51,7 @@
     "block.complexmod.emerald_furnace": "Emerald Furnace",
     "gui.complexmod.emerald_furnace": "Emerald Furnace",
     "block.complexmod.emerald_furnace_stack": "Emerald Furnace Stack",
-    "gui.complexmod.emerald_furnace_stack": "Emerald Furnace Stack"
+    "gui.complexmod.emerald_furnace_stack": "Emerald Furnace Stack",
+    "block.complexmod.emerald_stencil_table": "Emerald Stencil Table",
+    "gui.complexmod.emerald_stencil_table": "Emerald Stencil Table"
 }

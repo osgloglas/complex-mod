@@ -6,6 +6,7 @@ import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.recipe.DiamondFurnaceRecipe;
 import com.souls.complexmod.recipe.DiamondStencilShapedRecipe;
 import com.souls.complexmod.recipe.EmeraldFurnaceRecipe;
+import com.souls.complexmod.recipe.EmeraldStencilShapedRecipe;
 import com.souls.complexmod.recipe.IronFurnaceRecipe;
 import com.souls.complexmod.recipe.IronStencilShapedRecipe;
 import com.souls.complexmod.recipe.StencilShapedRecipe;
@@ -32,6 +33,8 @@ public class ModRecipes {
             SERIALIZERS.register("diamond_stencil_shaped", () -> DiamondStencilShapedRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<EmeraldFurnaceRecipe>> EMERALD_FURNACE_RECIPE_SERIALIZER =
             SERIALIZERS.register("emerald_furnace", () -> EmeraldFurnaceRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<EmeraldStencilShapedRecipe>> EMERALD_STENCIL_SHAPED_RECIPE_SERIALIZER =
+            SERIALIZERS.register("emerald_stencil_shaped", () -> EmeraldStencilShapedRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
