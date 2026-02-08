@@ -35,6 +35,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.MOLTEN_TUNGSTEN_BUCKET.get());
                         output.accept(ModItems.MOLTEN_AMETHYST_BUCKET.get());
                         output.accept(ModItems.AMETHINE_INGOT.get());
+                        output.accept(ModItems.AMETHINE_TEMPLATE.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -46,6 +47,12 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.AMETHINE_AXE.get());
                         output.accept(ModItems.AMETHINE_SHOVEL.get());
                         output.accept(ModItems.AMETHINE_HOE.get());
+
+                        //armor
+                        output.accept(ModItems.AMETHINE_HELMET.get());
+                        output.accept(ModItems.AMETHINE_CHESTPLATE.get());
+                        output.accept(ModItems.AMETHINE_LEGGINGS.get());
+                        output.accept(ModItems.AMETHINE_BOOTS.get());
 
                         //buckets
                         output.accept(ModItems.MIXED_SLAG_BUCKET.get());
@@ -65,6 +72,9 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.EMERALD_FURNACE.get());
                         output.accept(ModBlocks.EMERALD_FURNACE_STACK.get());
                         output.accept(ModBlocks.EMERALD_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.NETHERITE_FURNACE.get());
+                        //output.accept(ModBlocks.NETHERITE_FURNACE_STACK.get());
+                        //output.accept(ModBlocks.NETHERITE_STENCIL_TABLE.get());
                     })
                     .build());
     

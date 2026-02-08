@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:emerald_stencil_shaped",
+    "pattern": [
+        "NNN  ",
+        "NS   ",
+        "N S  ",
+        "   S ",
+        "T   S"
+    ],
+    "key": {
+        "N": {
+            "item": "complexmod:amethine_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "complexmod:amethine_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:amethine_pickaxe",
+        "count": 1
+    }
+}

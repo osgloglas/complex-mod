@@ -1,0 +1,23 @@
+{
+    "type": "complexmod:diamond_stencil_shaped",
+    "pattern": [
+        "#T#",
+        "#M#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "M": {
+            "item": "minecraft:obsidian"
+        },
+        "T": {
+            "item": "complexmod:amethine_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:amethine_template",
+        "count": 2
+    }
+}

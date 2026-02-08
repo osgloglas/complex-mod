@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:emerald_stencil_shaped",
+    "pattern": [
+        "A    ",
+        " A   ",
+        "  A  ",
+        "   S ",
+        "T   S"
+    ],
+    "key": {
+        "A": {
+            "item": "complexmod:amethine_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "complexmod:amethine_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:amethine_sword",
+        "count": 1
+    }
+}

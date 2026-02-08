@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.HoeItem;
@@ -55,6 +56,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_INGOT = ITEMS.register("amethine_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_TEMPLATE = ITEMS.register("amethine_template",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
@@ -62,22 +65,31 @@ public class ModItems {
     public static final RegistryObject<Item> FLINT_KNIFE = ITEMS.register("flint_knife",
             () -> new FlintKnifeItem(ModToolTiers.FLINT, 0, 1, new Item.Properties()));
     public static final RegistryObject<Item> WOODEN_MALLET = ITEMS.register("wooden_mallet",
-            () -> new PickaxeItem(Tiers.WOOD, 1, 2, new Item.Properties()));
+            () -> new PickaxeItem(Tiers.WOOD, 1, 0, new Item.Properties()));
     public static final RegistryObject<Item> STONE_MALLET = ITEMS.register("stone_mallet",
-            () -> new StoneMalletItem(Tiers.STONE, 2, 3, new Item.Properties()));
+            () -> new StoneMalletItem(Tiers.STONE, 2, 0, new Item.Properties()));
 
     //amethine tier
     public static final RegistryObject<Item> AMETHINE_SWORD = ITEMS.register("amethine_sword",
-            () -> new SwordItem(ModToolTiers.AMETHINE, 4, 2.4F, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.AMETHINE, 4, 0, new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_PICKAXE = ITEMS.register("amethine_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.AMETHINE, 2, 1, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.AMETHINE, 2, 0, new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_AXE = ITEMS.register("amethine_axe",
-            () -> new AxeItem(ModToolTiers.AMETHINE, 6, 3, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.AMETHINE, 5, 0, new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_SHOVEL = ITEMS.register("amethine_shovel",
-            () -> new ShovelItem(ModToolTiers.AMETHINE, 1.5F, 1, new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.AMETHINE, 2.5F, 0, new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_HOE = ITEMS.register("amethine_hoe",
-            () -> new HoeItem(ModToolTiers.AMETHINE, 1, 1, new Item.Properties()));
-        
+            () -> new HoeItem(ModToolTiers.AMETHINE, 0, 1, new Item.Properties()));
+
+    public static final RegistryObject<Item> AMETHINE_HELMET = ITEMS.register("amethine_helmet",
+            () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_CHESTPLATE = ITEMS.register("amethine_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_LEGGINGS = ITEMS.register("amethine_leggings",
+            () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> AMETHINE_BOOTS = ITEMS.register("amethine_boots",
+            () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.BOOTS, new Item.Properties()));
+
     //bucket items
     public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",
             () -> new BucketItem(ModFluids.MIXED_SLAG_SOURCE,

@@ -8,6 +8,7 @@ import com.souls.complexmod.fluid.ModFluidTypes;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModCreativeModTabs;
 import com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.loot.ModLootModifiers;
 import com.souls.complexmod.menu.ModMenus;
 import com.souls.complexmod.screen.FurnaceStackScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
@@ -70,6 +71,8 @@ public class ComplexMod
         ModFluidTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
