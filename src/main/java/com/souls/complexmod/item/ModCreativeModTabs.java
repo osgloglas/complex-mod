@@ -36,6 +36,9 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.MOLTEN_AMETHYST_BUCKET.get());
                         output.accept(ModItems.AMETHINE_INGOT.get());
                         output.accept(ModItems.AMETHINE_TEMPLATE.get());
+                        output.accept(ModItems.SUPERHEATED_AMETHINE_BUCKET.get());
+                        output.accept(ModItems.SUPERHEATED_DIAMOND_BUCKET.get());
+                        output.accept(ModItems.DIAMOND_AMETHINE_CRYSTAL.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -73,7 +76,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.EMERALD_FURNACE_STACK.get());
                         output.accept(ModBlocks.EMERALD_STENCIL_TABLE.get());
                         output.accept(ModBlocks.NETHERITE_FURNACE.get());
-                        //output.accept(ModBlocks.NETHERITE_FURNACE_STACK.get());
+                        output.accept(ModBlocks.NETHERITE_FURNACE_STACK.get());
                         //output.accept(ModBlocks.NETHERITE_STENCIL_TABLE.get());
                     })
                     .build());

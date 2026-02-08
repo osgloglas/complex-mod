@@ -58,6 +58,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_TEMPLATE = ITEMS.register("amethine_template",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_AMETHINE_BUCKET = ITEMS.register("superheated_amethine_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_DIAMOND_BUCKET = ITEMS.register("superheated_diamond_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_AMETHINE_CRYSTAL = ITEMS.register("diamond_amethine_crystal",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",

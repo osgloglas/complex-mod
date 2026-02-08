@@ -38,6 +38,8 @@ public class ModRecipes {
             SERIALIZERS.register("emerald_stencil_shaped", () -> EmeraldStencilShapedRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<NetheriteFurnaceRecipe>> NETHERITE_FURNACE_RECIPE_SERIALIZER =
             SERIALIZERS.register("netherite_furnace", () -> NetheriteFurnaceRecipe.Serializer.INSTANCE);
+    //public static final RegistryObject<RecipeSerializer<NetheriteStencilShapedRecipe>> NETHERITE_STENCIL_SHAPED_RECIPE_SERIALIZER =
+            //SERIALIZERS.register("netherite_stencil_shaped", () -> NetheriteStencilShapedRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

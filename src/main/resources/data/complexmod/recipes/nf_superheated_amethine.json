@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:netherite_furnace",
+    "input_main": {
+        "item": "complexmod:amethine_ingot"
+    },
+    "input_fuel": {
+        "item": "complexmod:blaze_essence_bucket"
+    },
+    "output": {
+        "item": "complexmod:superheated_amethine_bucket",
+        "count": 1
+    },
+    "xp": 0.9
+}

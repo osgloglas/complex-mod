@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/netherite_furnace_stack_output",
+        "south": "complexmod:block/netherite_furnace_stack",
+        "east": "complexmod:block/netherite_furnace_stack",
+        "west": "complexmod:block/netherite_furnace_stack",
+        "up": "complexmod:block/netherite_furnace_stack_output",
+        "down": "complexmod:block/netherite_furnace_stack"
+    }
+}

@@ -23,6 +23,7 @@ import com.souls.complexmod.block.custom.IronFurnaceBlock;
 import com.souls.complexmod.block.custom.IronFurnaceStackBlock;
 import com.souls.complexmod.block.custom.IronStencilTableBlock;
 import com.souls.complexmod.block.custom.NetheriteFurnaceBlock;
+import com.souls.complexmod.block.custom.NetheriteFurnaceStackBlock;
 import com.souls.complexmod.block.custom.StencilTableBlock;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
@@ -59,6 +60,8 @@ public class ModBlocks {
             () -> new EmeraldStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteFurnaceBlock> NETHERITE_FURNACE = registerBlock("netherite_furnace",
             () -> new NetheriteFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<NetheriteFurnaceStackBlock> NETHERITE_FURNACE_STACK = registerBlock("netherite_furnace_stack",
+            () -> new NetheriteFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

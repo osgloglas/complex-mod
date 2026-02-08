@@ -17,6 +17,9 @@
     "item.complexmod.molten_amethyst_bucket": "Molten Amethyst Bucket",
     "item.complexmod.amethine_ingot": "Amethine Ingot",
     "item.complexmod.amethine_template": "Amethine Template",
+    "item.complexmod.superheated_amethine_bucket": "Superheated Amethine Bucket",
+    "item.complexmod.superheated_diamond_bucket": "Superheated Diamond Bucket",
+    "item.complexmod.diamond_amethine_crystal": "Diamond Amethine Crystal",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -61,5 +64,7 @@
     "block.complexmod.emerald_stencil_table": "Emerald Stencil Table",
     "gui.complexmod.emerald_stencil_table": "Emerald Stencil Table",
     "block.complexmod.netherite_furnace": "Netherite Furnace",
-    "gui.complexmod.netherite_furnace": "Netherite Furnace"
+    "gui.complexmod.netherite_furnace": "Netherite Furnace",
+    "block.complexmod.netherite_furnace_stack": "Netherite Furnace Stack",
+    "gui.complexmod.netherite_furnace_stack": "Netherite Furnace Stack"
 }
