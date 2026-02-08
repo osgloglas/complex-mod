@@ -10,7 +10,7 @@
             "item": "complexmod:molten_diamond_bucket"
         },
         "I": {
-            "item": "complexmod:iron_block"
+            "item": "minecraft:iron_block"
         }
     },
     "result": {

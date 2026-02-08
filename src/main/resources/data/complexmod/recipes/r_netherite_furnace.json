@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "complexmod:netherite_frame"
+    },
+    "B": {
+      "item": "complexmod:blaze_essence_block"
+    },
+    "E": {
+      "item": "complexmod:emerald_furnace"
+    }
+  },
+  "pattern": [
+    "###",
+    "#B#",
+    "#E#"
+  ],
+  "result": {
+    "item": "complexmod:netherite_furnace",
+    "count": 1
+  },
+  "show_notification": true
+}

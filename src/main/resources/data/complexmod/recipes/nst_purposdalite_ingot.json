@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#BSB#",
+        "#BBB#",
+        "#BSB#",
+        "#####"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:purpur_block"
+        },
+        "B": {
+            "item": "complexmod:blaze_essence_bucket"
+        },
+        "S": {
+            "item": "complexmod:superheated_diamond_amethine_bucket"
+        }
+    },
+    "result": {
+        "item": "complexmod:purposdalite_ingot",
+        "count": 2
+    }
+}

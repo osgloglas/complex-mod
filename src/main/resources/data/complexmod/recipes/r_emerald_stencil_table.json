@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "complexmod:iron_stencil_table"
+    },
+    "D": {
+      "item": "minecraft:emerald_block"
+    }
+  },
+  "pattern": [
+    "#",
+    "D"
+  ],
+  "result": {
+    "item": "complexmod:emerald_stencil_table",
+    "count": 1
+  },
+  "show_notification": true
+}

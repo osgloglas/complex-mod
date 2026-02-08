@@ -1,0 +1,28 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#DDD#",
+        "#DBA#",
+        "#AAA#",
+        "#####"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:ender_essence_bucket"
+        },
+        "B": {
+            "item": "complexmod:blaze_essence_bucket"
+        },
+        "A": {
+            "item": "complexmod:superheated_amethine_bucket"
+        },
+        "D": {
+            "item": "complexmod:superheated_diamond_bucket"
+        }
+    },
+    "result": {
+        "item": "complexmod:diamond_amethine_crystal",
+        "count": 2
+    }
+}

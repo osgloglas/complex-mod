@@ -1,0 +1,22 @@
+{
+    "type": "complexmod:diamond_stencil_shaped",
+    "pattern": [
+        "     ",
+        " ### ",
+        " #I# ",
+        " ### ",
+        "     "
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:molten_tungsten_bucket"
+        },
+        "I": {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    "result": {
+        "item": "complexmod:netherite_frame",
+        "count": 1
+    }
+}

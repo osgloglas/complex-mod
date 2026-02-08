@@ -64,6 +64,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_AMETHINE_CRYSTAL = ITEMS.register("diamond_amethine_crystal",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_FRAME = ITEMS.register("netherite_frame",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_DIAMOND_AMETHINE_BUCKET = ITEMS.register("superheated_diamond_amethine_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_INGOT = ITEMS.register("purposdalite_ingot",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
