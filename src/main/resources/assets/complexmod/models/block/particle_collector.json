@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/particle_collector",
+        "south": "complexmod:block/particle_collector",
+        "east": "complexmod:block/particle_collector",
+        "west": "complexmod:block/particle_collector",
+        "up": "complexmod:block/particle_collector_top",
+        "down": "complexmod:block/particle_collector"
+    }
+}

@@ -39,6 +39,8 @@ public class ModMenus {
             MENUS.register("netherite_furnace_stack_menu", () -> IForgeMenuType.create(NetheriteFurnaceStackMenu::new));
         public static final RegistryObject<MenuType<NetheriteStencilTableMenu>> NETHERITE_STENCIL_TABLE_MENU =
             MENUS.register("netherite_stencil_table_menu", () -> IForgeMenuType.create(NetheriteStencilTableMenu::new));
+        public static final RegistryObject<MenuType<ParticleCollectorMenu>> PARTICLE_COLLECTOR_MENU =
+            MENUS.register("particle_collector_menu", () -> IForgeMenuType.create(ParticleCollectorMenu::new));
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);

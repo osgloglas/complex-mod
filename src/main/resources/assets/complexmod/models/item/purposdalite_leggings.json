@@ -2,5 +2,13 @@
     "parent": "item/generated",
     "textures": {
         "layer0": "complexmod:item/purposdalite_leggings"
-    }
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "trim_type": 1
+            },
+            "model": "complexmod:item/purposdalite_leggings_trim"
+        }
+    ]
 }

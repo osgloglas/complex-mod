@@ -72,6 +72,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PURPOSDALITE_TEMPLATE = ITEMS.register("purposdalite_template",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> NEUTRON_CLUSTER = ITEMS.register("neutron_cluster",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",

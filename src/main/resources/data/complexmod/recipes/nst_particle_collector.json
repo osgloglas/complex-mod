@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#DDD#",
+        "#DBD#",
+        "#DDD#",
+        "#####"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "B": {
+            "item": "minecraft:nether_star"
+        },
+        "D": {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    "result": {
+        "item": "complexmod:particle_collector",
+        "count": 1
+    }
+}

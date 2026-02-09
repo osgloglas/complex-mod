@@ -20,6 +20,7 @@ import com.souls.complexmod.screen.IronStencilTableScreen;
 import com.souls.complexmod.screen.NetheriteFurnaceScreen;
 import com.souls.complexmod.screen.NetheriteFurnaceStackScreen;
 import com.souls.complexmod.screen.NetheriteStencilTableScreen;
+import com.souls.complexmod.screen.ParticleCollectorScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
 
 @Mod.EventBusSubscriber(modid = ComplexMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -40,6 +41,7 @@ public class ClientHooks {
             MenuScreens.register(ModMenus.NETHERITE_FURNACE_MENU.get(), NetheriteFurnaceScreen::new);
             MenuScreens.register(ModMenus.NETHERITE_FURNACE_STACK_MENU.get(), NetheriteFurnaceStackScreen::new);
             MenuScreens.register(ModMenus.NETHERITE_STENCIL_TABLE_MENU.get(), NetheriteStencilTableScreen::new);
+            MenuScreens.register(ModMenus.PARTICLE_COLLECTOR_MENU.get(), ParticleCollectorScreen::new);
             //TODO: add more screens here later
         });
     }

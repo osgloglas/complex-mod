@@ -43,6 +43,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SUPERHEATED_DIAMOND_AMETHINE_BUCKET.get());
                         output.accept(ModItems.PURPOSDALITE_INGOT.get());
                         output.accept(ModItems.PURPOSDALITE_TEMPLATE.get());
+                        output.accept(ModItems.NEUTRON_CLUSTER.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -92,6 +93,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.NETHERITE_FURNACE.get());
                         output.accept(ModBlocks.NETHERITE_FURNACE_STACK.get());
                         output.accept(ModBlocks.NETHERITE_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.PARTICLE_COLLECTOR.get());
                     })
                     .build());
     

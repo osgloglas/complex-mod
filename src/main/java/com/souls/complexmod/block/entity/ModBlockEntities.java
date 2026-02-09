@@ -66,6 +66,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("netherite_stencil_table_block_entity",
                     () -> BlockEntityType.Builder.of(NetheriteStencilTableBlockEntity::new,
                             ModBlocks.NETHERITE_STENCIL_TABLE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<ParticleCollectorBlockEntity>> PARTICLE_COLLECTOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("particle_collector_block_entity",
+                    () -> BlockEntityType.Builder.of(ParticleCollectorBlockEntity::new,
+                            ModBlocks.PARTICLE_COLLECTOR.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

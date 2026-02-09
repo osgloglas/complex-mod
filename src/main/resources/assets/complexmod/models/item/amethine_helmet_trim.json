@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "complexmod:item/amethine_helmet",
+        "layer1": "minecraft:trims/items/trim_iron"
+    }
+}
