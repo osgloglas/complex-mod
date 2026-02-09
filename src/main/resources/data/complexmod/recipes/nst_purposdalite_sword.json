@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "A    ",
+        " A   ",
+        "  A  ",
+        "   S ",
+        "T   S"
+    ],
+    "key": {
+        "A": {
+            "item": "complexmod:purposdalite_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "complexmod:purposdalite_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:purposdalite_sword",
+        "count": 1
+    }
+}

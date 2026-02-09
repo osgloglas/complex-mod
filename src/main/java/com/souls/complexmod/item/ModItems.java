@@ -70,6 +70,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PURPOSDALITE_INGOT = ITEMS.register("purposdalite_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_TEMPLATE = ITEMS.register("purposdalite_template",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
@@ -101,6 +103,27 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_BOOTS = ITEMS.register("amethine_boots",
             () -> new ArmorItem(ModArmorMaterials.AMETHINE, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    //purposdalite tier
+    public static final RegistryObject<Item> PURPOSDALITE_SWORD = ITEMS.register("purposdalite_sword",
+            () -> new SwordItem(ModToolTiers.PURPOSDALITE, 4, 0, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_PICKAXE = ITEMS.register("purposdalite_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.PURPOSDALITE, 2, 0, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_AXE = ITEMS.register("purposdalite_axe",
+            () -> new AxeItem(ModToolTiers.PURPOSDALITE, 5, 0, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_SHOVEL = ITEMS.register("purposdalite_shovel",
+            () -> new ShovelItem(ModToolTiers.PURPOSDALITE, 2.5F, 0, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_HOE = ITEMS.register("purposdalite_hoe",
+            () -> new HoeItem(ModToolTiers.PURPOSDALITE, 0, 1, new Item.Properties()));
+
+    public static final RegistryObject<Item> PURPOSDALITE_HELMET = ITEMS.register("purposdalite_helmet",
+            () -> new ArmorItem(ModArmorMaterials.PURPOSDALITE, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_CHESTPLATE = ITEMS.register("purposdalite_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.PURPOSDALITE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_LEGGINGS = ITEMS.register("purposdalite_leggings",
+            () -> new ArmorItem(ModArmorMaterials.PURPOSDALITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> PURPOSDALITE_BOOTS = ITEMS.register("purposdalite_boots",
+            () -> new ArmorItem(ModArmorMaterials.PURPOSDALITE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     //bucket items
     public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",

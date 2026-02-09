@@ -42,6 +42,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.NETHERITE_FRAME.get());
                         output.accept(ModItems.SUPERHEATED_DIAMOND_AMETHINE_BUCKET.get());
                         output.accept(ModItems.PURPOSDALITE_INGOT.get());
+                        output.accept(ModItems.PURPOSDALITE_TEMPLATE.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -53,12 +54,21 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.AMETHINE_AXE.get());
                         output.accept(ModItems.AMETHINE_SHOVEL.get());
                         output.accept(ModItems.AMETHINE_HOE.get());
+                        output.accept(ModItems.PURPOSDALITE_SWORD.get());
+                        output.accept(ModItems.PURPOSDALITE_PICKAXE.get());
+                        output.accept(ModItems.PURPOSDALITE_AXE.get());
+                        output.accept(ModItems.PURPOSDALITE_SHOVEL.get());
+                        output.accept(ModItems.PURPOSDALITE_HOE.get());
 
                         //armor
                         output.accept(ModItems.AMETHINE_HELMET.get());
                         output.accept(ModItems.AMETHINE_CHESTPLATE.get());
                         output.accept(ModItems.AMETHINE_LEGGINGS.get());
                         output.accept(ModItems.AMETHINE_BOOTS.get());
+                        output.accept(ModItems.PURPOSDALITE_HELMET.get());
+                        output.accept(ModItems.PURPOSDALITE_CHESTPLATE.get());
+                        output.accept(ModItems.PURPOSDALITE_LEGGINGS.get());
+                        output.accept(ModItems.PURPOSDALITE_BOOTS.get());
 
                         //buckets
                         output.accept(ModItems.MIXED_SLAG_BUCKET.get());
@@ -66,6 +76,7 @@ public class ModCreativeModTabs {
 
                         //blocks
                         output.accept(ModBlocks.AMETHINE_BLOCK.get());
+                        output.accept(ModBlocks.PURPOSDALITE_BLOCK.get());
 
                         //block entities
                         output.accept(ModBlocks.FURNACE_STACK.get());

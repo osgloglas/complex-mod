@@ -10,9 +10,12 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    AMETHINE("amethine", 41, new int[]{4, 7, 9, 4}, 20,
+    AMETHINE("amethine", 41, new int[]{4, 7, 9, 4}, 18,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            () -> Ingredient.of(ModItems.AMETHINE_INGOT.get()), 4f, 0.1f);
+            () -> Ingredient.of(ModItems.AMETHINE_INGOT.get()), 4f, 0.1f),
+    PURPOSDALITE("purposdalite", 50, new int[]{5, 8, 10, 5}, 24,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.of(ModItems.PURPOSDALITE_INGOT.get()), 5f, 0.2f);
 
     private final String name;
     private final int durabilityMultiplier;

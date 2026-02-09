@@ -15,6 +15,8 @@ public class ModLootModifiers {
 
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_item", WoodlandMansionModifier.CODEC);
+    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> END_CITY =
+            LOOT_MODIFIER_SERIALIZERS.register("end_city", EndCityModifier.CODEC);
 
     public static void register(IEventBus eventBus) {
         LOOT_MODIFIER_SERIALIZERS.register(eventBus);

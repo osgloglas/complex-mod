@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "complexmod:purposdalite_block"
+    }
+  ],
+  "result": {
+    "item": "complexmod:purposdalite_ingot",
+    "count": 9
+  },
+  "show_notification": true
+}

@@ -1,6 +1,7 @@
 {
     "replace": false,
     "entries": [
-        "complexmod:mansion_loot"
+        "complexmod:mansion_loot",
+        "complexmod:end_city_loot"
     ]
 }

@@ -23,6 +23,7 @@
     "item.complexmod.netherite_frame": "Netherite Frame",
     "item.complexmod.superheated_diamond_amethine_bucket": "Superheated Diamond Amethine Bucket",
     "item.complexmod.purposdalite_ingot": "Purposdalite Ingot",
+    "item.complexmod.purposdalite_template": "Purposdalite Template",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -33,11 +34,20 @@
     "item.complexmod.amethine_axe": "Amethine Axe",
     "item.complexmod.amethine_shovel": "Amethine Shovel",
     "item.complexmod.amethine_hoe": "Amethine Hoe",
+    "item.complexmod.purposdalite_sword": "Purposdalite Sword",
+    "item.complexmod.purposdalite_pickaxe": "Purposdalite Pickaxe",
+    "item.complexmod.purposdalite_axe": "Purposdalite Axe",
+    "item.complexmod.purposdalite_shovel": "Purposdalite Shovel",
+    "item.complexmod.purposdalite_hoe": "Purposdalite Hoe",
 
     "item.complexmod.amethine_helmet": "Amethine Helmet",
     "item.complexmod.amethine_chestplate": "Amethine Chestplate",
     "item.complexmod.amethine_leggings": "Amethine Leggings",
     "item.complexmod.amethine_boots": "Amethine Boots",
+    "item.complexmod.purposdalite_helmet": "Purposdalite Helmet",
+    "item.complexmod.purposdalite_chestplate": "Purposdalite Chestplate",
+    "item.complexmod.purposdalite_leggings": "Purposdalite Leggings",
+    "item.complexmod.purposdalite_boots": "Purposdalite Boots",
 
     "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
@@ -45,6 +55,7 @@
     "block.complexmod.netherite_slag_block": "Netherite Slag Block",
 
     "block.complexmod.amethine_block": "Amethine Block",
+    "block.complexmod.purposdalite_block": "Purposdalite Block",
 
     "block.complexmod.furnace_stack": "Furnace Stack",
     "gui.complexmod.furnace_stack": "Furnace Stack",

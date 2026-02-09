@@ -37,6 +37,8 @@ public class ModBlocks {
     //normal blocks
     public static final RegistryObject<Block> AMETHINE_BLOCK = registerBlock("amethine_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PURPOSDALITE_BLOCK = registerBlock("purposdalite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
 
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",
