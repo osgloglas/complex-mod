@@ -5,12 +5,8 @@ import javax.annotation.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import com.souls.complexmod.block.custom.EmeraldFurnaceBlock;
-import com.souls.complexmod.block.custom.IronFurnaceBlock;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.menu.EmeraldFurnaceStackMenu;
-import com.souls.complexmod.menu.FurnaceStackMenu;
-import com.souls.complexmod.menu.IronFurnaceStackMenu;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,19 +15,16 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Container;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FurnaceBlock;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -62,6 +55,18 @@ public class EmeraldFurnaceStackBlockEntity extends BlockEntity implements MenuP
         boolean lit = belowState.getValue(EmeraldFurnaceBlock.LIT);
         this.ticks++;
 
+        if (lit) {
+            if (level.random.nextFloat() < 0.1) { //10% chance every tick to spawn particles
+                if (level instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE,
+                        worldPosition.getX() + 0.5,
+                        worldPosition.getY() + 0.8,
+                        worldPosition.getZ() + 0.5,
+                        0, 0.0, 0.07, 0.0, 0.5);
+                }
+            }
+        }
+
         if(this.ticks >= burnTimeTotal && lit) { //every 10 seconds
             FluidStack lava = new FluidStack(ModFluids.NETHERITE_SLAG_SOURCE.get(), 100);
             slagTank.fill(lava, IFluidHandler.FluidAction.EXECUTE);
@@ -71,12 +76,6 @@ public class EmeraldFurnaceStackBlockEntity extends BlockEntity implements MenuP
             this.ticks = 0;
         }
         this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
-
-        double x = worldPosition.getX() + 0.5;
-        double y = worldPosition.getY() + 1.0;
-        double z = worldPosition.getZ() + 0.5;
-
-        level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0); //smoke particle effect needs to be added on the client side, this is just for testing
 
         //increment burn time and reset if necessary
         burnTime++;

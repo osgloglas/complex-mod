@@ -39,7 +39,14 @@ import net.minecraftforge.items.ItemStackHandler;
 public class DiamondFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.diamond_furnace");
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+        }
+    };
+    
     private static final int INPUT_1_SLOT = 0;
     private static final int INPUT_2_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
@@ -88,11 +95,13 @@ public class DiamondFurnaceBlockEntity extends BlockEntity implements MenuProvid
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
+        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
+        nbt.put("inventory", itemHandler.serializeNBT());
     }
 
     //block and chunk update stuff

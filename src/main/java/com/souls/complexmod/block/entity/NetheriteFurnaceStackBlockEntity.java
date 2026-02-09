@@ -21,6 +21,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -64,6 +65,18 @@ public class NetheriteFurnaceStackBlockEntity extends BlockEntity implements Men
         boolean lit = belowState.getValue(NetheriteFurnaceBlock.LIT);
         this.ticks++;
 
+        if (lit) {
+            if (level.random.nextFloat() < 0.1) { //10% chance every tick to spawn particles
+                if (level instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE,
+                        worldPosition.getX() + 0.5,
+                        worldPosition.getY() + 0.8,
+                        worldPosition.getZ() + 0.5,
+                        0, 0.0, 0.07, 0.0, 0.5);
+                }
+            }
+        }
+
         if(this.ticks >= burnTimeTotal && lit) { //every 10 seconds
             FluidStack lava = new FluidStack(ModFluids.NETHERITE_SLAG_SOURCE.get(), 100);
             slagTank.fill(lava, IFluidHandler.FluidAction.EXECUTE);
@@ -73,12 +86,6 @@ public class NetheriteFurnaceStackBlockEntity extends BlockEntity implements Men
             this.ticks = 0;
         }
         this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL); //sync to client
-
-        double x = worldPosition.getX() + 0.5;
-        double y = worldPosition.getY() + 1.0;
-        double z = worldPosition.getZ() + 0.5;
-
-        level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, x, y, z, 0, 0.05, 0); //smoke particle effect needs to be added on the client side, this is just for testing
 
         //increment burn time and reset if necessary
         burnTime++;

@@ -34,7 +34,13 @@ import net.minecraftforge.items.ItemStackHandler;
 public class EmeraldStencilTableBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.emerald_stencil_table");
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(26);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(26) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+        }
+    };
 
     //this is for a FURNACE
     private static final int INPUT_1_SLOT = 0;
@@ -117,13 +123,13 @@ public class EmeraldStencilTableBlockEntity extends BlockEntity implements MenuP
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        itemHandler.deserializeNBT(nbt.getCompound("Items"));
+        itemHandler.deserializeNBT(nbt.getCompound("emerald_stencil_table_inventory"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
-        nbt.put("Items", itemHandler.serializeNBT());
         super.saveAdditional(nbt);
+        nbt.put("emerald_stencil_table_inventory", itemHandler.serializeNBT());
     }
 
     @Override

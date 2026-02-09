@@ -30,7 +30,14 @@ import net.minecraftforge.items.ItemStackHandler;
 public class ParticleCollectorBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.particle_collector");
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(1);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(1) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+        }
+    };
+
     private static final int OUTPUT_SLOT = 0;
 
     private int burnTime = 0;
@@ -89,11 +96,15 @@ public class ParticleCollectorBlockEntity extends BlockEntity implements MenuPro
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
+        itemHandler.deserializeNBT(nbt.getCompound("particle_collector_inventory"));
+        burnTime = nbt.getInt("burntime");
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
+        nbt.put("particle_collector_inventory", itemHandler.serializeNBT());
+        nbt.putInt("burntime", ticks);
     }
 
     //block and chunk update stuff

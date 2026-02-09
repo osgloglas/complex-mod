@@ -11,6 +11,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -30,7 +33,13 @@ import net.minecraftforge.items.ItemStackHandler;
 public class StencilTableBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TITLE = Component.translatable("gui.complexmod.stencil_table");
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(10);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(10) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+        }
+    };
 
     //this is for a FURNACE
     private static final int INPUT_1_SLOT = 0;
@@ -97,19 +106,27 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        itemHandler.deserializeNBT(nbt.getCompound("Items"));
+        itemHandler.deserializeNBT(nbt.getCompound("stencil_table_inventory"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
-        nbt.put("Items", itemHandler.serializeNBT());
         super.saveAdditional(nbt);
+        nbt.put("stencil_table_inventory", itemHandler.serializeNBT());
     }
 
+    //block and chunk update stuff
     @Override
-    public void onLoad() {
-        super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this); //sends the block entity data to the client
     }
 
     //this is crafting logic for a FURNACE
