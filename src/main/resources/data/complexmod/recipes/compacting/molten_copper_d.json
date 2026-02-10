@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "complexmod:molten_copper_bucket_2709"
+        },
+        {
+            "fluid": "complexmod:mixed_slag_source",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "item": "complexmod:molten_copper_bucket_3600",
+            "count": 3
+        }
+    ]
+}

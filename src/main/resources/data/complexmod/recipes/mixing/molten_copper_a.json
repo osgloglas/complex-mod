@@ -1,5 +1,6 @@
 {
     "type": "create:mixing",
+    "heatRequirement": "heated",
     "ingredients": [
         {
             "item": "complexmod:molten_copper_bucket"
@@ -14,7 +15,7 @@
     ],
     "results": [
         {
-            "item": "complexmod:molten_copper_bucket_2150",
+            "item": "complexmod:molten_copper_bucket_1477",
             "count": 3
         }
     ]

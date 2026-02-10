@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "complexmod:molten_gold_bucket_2692"
+        },
+        {
+            "fluid": "complexmod:mixed_slag_source",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "item": "complexmod:molten_gold_bucket_3580",
+            "count": 3
+        }
+    ]
+}

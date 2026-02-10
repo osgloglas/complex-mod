@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "complexmod:molten_tungsten_bucket_4710"
+        },
+        {
+            "fluid": "complexmod:mixed_slag_source",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "item": "complexmod:molten_tungsten_bucket_5365",
+            "count": 3
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "item": "complexmod:molten_amethyst_bucket_3299"
+        },
+        {
+            "fluid": "complexmod:mixed_slag_source",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "item": "complexmod:molten_amethyst_bucket_4167",
+            "count": 3
+        }
+    ]
+}

@@ -3,10 +3,7 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "item": "complexmod:molten_tungsten_bucket"
-        },
-        {
-            "item": "complexmod:molten_tungsten_bucket"
+            "item": "complexmod:molten_tungsten_bucket_3877"
         },
         {
             "fluid": "complexmod:mixed_slag_source",
@@ -15,8 +12,8 @@
     ],
     "results": [
         {
-            "item": "complexmod:molten_tungsten_bucket_3877",
-            "count": 3
+            "item": "complexmod:molten_tungsten_bucket_4710",
+            "count": 2
         }
     ]
 }
