@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "complexmod:timeless_log"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "complexmod:timeless_stripped_log"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "complexmod:timeless_wood"
+    },
+    {
+      "item": "complexmod:flint_knife"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "complexmod:timeless_planks"
+  }
+}

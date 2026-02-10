@@ -105,6 +105,19 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.TIMELESS_LEAVES.get());
                         output.accept(ModBlocks.TIMELESS_SAPLING.get());
                         output.accept(ModBlocks.TIMELESS_LOG.get());
+                        output.accept(ModBlocks.TIMELESS_STRIPPED_LOG.get());
+                        output.accept(ModBlocks.TIMELESS_WOOD.get());
+
+                        //blocks (tree)
+                        output.accept(ModBlocks.TIMELESS_STAIRS.get());
+                        output.accept(ModBlocks.TIMELESS_SLAB.get());
+                        output.accept(ModBlocks.TIMELESS_BUTTON.get());
+                        output.accept(ModBlocks.TIMELESS_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.TIMELESS_FENCE.get());
+                        output.accept(ModBlocks.TIMELESS_FENCE_GATE.get());
+                        output.accept(ModBlocks.TIMELESS_WALL.get());
+                        output.accept(ModBlocks.TIMELESS_DOOR.get());
+                        output.accept(ModBlocks.TIMELESS_TRAPDOOR.get());
 
                         //block entities
                         output.accept(ModBlocks.FURNACE_STACK.get());

@@ -5,14 +5,26 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.FlowingFluid;
 
 import com.souls.complexmod.block.custom.DiamondFurnaceBlock;
@@ -51,6 +63,35 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIMELESS_SAPLING = registerBlock("timeless_sapling",
             () -> new SaplingBlock(new TimelessTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> TIMELESS_PLANKS = registerBlock("timeless_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_STRIPPED_LOG = registerBlock("timeless_stripped_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_WOOD = registerBlock("timeless_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).requiresCorrectToolForDrops()));
+    
+    //blocks (tree)
+    public static final RegistryObject<Block> TIMELESS_STAIRS = registerBlock("timeless_stairs",
+            () -> new StairBlock(() -> ModBlocks.TIMELESS_PLANKS.get().defaultBlockState(),
+                        BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_SLAB = registerBlock("timeless_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_BUTTON = registerBlock("timeless_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).requiresCorrectToolForDrops(),
+                        BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> TIMELESS_PRESSURE_PLATE = registerBlock("timeless_pressure_plate",
+            () -> new PressurePlateBlock(Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE).requiresCorrectToolForDrops(),
+                        BlockSetType.OAK));
+    public static final RegistryObject<Block> TIMELESS_FENCE = registerBlock("timeless_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_FENCE_GATE = registerBlock("timeless_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).requiresCorrectToolForDrops(), SoundEvents.WOODEN_TRAPDOOR_OPEN, SoundEvents.WOODEN_TRAPDOOR_CLOSE));
+    public static final RegistryObject<Block> TIMELESS_WALL = registerBlock("timeless_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_DOOR = registerBlock("timeless_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops(), BlockSetType.OAK));
+    public static final RegistryObject<Block> TIMELESS_TRAPDOOR = registerBlock("timeless_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops(), BlockSetType.OAK));
 
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",

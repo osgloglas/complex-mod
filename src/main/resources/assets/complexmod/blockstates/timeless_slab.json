@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "complexmod:block/timeless_slab"
+    },
+    "type=double": {
+      "model": "complexmod:block/timeless_planks"
+    },
+    "type=top": {
+      "model": "complexmod:block/timeless_slab_top"
+    }
+  }
+}

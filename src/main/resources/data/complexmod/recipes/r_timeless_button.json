@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "complexmod:timeless_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "complexmod:timeless_button"
+  }
+}

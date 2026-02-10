@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "complexmod:block/timeless_door_bottom",
+    "top": "complexmod:block/timeless_door_top"
+  }
+}
