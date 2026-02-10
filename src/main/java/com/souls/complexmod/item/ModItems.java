@@ -15,6 +15,13 @@ import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.HoeItem;
 
 import com.souls.complexmod.item.custom.FlintKnifeItem;
+import com.souls.complexmod.item.custom.MoltenAmethystBucketItem;
+import com.souls.complexmod.item.custom.MoltenCopperBucketItem;
+import com.souls.complexmod.item.custom.MoltenDiamondBucketItem;
+import com.souls.complexmod.item.custom.MoltenGoldBucketItem;
+import com.souls.complexmod.item.custom.MoltenIronBucketItem;
+import com.souls.complexmod.item.custom.MoltenTungstenBucketItem;
+
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
@@ -38,12 +45,44 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_IRON_BUCKET = ITEMS.register("molten_iron_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_IRON_BUCKET_A = ITEMS.register("molten_iron_bucket_2086",
+            () -> new MoltenIronBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_IRON_BUCKET_B = ITEMS.register("molten_iron_bucket_2712",
+            () -> new MoltenIronBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_IRON_BUCKET_C = ITEMS.register("molten_iron_bucket_3380",
+            () -> new MoltenIronBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_IRON_BUCKET_D = ITEMS.register("molten_iron_bucket_4290",
+            () -> new MoltenIronBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET = ITEMS.register("molten_copper_bucket",
-            () -> new Item(new Item.Properties()));
+            () -> new MoltenCopperBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET_A = ITEMS.register("molten_copper_bucket_1477",
+            () -> new MoltenCopperBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET_B = ITEMS.register("molten_copper_bucket_2150",
+            () -> new MoltenCopperBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET_C = ITEMS.register("molten_copper_bucket_2709",
+            () -> new MoltenCopperBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_COPPER_BUCKET_D = ITEMS.register("molten_copper_bucket_3600",
+            () -> new MoltenCopperBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_DIAMOND_BUCKET = ITEMS.register("molten_diamond_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_DIAMOND_BUCKET_A = ITEMS.register("molten_diamond_bucket_3900",
+            () -> new MoltenDiamondBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_DIAMOND_BUCKET_B = ITEMS.register("molten_diamond_bucket_4550",
+            () -> new MoltenDiamondBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_DIAMOND_BUCKET_C = ITEMS.register("molten_diamond_bucket_5100",
+            () -> new MoltenDiamondBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_DIAMOND_BUCKET_D = ITEMS.register("molten_diamond_bucket_6000",
+            () -> new MoltenDiamondBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET = ITEMS.register("molten_gold_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET_A = ITEMS.register("molten_gold_bucket_1456",
+            () -> new MoltenGoldBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET_B = ITEMS.register("molten_gold_bucket_2131",
+            () -> new MoltenGoldBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET_C = ITEMS.register("molten_gold_bucket_2692",
+            () -> new MoltenGoldBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_GOLD_BUCKET_D = ITEMS.register("molten_gold_bucket_3580",
+            () -> new MoltenGoldBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_ESSENCE_BUCKET = ITEMS.register("ender_essence_bucket",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLAZE_ESSENCE_BUCKET = ITEMS.register("blaze_essence_bucket",
@@ -52,8 +91,24 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET = ITEMS.register("molten_tungsten_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET_A = ITEMS.register("molten_tungsten_bucket_3877",
+            () -> new MoltenTungstenBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET_B = ITEMS.register("molten_tungsten_bucket_4710",
+            () -> new MoltenTungstenBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET_C = ITEMS.register("molten_tungsten_bucket_5365",
+            () -> new MoltenTungstenBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_TUNGSTEN_BUCKET_D = ITEMS.register("molten_tungsten_bucket_6260",
+            () -> new MoltenTungstenBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET = ITEMS.register("molten_amethyst_bucket",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET_A = ITEMS.register("molten_amethyst_bucket_2100",
+            () -> new MoltenAmethystBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET_B = ITEMS.register("molten_amethyst_bucket_2750",
+            () -> new MoltenAmethystBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET_C = ITEMS.register("molten_amethyst_bucket_3299",
+            () -> new MoltenAmethystBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOLTEN_AMETHYST_BUCKET_D = ITEMS.register("molten_amethyst_bucket_4167",
+            () -> new MoltenAmethystBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_INGOT = ITEMS.register("amethine_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHINE_TEMPLATE = ITEMS.register("amethine_template",
