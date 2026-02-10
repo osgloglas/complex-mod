@@ -89,7 +89,7 @@ public class ParticleCollectorBlockEntity extends BlockEntity implements MenuPro
         data.set(1, burnTimeTotal); //update data container with total burn time
 
         if (level instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(ParticleTypes.ENCHANT, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, 3, 0.5, 0.5, 0.5, 0);
+            serverLevel.sendParticles(ParticleTypes.ENCHANT, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, 2, 0.3, 0.3, 0.3, 0);
         }
     }
 

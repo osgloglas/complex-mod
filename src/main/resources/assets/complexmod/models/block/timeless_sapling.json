@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "complexmod:block/timeless_sapling"
+    }
+}

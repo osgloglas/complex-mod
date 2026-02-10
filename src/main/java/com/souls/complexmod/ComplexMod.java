@@ -14,11 +14,14 @@ import com.souls.complexmod.screen.FurnaceStackScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
 import com.souls.complexmod.util.ModEvents;
 import com.souls.complexmod.util.ModRecipes;
+import com.souls.complexmod.worldgen.ModConfiguredTrees;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -111,6 +114,7 @@ public class ComplexMod
             //menus
             //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.cutout());
             //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TIMELESS_SAPLING.get(), RenderType.cutout());
         }
     }
 }

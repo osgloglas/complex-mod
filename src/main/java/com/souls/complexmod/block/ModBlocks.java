@@ -10,6 +10,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 
@@ -27,8 +29,11 @@ import com.souls.complexmod.block.custom.NetheriteFurnaceStackBlock;
 import com.souls.complexmod.block.custom.NetheriteStencilTableBlock;
 import com.souls.complexmod.block.custom.ParticleCollectorBlock;
 import com.souls.complexmod.block.custom.StencilTableBlock;
+import com.souls.complexmod.block.custom.TimelessLeavesBlock;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
+import com.souls.complexmod.worldgen.tree.TimelessTreeGrower;
+
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -40,6 +45,12 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PURPOSDALITE_BLOCK = registerBlock("purposdalite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_LEAVES = registerBlock("timeless_leaves",
+            () -> new TimelessLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_LOG = registerBlock("timeless_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TIMELESS_SAPLING = registerBlock("timeless_sapling",
+            () -> new SaplingBlock(new TimelessTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     //block entities
     public static final RegistryObject<FurnaceStackBlock> FURNACE_STACK = registerBlock("furnace_stack",

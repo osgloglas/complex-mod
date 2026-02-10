@@ -83,6 +83,9 @@
 
     "block.complexmod.amethine_block": "Amethine Block",
     "block.complexmod.purposdalite_block": "Purposdalite Block",
+    "block.complexmod.timeless_log": "Timeless Log",
+    "block.complexmod.timeless_leaves": "Timeless Leaves",
+    "block.complexmod.timeless_sapling": "Timeless Sapling",
 
     "block.complexmod.furnace_stack": "Furnace Stack",
     "gui.complexmod.furnace_stack": "Furnace Stack",
