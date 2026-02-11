@@ -43,6 +43,7 @@ import com.souls.complexmod.block.custom.NetheriteFurnaceBlock;
 import com.souls.complexmod.block.custom.NetheriteFurnaceStackBlock;
 import com.souls.complexmod.block.custom.NetheriteStencilTableBlock;
 import com.souls.complexmod.block.custom.ParticleCollectorBlock;
+import com.souls.complexmod.block.custom.StarFactoryBlock;
 import com.souls.complexmod.block.custom.StencilTableBlock;
 import com.souls.complexmod.block.custom.TimelessLeavesBlock;
 import com.souls.complexmod.fluid.ModFluids;
@@ -133,6 +134,8 @@ public class ModBlocks {
             () -> new AmethineCrystalFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalStencilTableBlock> AMETHINE_CRYSTAL_STENCIL_TABLE = registerBlock("amethine_crystal_stencil_table",
             () -> new AmethineCrystalStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<StarFactoryBlock> STAR_FACTORY = registerBlock("star_factory",
+            () -> new StarFactoryBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

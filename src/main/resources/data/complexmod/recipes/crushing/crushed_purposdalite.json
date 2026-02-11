@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "complexmod:cooled_purposdalite_ingot"
+    }
+  ],
+  "processingTime": 500,
+  "results": [
+    {
+      "count": 2,
+      "item": "complexmod:crushed_purposdalite"
+    },
+    {
+      "chance": 1,
+      "item": "create:experience_nugget"
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import com.souls.complexmod.recipe.IronFurnaceRecipe;
 import com.souls.complexmod.recipe.IronStencilShapedRecipe;
 import com.souls.complexmod.recipe.NetheriteFurnaceRecipe;
 import com.souls.complexmod.recipe.NetheriteStencilShapedRecipe;
+import com.souls.complexmod.recipe.StarFactoryRecipe;
 import com.souls.complexmod.recipe.StencilShapedRecipe;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -47,6 +48,8 @@ public class ModRecipes {
             SERIALIZERS.register("amethine_crystal_furnace", () -> AmethineCrystalFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<AmethineCrystalStencilShapedRecipe>> AMETHINE_CRYSTAL_STENCIL_SHAPED_RECIPE_SERIALIZER =
             SERIALIZERS.register("amethine_crystal_stencil_shaped", () -> AmethineCrystalStencilShapedRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<StarFactoryRecipe>> STAR_FACTORY_RECIPE_SERIALIZER =
+            SERIALIZERS.register("star_factory", () -> StarFactoryRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

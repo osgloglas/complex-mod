@@ -1,0 +1,14 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "complexmod:superheated_purposdalite_ingot"
+    }
+  ],
+  "results": [
+    {
+      "chance": 1,
+      "item": "complexmod:cooled_purposdalite_ingot"
+    }
+  ]
+}

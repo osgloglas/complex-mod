@@ -1,0 +1,33 @@
+{
+    "type": "complexmod:amethine_crystal_stencil_shaped",
+    "pattern": [
+        "#######",
+        "SSSSSSS",
+        "SRNNNRS",
+        "SREEERS",
+        "SRNNNRS",
+        "SSSSSSS",
+        "#######"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:superheated_purposdalite_bucket"
+        },
+        "S": {
+            "item": "complexmod:superheated_ender_essence_bucket"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "E": {
+            "item": "minecraft:emerald"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "complexmod:bedrock_ingot",
+        "count": 2
+    }
+}

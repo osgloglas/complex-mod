@@ -51,8 +51,13 @@
     "item.complexmod.neutron_cluster": "Neutron Cluster",
     "item.complexmod.bedrock_ingot": "Bedrock Ingot",
     "item.complexmod.bedrock_template": "Bedrock Template",
-    "item.complexmod.superheated_purposdalite_bucket": "Superheated Purposdalite Bucket",
+    "item.complexmod.superheated_purposdalite_ingot": "Superheated Purposdalite Ingot",
     "item.complexmod.superheated_blaze_essence_bucket": "Superheated Blaze Essence Bucket",
+    "item.complexmod.cooled_purposdalite_ingot": "Cooled Purposdalite Ingot",
+    "item.complexmod.crushed_purposdalite": "Crushed Purposdalite",
+    "item.complexmod.superheated_purposdalite_bucket": "Superheated Purposdalite Bucket",
+    "item.complexmod.superheated_ender_essence_bucket": "Superheated Ender Essence Bucket",
+    "item.complexmod.mini_sun": "Mini Sun",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -150,5 +155,9 @@
     "block.complexmod.amethine_crystal_furnace_stack": "Amethine Crystal Furnace Stack",
     "gui.complexmod.amethine_crystal_furnace_stack": "Amethine Crystal Furnace Stack",
     "block.complexmod.amethine_crystal_stencil_table": "Amethine Crystal Stencil Table",
-    "gui.complexmod.amethine_crystal_stencil_table": "Amethine Crystal Stencil Table"
+    "gui.complexmod.amethine_crystal_stencil_table": "Amethine Crystal Stencil Table",
+    "block.complexmod.star_factory": "Star Factory",
+    "gui.complexmod.star_factory": "Star Factory",
+
+    "enchantment.complexmod.vitality": "Vitality"
 }

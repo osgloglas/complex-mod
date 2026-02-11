@@ -47,6 +47,8 @@ public class ModMenus {
             MENUS.register("amethine_crystal_furnace_stack_menu", () -> IForgeMenuType.create(AmethineCrystalFurnaceStackMenu::new));
         public static final RegistryObject<MenuType<AmethineCrystalStencilTableMenu>> AMETHINE_CRYSTAL_STENCIL_TABLE_MENU =
             MENUS.register("amethine_crystal_stencil_table_menu", () -> IForgeMenuType.create(AmethineCrystalStencilTableMenu::new));
+        public static final RegistryObject<MenuType<StarFactoryMenu>> STAR_FACTORY_MENU =
+            MENUS.register("star_factory_menu", () -> IForgeMenuType.create(StarFactoryMenu::new));
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);

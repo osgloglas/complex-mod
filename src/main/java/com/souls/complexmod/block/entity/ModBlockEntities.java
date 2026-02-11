@@ -82,6 +82,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("amethine_crystal_stencil_table_block_entity",
                     () -> BlockEntityType.Builder.of(AmethineCrystalStencilTableBlockEntity::new,
                             ModBlocks.AMETHINE_CRYSTAL_STENCIL_TABLE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<StarFactoryBlockEntity>> STAR_FACTORY_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("star_factory_block_entity",
+                    () -> BlockEntityType.Builder.of(StarFactoryBlockEntity::new,
+                            ModBlocks.STAR_FACTORY.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

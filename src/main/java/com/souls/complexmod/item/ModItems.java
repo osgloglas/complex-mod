@@ -133,9 +133,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BEDROCK_TEMPLATE = ITEMS.register("bedrock_template",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SUPERHEATED_PURPOSDALITE_BUCKET = ITEMS.register("superheated_purposdalite_bucket",
+    public static final RegistryObject<Item> SUPERHEATED_PURPOSDALITE_INGOT = ITEMS.register("superheated_purposdalite_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SUPERHEATED_BLAZE_ESSENCE_BUCKET = ITEMS.register("superheated_blaze_essence_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COOLED_PURPOSDALITE_INGOT = ITEMS.register("cooled_purposdalite_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CRUSHED_PURPOSDALITE = ITEMS.register("crushed_purposdalite",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_PURPOSDALITE_BUCKET = ITEMS.register("superheated_purposdalite_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_ENDER_ESSENCE_BUCKET = ITEMS.register("superheated_ender_essence_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MINI_SUN = ITEMS.register("mini_sun",
             () -> new Item(new Item.Properties()));
 
     //tools

@@ -70,8 +70,13 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.NEUTRON_CLUSTER.get());
                         output.accept(ModItems.BEDROCK_INGOT.get());
                         output.accept(ModItems.BEDROCK_TEMPLATE.get());
-                        output.accept(ModItems.SUPERHEATED_PURPOSDALITE_BUCKET.get());
+                        output.accept(ModItems.SUPERHEATED_PURPOSDALITE_INGOT.get());
                         output.accept(ModItems.SUPERHEATED_BLAZE_ESSENCE_BUCKET.get());
+                        output.accept(ModItems.COOLED_PURPOSDALITE_INGOT.get());
+                        output.accept(ModItems.CRUSHED_PURPOSDALITE.get());
+                        output.accept(ModItems.SUPERHEATED_PURPOSDALITE_BUCKET.get());
+                        output.accept(ModItems.SUPERHEATED_ENDER_ESSENCE_BUCKET.get());
+                        output.accept(ModItems.MINI_SUN.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -152,6 +157,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.AMETHINE_CRYSTAL_FURNACE.get());
                         output.accept(ModBlocks.AMETHINE_CRYSTAL_FURNACE_STACK.get());
                         output.accept(ModBlocks.AMETHINE_CRYSTAL_STENCIL_TABLE.get());
+                        output.accept(ModBlocks.STAR_FACTORY.get());
                     })
                     .build());
     

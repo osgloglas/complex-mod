@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/star_factory",
+        "south": "complexmod:block/star_factory_side",
+        "east": "complexmod:block/star_factory_side",
+        "west": "complexmod:block/star_factory_side",
+        "up": "complexmod:block/star_factory_top",
+        "down": "complexmod:block/star_factory_top"
+    }
+}

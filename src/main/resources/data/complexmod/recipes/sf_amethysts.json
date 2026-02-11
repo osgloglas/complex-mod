@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:star_factory",
+    "input_main": {
+        "item": "complexmod:molten_amethyst_bucket_4167"
+    },
+    "input_fuel": {
+        "item": "complexmod:mini_sun"
+    },
+    "output": {
+        "item": "complexmod:amethine_ingot",
+        "count": 5
+    },
+    "xp": 0.9
+}

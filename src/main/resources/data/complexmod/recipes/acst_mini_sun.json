@@ -1,0 +1,24 @@
+{
+    "type": "complexmod:amethine_crystal_stencil_shaped",
+    "pattern": [
+        "#######",
+        "#NNNNN#",
+        "#NNNNN#",
+        "#NNNNN#",
+        "#NNNNN#",
+        "#NNNNN#",
+        "#######"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:superheated_blaze_essence_bucket"
+        },
+        "N": {
+            "item": "complexmod:neutron_cluster"
+        }
+    },
+    "result": {
+        "item": "complexmod:mini_sun",
+        "count": 1
+    }
+}

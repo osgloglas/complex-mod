@@ -24,6 +24,7 @@ import com.souls.complexmod.screen.NetheriteFurnaceScreen;
 import com.souls.complexmod.screen.NetheriteFurnaceStackScreen;
 import com.souls.complexmod.screen.NetheriteStencilTableScreen;
 import com.souls.complexmod.screen.ParticleCollectorScreen;
+import com.souls.complexmod.screen.StarFactoryScreen;
 import com.souls.complexmod.screen.StencilTableScreen;
 
 @Mod.EventBusSubscriber(modid = ComplexMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -48,6 +49,7 @@ public class ClientHooks {
             MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_FURNACE_MENU.get(), AmethineCrystalFurnaceScreen::new);
             MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_FURNACE_STACK_MENU.get(), AmethineCrystalFurnaceStackScreen::new);
             MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_STENCIL_TABLE_MENU.get(), AmethineCrystalStencilTableScreen::new);
+            MenuScreens.register(ModMenus.STAR_FACTORY_MENU.get(), StarFactoryScreen::new);
             //TODO: add more screens here later
         });
     }
