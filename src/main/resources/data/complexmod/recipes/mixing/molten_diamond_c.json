@@ -1,8 +1,9 @@
 {
-    "type": "create:compacting",
+    "type": "create:mixing",
+    "heatRequirement": "heated",
     "ingredients": [
         {
-            "item": "complexmod:molten_gold_bucket_2131"
+            "item": "complexmod:molten_diamond_bucket_4550"
         },
         {
             "fluid": "complexmod:netherite_slag_source",
@@ -11,7 +12,7 @@
     ],
     "results": [
         {
-            "item": "complexmod:molten_gold_bucket_2692",
+            "item": "complexmod:molten_diamond_bucket_5100",
             "count": 3
         }
     ]

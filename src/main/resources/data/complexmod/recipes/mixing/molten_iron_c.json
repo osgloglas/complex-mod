@@ -1,8 +1,9 @@
 {
-    "type": "create:compacting",
+    "type": "create:mixing",
+    "heatRequirement": "heated",
     "ingredients": [
         {
-            "item": "complexmod:molten_amethyst_bucket_2750"
+            "item": "complexmod:molten_iron_bucket_2712"
         },
         {
             "fluid": "complexmod:netherite_slag_source",
@@ -11,7 +12,7 @@
     ],
     "results": [
         {
-            "item": "complexmod:molten_amethyst_bucket_3299",
+            "item": "complexmod:molten_iron_bucket_3380",
             "count": 3
         }
     ]

@@ -14,8 +14,7 @@ public class ModEnchantments {
             DeferredRegister.create(Registries.ENCHANTMENT, ComplexMod.MOD_ID);
 
     public static final RegistryObject<Enchantment> VITALITY =
-            ENCHANTMENTS.register("vitality",
-                    () -> new VitalityEnchantment(Enchantment.Rarity.UNCOMMON, EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET));
+            ENCHANTMENTS.register("vitality", VitalityEnchantment::new);
 
     public static void register (IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);

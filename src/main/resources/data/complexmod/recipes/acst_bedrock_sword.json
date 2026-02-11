@@ -1,0 +1,24 @@
+{
+    "type": "complexmod:amethine_crystal_stencil_shaped",
+    "pattern": [
+        "B      ",
+        "BBB    ",
+        " BBB   ",
+        "  BBB  ",
+        "   BS  ",
+        "     S ",
+        "      S"
+    ],
+    "key": {
+        "B": {
+            "item": "complexmod:bedrock_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "complexmod:bedrock_sword",
+        "count": 1
+    }
+}

@@ -3,17 +3,17 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "item": "complexmod:molten_gold_bucket_1456"
+            "item": "complexmod:molten_copper_bucket_2150"
         },
         {
-            "fluid": "complexmod:mixed_slag_source",
+            "fluid": "complexmod:netherite_slag_source",
             "amount": 100
         }
     ],
     "results": [
         {
-            "item": "complexmod:molten_gold_bucket_2131",
-            "count": 2
+            "item": "complexmod:molten_copper_bucket_2709",
+            "count": 3
         }
     ]
 }

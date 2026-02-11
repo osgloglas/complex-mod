@@ -1,24 +1,25 @@
 package com.souls.complexmod.util;
 
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.BucketItem;
 
-import com.souls.complexmod.fluid.ModFluids;
+import java.util.UUID;
+
+import com.souls.complexmod.block.enchantment.ModEnchantments;
 import com.souls.complexmod.item.ModItems;
-import com.souls.complexmod.item.custom.MoltenCopperBucketItem;
-
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 public class ModEvents {
     @SubscribeEvent
@@ -61,6 +62,42 @@ public class ModEvents {
 
             if (!hasDrill || !hasWedge || !holdingMallet) {
                 event.setNewSpeed(0.0F);
+            }
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = "complexmod", bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ForgeEvents {
+        private static final UUID VITALITY_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
+
+        @SubscribeEvent
+        public static void onEquipmentChange(LivingEquipmentChangeEvent event) {
+            if (event.getEntity() instanceof Player player) {
+                int totalLevel = 0;
+                for (ItemStack stack : player.getArmorSlots()) {
+                    totalLevel += EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.VITALITY.get(), stack);
+                }
+            
+                AttributeInstance maxHealth = player.getAttribute(Attributes.MAX_HEALTH);
+                if (maxHealth != null) {
+                    // 1. Remove the old modifier using the UUID
+                    maxHealth.removeModifier(VITALITY_UUID);
+                
+                    // 2. Re-apply only if level is > 0
+                    if (totalLevel > 0) {
+                        maxHealth.addTransientModifier(new AttributeModifier(
+                            VITALITY_UUID, 
+                            "Vitality Health Boost", 
+                            (double) totalLevel * 4.0, 
+                            AttributeModifier.Operation.ADDITION));
+                    }
+                
+                    // 3. THE FIX: Force the player's health to sync with the new max
+                    // This prevents "ghost hearts" from staying on the screen
+                    if (player.getHealth() > player.getMaxHealth()) {
+                        player.setHealth(player.getMaxHealth());
+                    }
+                }
             }
         }
     }

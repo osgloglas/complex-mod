@@ -1,9 +1,8 @@
 {
-    "type": "create:mixing",
-    "heatRequirement": "heated",
+    "type": "create:compacting",
     "ingredients": [
         {
-            "item": "complexmod:molten_copper_bucket_1477"
+            "item": "complexmod:molten_amethyst_bucket_2100"
         },
         {
             "fluid": "complexmod:mixed_slag_source",
@@ -12,7 +11,7 @@
     ],
     "results": [
         {
-            "item": "complexmod:molten_copper_bucket_2150",
+            "item": "complexmod:molten_amethyst_bucket_2750",
             "count": 2
         }
     ]

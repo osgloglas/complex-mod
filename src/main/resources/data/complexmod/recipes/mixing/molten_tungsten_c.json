@@ -1,5 +1,6 @@
 {
-    "type": "create:compacting",
+    "type": "create:mixing",
+    "heatRequirement": "heated",
     "ingredients": [
         {
             "item": "complexmod:molten_tungsten_bucket_4710"

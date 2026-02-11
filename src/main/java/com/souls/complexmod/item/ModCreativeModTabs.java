@@ -3,11 +3,18 @@ package com.souls.complexmod.item;
 import com.souls.complexmod.ComplexMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.EnchantedBookItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.network.chat.Component;
 import com.souls.complexmod.block.ModBlocks;
+import com.souls.complexmod.block.enchantment.ModEnchantments;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -160,6 +167,17 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.STAR_FACTORY.get());
                     })
                     .build());
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) { // Books are usually here
+            for (int level = 1; level <= 5; level++) {
+                ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(ModEnchantments.VITALITY.get(), level));
+                event.accept(book);
+            }
+        }
+    }
+
     
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
