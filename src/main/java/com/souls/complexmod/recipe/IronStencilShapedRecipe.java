@@ -50,6 +50,10 @@ public class IronStencilShapedRecipe implements Recipe<SimpleContainer> {
                inputs.get(8).test(container.getItem(8));
     }
 
+    public NonNullList<Ingredient> getIngredients() {
+        return inputs;
+    }
+
     @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess registryAccess) {
         return output.copy();

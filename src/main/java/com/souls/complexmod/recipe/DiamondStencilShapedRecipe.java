@@ -51,6 +51,11 @@ public class DiamondStencilShapedRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return inputs;
+    }
+
+    @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess registryAccess) {
         return output.copy();
     }

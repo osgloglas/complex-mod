@@ -1,35 +1,13 @@
 package com.souls.complexmod.menu;
 
-import java.lang.StackWalker.Option;
-import java.util.Optional;
-
-import com.souls.complexmod.block.ModBlocks;
 import com.souls.complexmod.block.entity.StencilTableBlockEntity;
-import com.souls.complexmod.recipe.StencilShapedRecipe;
-
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.CraftingContainer;
-import net.minecraft.world.inventory.RecipeHolder;
-import net.minecraft.world.inventory.ResultContainer;
-import net.minecraft.world.inventory.ResultSlot;
-import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.inventory.TransientCraftingContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
