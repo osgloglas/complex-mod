@@ -55,9 +55,9 @@ public class ModEvents {
                     || player.getMainHandItem().is(ModItems.AMETHINE_PICKAXE.get())
                     || player.getOffhandItem().is(ModItems.AMETHINE_PICKAXE.get())
                     || player.getMainHandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
-                    || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get());
-                    //|| player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
-                    //|| player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
+                    || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                    || player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
+                    || player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
 
             if (!hasDrill || !hasWedge || !holdingMallet) {
                 event.setNewSpeed(0.0F);

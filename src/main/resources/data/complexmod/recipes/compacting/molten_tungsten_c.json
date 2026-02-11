@@ -5,7 +5,7 @@
             "item": "complexmod:molten_tungsten_bucket_4710"
         },
         {
-            "fluid": "complexmod:mixed_slag_source",
+            "fluid": "complexmod:netherite_slag_source",
             "amount": 100
         }
     ],

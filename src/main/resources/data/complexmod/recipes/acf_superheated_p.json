@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:amethine_crystal_furnace",
+    "input_main": {
+        "item": "complexmod:purposdalite_ingot"
+    },
+    "input_fuel": {
+        "item": "complexmod:superheated_blaze_essence_bucket"
+    },
+    "output": {
+        "item": "complexmod:superheated_purposdalite_bucket",
+        "count": 1
+    },
+    "xp": 0.9
+}

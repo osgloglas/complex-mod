@@ -8,6 +8,10 @@
         "complexmod:purposdalite_helmet",
         "complexmod:purposdalite_chestplate",
         "complexmod:purposdalite_leggings",
-        "complexmod:purposdalite_boots"
+        "complexmod:purposdalite_boots",
+        "complexmod:bedrock_helmet",
+        "complexmod:bedrock_chestplate",
+        "complexmod:bedrock_leggings",
+        "complexmod:bedrock_boots"
     ]
 }

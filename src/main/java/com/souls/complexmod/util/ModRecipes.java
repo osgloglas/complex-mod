@@ -3,6 +3,8 @@ package com.souls.complexmod.util;
 import org.checkerframework.checker.units.qual.s;
 
 import com.souls.complexmod.ComplexMod;
+import com.souls.complexmod.recipe.AmethineCrystalFurnaceRecipe;
+import com.souls.complexmod.recipe.AmethineCrystalStencilShapedRecipe;
 import com.souls.complexmod.recipe.DiamondFurnaceRecipe;
 import com.souls.complexmod.recipe.DiamondStencilShapedRecipe;
 import com.souls.complexmod.recipe.EmeraldFurnaceRecipe;
@@ -41,6 +43,10 @@ public class ModRecipes {
             SERIALIZERS.register("netherite_furnace", () -> NetheriteFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<NetheriteStencilShapedRecipe>> NETHERITE_STENCIL_SHAPED_RECIPE_SERIALIZER =
             SERIALIZERS.register("netherite_stencil_shaped", () -> NetheriteStencilShapedRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<AmethineCrystalFurnaceRecipe>> AMETHINE_CRYSTAL_FURNACE_RECIPE_SERIALIZER =
+            SERIALIZERS.register("amethine_crystal_furnace", () -> AmethineCrystalFurnaceRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<AmethineCrystalStencilShapedRecipe>> AMETHINE_CRYSTAL_STENCIL_SHAPED_RECIPE_SERIALIZER =
+            SERIALIZERS.register("amethine_crystal_stencil_shaped", () -> AmethineCrystalStencilShapedRecipe.Serializer.INSTANCE);
 
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

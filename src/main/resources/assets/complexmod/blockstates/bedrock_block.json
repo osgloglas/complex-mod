@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "complexmod:block/bedrock_block"
+    }
+  }
+}

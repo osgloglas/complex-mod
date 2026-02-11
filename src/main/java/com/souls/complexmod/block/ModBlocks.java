@@ -27,6 +27,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.FlowingFluid;
 
+import com.souls.complexmod.block.custom.AmethineCrystalFurnaceBlock;
+import com.souls.complexmod.block.custom.AmethineCrystalFurnaceStackBlock;
+import com.souls.complexmod.block.custom.AmethineCrystalStencilTableBlock;
 import com.souls.complexmod.block.custom.DiamondFurnaceBlock;
 import com.souls.complexmod.block.custom.DiamondStencilTableBlock;
 import com.souls.complexmod.block.custom.EmeraldFurnaceBlock;
@@ -69,6 +72,8 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIMELESS_WOOD = registerBlock("timeless_wood",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BEDROCK_BLOCK = registerBlock("bedrock_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
     
     //blocks (tree)
     public static final RegistryObject<Block> TIMELESS_STAIRS = registerBlock("timeless_stairs",
@@ -122,12 +127,20 @@ public class ModBlocks {
             () -> new NetheriteStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<ParticleCollectorBlock> PARTICLE_COLLECTOR = registerBlock("particle_collector",
             () -> new ParticleCollectorBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<AmethineCrystalFurnaceBlock> AMETHINE_CRYSTAL_FURNACE = registerBlock("amethine_crystal_furnace",
+            () -> new AmethineCrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<AmethineCrystalFurnaceStackBlock> AMETHINE_CRYSTAL_FURNACE_STACK = registerBlock("amethine_crystal_furnace_stack",
+            () -> new AmethineCrystalFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<AmethineCrystalStencilTableBlock> AMETHINE_CRYSTAL_STENCIL_TABLE = registerBlock("amethine_crystal_stencil_table",
+            () -> new AmethineCrystalStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",
             () -> new LiquidBlock(ModFluids.MIXED_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
     public static final RegistryObject<LiquidBlock> NETHERITE_SLAG_BLOCK = BLOCKS.register("netherite_slag_block",
             () -> new LiquidBlock(ModFluids.NETHERITE_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
+    public static final RegistryObject<LiquidBlock> BEDROCK_SLAG_BLOCK = BLOCKS.register("bedrock_slag_block",
+            () -> new LiquidBlock(ModFluids.BEDROCK_SLAG_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA))); //must be SOURCE
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -51,6 +51,23 @@ public class ModFluidTypes {
                             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA) 
                             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA));
 
+        public static final ResourceLocation BEDROCK_SLAG_STILL_RL =
+            new ResourceLocation(ComplexMod.MOD_ID, "block/bedrock_slag");
+        public static final ResourceLocation BEDROCK_SLAG_FLOWING_RL =
+            new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_bedrock_slag");
+
+        public static final RegistryObject<FluidType> BEDROCK_SLAG_TYPE =
+            register("bedrock_slag_type", 
+                    FluidType.Properties.create()
+                            .density(3000)
+                            .viscosity(3000)
+                            .temperature(1300)
+                            .lightLevel(8)
+                            .canDrown(false)
+                            .supportsBoating(false)
+                            .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA) 
+                            .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA));
+
     private static RegistryObject<FluidType> register(String name, FluidType.Properties properties) {
         return FLUID_TYPES.register(name, () -> new BaseFluidType(MIXED_SLAG_STILL_RL, MIXED_SLAG_FLOWING_RL, null, 0x685C34, new Vector3f(0.2f, 0.2f, 0.2f), properties));
     }

@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/amethine_stencil_table",
+        "south": "complexmod:block/amethine_stencil_table",
+        "east": "complexmod:block/amethine_stencil_table",
+        "west": "complexmod:block/amethine_stencil_table",
+        "up": "complexmod:block/amethine_stencil_table_top",
+        "down": "minecraft:block/diamond_block"
+    }
+}

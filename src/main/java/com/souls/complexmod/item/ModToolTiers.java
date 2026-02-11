@@ -50,7 +50,7 @@ public class ModToolTiers {
         ),
         ResourceLocation.fromNamespaceAndPath(ComplexMod.MOD_ID, "purposdalite"), List.of(AMETHINE), List.of()); // Name, Lower, Higher
 
-    /*public static final Tier BEDROCK = TierSortingRegistry.registerTier (
+    public static final Tier BEDROCK = TierSortingRegistry.registerTier (
         new ForgeTier(
             7, // Harvest Level
             5000, // Durability
@@ -60,5 +60,5 @@ public class ModToolTiers {
             ModTags.Blocks.NEEDS_BEDROCK_TOOL, // Tag
             () -> Ingredient.of(ModItems.BEDROCK_INGOT.get()) // Repair Ingredient
         ),
-        ResourceLocation.fromNamespaceAndPath(ComplexMod.MOD_ID, "bedrock"), List.of(PURPOSDALITE), List.of()); // Name, Lower, Higher*/
+        ResourceLocation.fromNamespaceAndPath(ComplexMod.MOD_ID, "bedrock"), List.of(PURPOSDALITE), List.of()); // Name, Lower, Higher
 }

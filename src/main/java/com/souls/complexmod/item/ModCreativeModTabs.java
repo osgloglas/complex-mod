@@ -68,6 +68,10 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.PURPOSDALITE_INGOT.get());
                         output.accept(ModItems.PURPOSDALITE_TEMPLATE.get());
                         output.accept(ModItems.NEUTRON_CLUSTER.get());
+                        output.accept(ModItems.BEDROCK_INGOT.get());
+                        output.accept(ModItems.BEDROCK_TEMPLATE.get());
+                        output.accept(ModItems.SUPERHEATED_PURPOSDALITE_BUCKET.get());
+                        output.accept(ModItems.SUPERHEATED_BLAZE_ESSENCE_BUCKET.get());
 
                         //tools
                         output.accept(ModItems.FLINT_HATCHET.get());
@@ -84,6 +88,11 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.PURPOSDALITE_AXE.get());
                         output.accept(ModItems.PURPOSDALITE_SHOVEL.get());
                         output.accept(ModItems.PURPOSDALITE_HOE.get());
+                        output.accept(ModItems.BEDROCK_SWORD.get());
+                        output.accept(ModItems.BEDROCK_PICKAXE.get());
+                        output.accept(ModItems.BEDROCK_AXE.get());
+                        output.accept(ModItems.BEDROCK_SHOVEL.get());
+                        output.accept(ModItems.BEDROCK_HOE.get());
 
                         //armor
                         output.accept(ModItems.AMETHINE_HELMET.get());
@@ -94,10 +103,15 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.PURPOSDALITE_CHESTPLATE.get());
                         output.accept(ModItems.PURPOSDALITE_LEGGINGS.get());
                         output.accept(ModItems.PURPOSDALITE_BOOTS.get());
+                        output.accept(ModItems.BEDROCK_HELMET.get());
+                        output.accept(ModItems.BEDROCK_CHESTPLATE.get());
+                        output.accept(ModItems.BEDROCK_LEGGINGS.get());
+                        output.accept(ModItems.BEDROCK_BOOTS.get());
 
                         //buckets
                         output.accept(ModItems.MIXED_SLAG_BUCKET.get());
                         output.accept(ModItems.NETHERITE_SLAG_BUCKET.get());
+                        output.accept(ModItems.BEDROCK_SLAG_BUCKET.get());
 
                         //blocks
                         output.accept(ModBlocks.AMETHINE_BLOCK.get());
@@ -107,6 +121,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.TIMELESS_LOG.get());
                         output.accept(ModBlocks.TIMELESS_STRIPPED_LOG.get());
                         output.accept(ModBlocks.TIMELESS_WOOD.get());
+                        output.accept(ModBlocks.BEDROCK_BLOCK.get());
 
                         //blocks (tree)
                         output.accept(ModBlocks.TIMELESS_STAIRS.get());
@@ -134,6 +149,9 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.NETHERITE_FURNACE_STACK.get());
                         output.accept(ModBlocks.NETHERITE_STENCIL_TABLE.get());
                         output.accept(ModBlocks.PARTICLE_COLLECTOR.get());
+                        output.accept(ModBlocks.AMETHINE_CRYSTAL_FURNACE.get());
+                        output.accept(ModBlocks.AMETHINE_CRYSTAL_FURNACE_STACK.get());
+                        output.accept(ModBlocks.AMETHINE_CRYSTAL_STENCIL_TABLE.get());
                     })
                     .build());
     

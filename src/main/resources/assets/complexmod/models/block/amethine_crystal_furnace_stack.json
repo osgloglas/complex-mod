@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "north": "complexmod:block/amethine_furnace_stack_output",
+        "south": "complexmod:block/amethine_furnace_stack",
+        "east": "complexmod:block/amethine_furnace_stack",
+        "west": "complexmod:block/amethine_furnace_stack",
+        "up": "complexmod:block/amethine_furnace_stack_output",
+        "down": "complexmod:block/amethine_furnace_stack"
+    }
+}

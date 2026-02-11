@@ -5,7 +5,7 @@
             "item": "complexmod:molten_amethyst_bucket_3299"
         },
         {
-            "fluid": "complexmod:mixed_slag_source",
+            "fluid": "complexmod:netherite_slag_source",
             "amount": 100
         }
     ],

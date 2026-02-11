@@ -129,6 +129,14 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NEUTRON_CLUSTER = ITEMS.register("neutron_cluster",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_INGOT = ITEMS.register("bedrock_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_TEMPLATE = ITEMS.register("bedrock_template",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_PURPOSDALITE_BUCKET = ITEMS.register("superheated_purposdalite_bucket",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUPERHEATED_BLAZE_ESSENCE_BUCKET = ITEMS.register("superheated_blaze_essence_bucket",
+            () -> new Item(new Item.Properties()));
 
     //tools
     public static final RegistryObject<Item> FLINT_HATCHET = ITEMS.register("flint_hatchet",
@@ -182,12 +190,36 @@ public class ModItems {
     public static final RegistryObject<Item> PURPOSDALITE_BOOTS = ITEMS.register("purposdalite_boots",
             () -> new ArmorItem(ModArmorMaterials.PURPOSDALITE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    //bedrock tier
+    public static final RegistryObject<Item> BEDROCK_SWORD = ITEMS.register("bedrock_sword",
+            () -> new SwordItem(ModToolTiers.BEDROCK, 4, 0, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_PICKAXE = ITEMS.register("bedrock_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.BEDROCK, 2, 0, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_AXE = ITEMS.register("bedrock_axe",
+            () -> new AxeItem(ModToolTiers.BEDROCK, 5, 0, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_SHOVEL = ITEMS.register("bedrock_shovel",
+            () -> new ShovelItem(ModToolTiers.BEDROCK, 2.5F, 0, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_HOE = ITEMS.register("bedrock_hoe",
+            () -> new HoeItem(ModToolTiers.BEDROCK, 0, 1, new Item.Properties()));
+
+    public static final RegistryObject<Item> BEDROCK_HELMET = ITEMS.register("bedrock_helmet",
+            () -> new ArmorItem(ModArmorMaterials.BEDROCK, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_CHESTPLATE = ITEMS.register("bedrock_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BEDROCK, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_LEGGINGS = ITEMS.register("bedrock_leggings",
+            () -> new ArmorItem(ModArmorMaterials.BEDROCK, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> BEDROCK_BOOTS = ITEMS.register("bedrock_boots",
+            () -> new ArmorItem(ModArmorMaterials.BEDROCK, ArmorItem.Type.BOOTS, new Item.Properties()));
+
     //bucket items
     public static final RegistryObject<Item> MIXED_SLAG_BUCKET = ITEMS.register("mixed_slag_bucket",
             () -> new BucketItem(ModFluids.MIXED_SLAG_SOURCE,
                 new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> NETHERITE_SLAG_BUCKET = ITEMS.register("netherite_slag_bucket",
             () -> new BucketItem(ModFluids.NETHERITE_SLAG_SOURCE,
+                new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> BEDROCK_SLAG_BUCKET = ITEMS.register("bedrock_slag_bucket",
+            () -> new BucketItem(ModFluids.BEDROCK_SLAG_SOURCE,
                 new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {

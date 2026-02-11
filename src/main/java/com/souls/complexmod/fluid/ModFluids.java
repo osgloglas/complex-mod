@@ -52,6 +52,23 @@ public class ModFluids {
                         .block(() -> ModBlocks.NETHERITE_SLAG_BLOCK.get())
                         .bucket(() -> ModItems.NETHERITE_SLAG_BUCKET.get());
 
+        //bedrock slag
+        public static final RegistryObject<FlowingFluid> BEDROCK_SLAG_SOURCE = FLUIDS.register("bedrock_slag_source",
+                () -> new ForgeFlowingFluid.Source(ModFluids.BEDROCK_SLAG_PROPERTIES));
+        public static final RegistryObject<FlowingFluid> FLOWING_BEDROCK_SLAG = FLUIDS.register("flowing_bedrock_slag",
+                () -> new ForgeFlowingFluid.Flowing(ModFluids.BEDROCK_SLAG_PROPERTIES));
+        
+        public static final ForgeFlowingFluid.Properties BEDROCK_SLAG_PROPERTIES =
+                new ForgeFlowingFluid.Properties(
+                        ModFluidTypes.BEDROCK_SLAG_TYPE,
+                        ModFluids.BEDROCK_SLAG_SOURCE,
+                        ModFluids.FLOWING_BEDROCK_SLAG)
+                        .slopeFindDistance(4)
+                        .levelDecreasePerBlock(1)
+                        .tickRate(30)
+                        .block(() -> ModBlocks.BEDROCK_SLAG_BLOCK.get())
+                        .bucket(() -> ModItems.BEDROCK_SLAG_BUCKET.get());
+
     public static void register (IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }

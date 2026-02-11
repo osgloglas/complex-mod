@@ -70,6 +70,18 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("particle_collector_block_entity",
                     () -> BlockEntityType.Builder.of(ParticleCollectorBlockEntity::new,
                             ModBlocks.PARTICLE_COLLECTOR.get()).build(null));
+        public static final RegistryObject<BlockEntityType<AmethineCrystalFurnaceBlockEntity>> AMETHINE_CRYSTAL_FURNACE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("amethine_crystal_furnace_block_entity",
+                    () -> BlockEntityType.Builder.of(AmethineCrystalFurnaceBlockEntity::new,
+                            ModBlocks.AMETHINE_CRYSTAL_FURNACE.get()).build(null));
+        public static final RegistryObject<BlockEntityType<AmethineCrystalFurnaceStackBlockEntity>> AMETHINE_CRYSTAL_FURNACE_STACK_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("amethine_crystal_furnace_stack_block_entity",
+                    () -> BlockEntityType.Builder.of(AmethineCrystalFurnaceStackBlockEntity::new,
+                            ModBlocks.AMETHINE_CRYSTAL_FURNACE_STACK.get()).build(null));
+        public static final RegistryObject<BlockEntityType<AmethineCrystalStencilTableBlockEntity>> AMETHINE_CRYSTAL_STENCIL_TABLE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("amethine_crystal_stencil_table_block_entity",
+                    () -> BlockEntityType.Builder.of(AmethineCrystalStencilTableBlockEntity::new,
+                            ModBlocks.AMETHINE_CRYSTAL_STENCIL_TABLE.get()).build(null));
     
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

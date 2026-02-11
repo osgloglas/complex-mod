@@ -49,6 +49,10 @@
     "item.complexmod.purposdalite_ingot": "Purposdalite Ingot",
     "item.complexmod.purposdalite_template": "Purposdalite Template",
     "item.complexmod.neutron_cluster": "Neutron Cluster",
+    "item.complexmod.bedrock_ingot": "Bedrock Ingot",
+    "item.complexmod.bedrock_template": "Bedrock Template",
+    "item.complexmod.superheated_purposdalite_bucket": "Superheated Purposdalite Bucket",
+    "item.complexmod.superheated_blaze_essence_bucket": "Superheated Blaze Essence Bucket",
 
     "item.complexmod.flint_hatchet": "Flint Hatchet",
     "item.complexmod.flint_knife": "Flint Knife",
@@ -64,6 +68,11 @@
     "item.complexmod.purposdalite_axe": "Purposdalite Axe",
     "item.complexmod.purposdalite_shovel": "Purposdalite Shovel",
     "item.complexmod.purposdalite_hoe": "Purposdalite Hoe",
+    "item.complexmod.bedrock_sword": "Bedrock Sword",
+    "item.complexmod.bedrock_pickaxe": "Bedrock Pickaxe",
+    "item.complexmod.bedrock_axe": "Bedrock Axe",
+    "item.complexmod.bedrock_shovel": "Bedrock Shovel",
+    "item.complexmod.bedrock_hoe": "Bedrock Hoe",
 
     "item.complexmod.amethine_helmet": "Amethine Helmet",
     "item.complexmod.amethine_chestplate": "Amethine Chestplate",
@@ -73,6 +82,10 @@
     "item.complexmod.purposdalite_chestplate": "Purposdalite Chestplate",
     "item.complexmod.purposdalite_leggings": "Purposdalite Leggings",
     "item.complexmod.purposdalite_boots": "Purposdalite Boots",
+    "item.complexmod.bedrock_helmet": "Bedrock Helmet",
+    "item.complexmod.bedrock_chestplate": "Bedrock Chestplate",
+    "item.complexmod.bedrock_leggings": "Bedrock Leggings",
+    "item.complexmod.bedrock_boots": "Bedrock Boots",
 
     "item.complexmod.mixed_slag_bucket": "Mixed Slag Bucket",
     "block.complexmod.mixed_slag_block": "Mixed Slag Block",
@@ -80,6 +93,9 @@
     "item.complexmod.netherite_slag_bucket": "Netherite Slag Bucket",
     "block.complexmod.netherite_slag_block": "Netherite Slag Block",
     "fluid_type.complexmod.netherite_slag_type": "Netherite Slag",
+    "item.complexmod.bedrock_slag_bucket": "Bedrock Slag Bucket",
+    "block.complexmod.bedrock_slag_block": "Bedrock Slag Block",
+    "fluid_type.complexmod.bedrock_slag_type": "Bedrock Slag",
 
     "block.complexmod.amethine_block": "Amethine Block",
     "block.complexmod.purposdalite_block": "Purposdalite Block",
@@ -89,6 +105,7 @@
     "block.complexmod.timeless_planks": "Timeless Planks",
     "block.complexmod.timeless_stripped_log": "Timeless Stripped Log",
     "block.complexmod.timeless_wood": "Timeless Wood",
+    "block.complexmod.bedrock_block": "Bedrock Block",
 
     "block.complexmod.timeless_stairs": "Timeless Stairs",
     "block.complexmod.timeless_slab": "Timeless Slab",
@@ -127,5 +144,11 @@
     "block.complexmod.netherite_stencil_table": "Netherite Stencil Table",
     "gui.complexmod.netherite_stencil_table": "Netherite Stencil Table",
     "block.complexmod.particle_collector": "Particle Collector",
-    "gui.complexmod.particle_collector": "Particle Collector"
+    "gui.complexmod.particle_collector": "Particle Collector",
+    "block.complexmod.amethine_crystal_furnace": "Amethine Crystal Furnace",
+    "gui.complexmod.amethine_crystal_furnace": "Amethine Crystal Furnace",
+    "block.complexmod.amethine_crystal_furnace_stack": "Amethine Crystal Furnace Stack",
+    "gui.complexmod.amethine_crystal_furnace_stack": "Amethine Crystal Furnace Stack",
+    "block.complexmod.amethine_crystal_stencil_table": "Amethine Crystal Stencil Table",
+    "gui.complexmod.amethine_crystal_stencil_table": "Amethine Crystal Stencil Table"
 }

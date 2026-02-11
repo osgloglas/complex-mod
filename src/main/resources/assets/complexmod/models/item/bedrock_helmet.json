@@ -1,0 +1,14 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "complexmod:item/bedrock_helmet"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "trim_type": 1
+            },
+            "model": "complexmod:item/bedrock_helmet_trim"
+        }
+    ]
+}

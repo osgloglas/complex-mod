@@ -1,0 +1,14 @@
+{
+    "type": "complexmod:netherite_furnace",
+    "input_main": {
+        "item": "complexmod:blaze_essence_bucket"
+    },
+    "input_fuel": {
+        "item": "complexmod:blaze_essence_bucket"
+    },
+    "output": {
+        "item": "complexmod:superheated_blaze_essence_bucket",
+        "count": 2
+    },
+    "xp": 0.9
+}

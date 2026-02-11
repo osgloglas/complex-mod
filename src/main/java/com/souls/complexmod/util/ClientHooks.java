@@ -8,6 +8,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import com.souls.complexmod.ComplexMod;
 import com.souls.complexmod.menu.ModMenus;
+import com.souls.complexmod.screen.AmethineCrystalFurnaceScreen;
+import com.souls.complexmod.screen.AmethineCrystalFurnaceStackScreen;
+import com.souls.complexmod.screen.AmethineCrystalStencilTableScreen;
 import com.souls.complexmod.screen.DiamondFurnaceScreen;
 import com.souls.complexmod.screen.DiamondStencilTableScreen;
 import com.souls.complexmod.screen.EmeraldFurnaceScreen;
@@ -42,6 +45,9 @@ public class ClientHooks {
             MenuScreens.register(ModMenus.NETHERITE_FURNACE_STACK_MENU.get(), NetheriteFurnaceStackScreen::new);
             MenuScreens.register(ModMenus.NETHERITE_STENCIL_TABLE_MENU.get(), NetheriteStencilTableScreen::new);
             MenuScreens.register(ModMenus.PARTICLE_COLLECTOR_MENU.get(), ParticleCollectorScreen::new);
+            MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_FURNACE_MENU.get(), AmethineCrystalFurnaceScreen::new);
+            MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_FURNACE_STACK_MENU.get(), AmethineCrystalFurnaceStackScreen::new);
+            MenuScreens.register(ModMenus.AMETHINE_CRYSTAL_STENCIL_TABLE_MENU.get(), AmethineCrystalStencilTableScreen::new);
             //TODO: add more screens here later
         });
     }

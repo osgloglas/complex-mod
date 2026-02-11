@@ -41,6 +41,12 @@ public class ModMenus {
             MENUS.register("netherite_stencil_table_menu", () -> IForgeMenuType.create(NetheriteStencilTableMenu::new));
         public static final RegistryObject<MenuType<ParticleCollectorMenu>> PARTICLE_COLLECTOR_MENU =
             MENUS.register("particle_collector_menu", () -> IForgeMenuType.create(ParticleCollectorMenu::new));
+        public static final RegistryObject<MenuType<AmethineCrystalFurnaceMenu>> AMETHINE_CRYSTAL_FURNACE_MENU =
+            MENUS.register("amethine_crystal_furnace_menu", () -> IForgeMenuType.create(AmethineCrystalFurnaceMenu::new));
+        public static final RegistryObject<MenuType<AmethineCrystalFurnaceStackMenu>> AMETHINE_CRYSTAL_FURNACE_STACK_MENU =
+            MENUS.register("amethine_crystal_furnace_stack_menu", () -> IForgeMenuType.create(AmethineCrystalFurnaceStackMenu::new));
+        public static final RegistryObject<MenuType<AmethineCrystalStencilTableMenu>> AMETHINE_CRYSTAL_STENCIL_TABLE_MENU =
+            MENUS.register("amethine_crystal_stencil_table_menu", () -> IForgeMenuType.create(AmethineCrystalStencilTableMenu::new));
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);

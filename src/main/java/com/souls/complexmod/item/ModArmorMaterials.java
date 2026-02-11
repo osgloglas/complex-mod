@@ -10,12 +10,15 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    AMETHINE("amethine", 41, new int[]{4, 7, 9, 4}, 18,
+    AMETHINE("amethine", 41, new int[]{4, 9, 7, 4}, 18,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ModItems.AMETHINE_INGOT.get()), 4f, 0.1f),
-    PURPOSDALITE("purposdalite", 50, new int[]{5, 8, 10, 5}, 24,
+    PURPOSDALITE("purposdalite", 50, new int[]{5, 10, 8, 5}, 24,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            () -> Ingredient.of(ModItems.PURPOSDALITE_INGOT.get()), 5f, 0.2f);
+            () -> Ingredient.of(ModItems.PURPOSDALITE_INGOT.get()), 5f, 0.2f),
+    BEDROCK("bedrock", 69, new int[]{6, 12, 10, 6}, 30,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.of(ModItems.BEDROCK_INGOT.get()), 6f, 0.3f);
 
     private final String name;
     private final int durabilityMultiplier;
@@ -26,7 +29,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float toughness;
     private final float knockbackResistance;
 
-    private static final int[] BASE_DURABILITY = {11, 15, 16, 13};
+    private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionValues, int enchantmentValue,
                       SoundEvent equipSound, Supplier<Ingredient> repairIngredient, float toughness,
