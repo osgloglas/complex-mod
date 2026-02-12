@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "complexmod:bedrock_ingot"
+      "item": "complexmod:bedrock_ingot"
     }
   },
   "pattern": [

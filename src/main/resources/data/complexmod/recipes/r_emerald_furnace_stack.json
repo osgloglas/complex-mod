@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "minecraft:emerald"
+      "item": "minecraft:emerald"
     },
     "L": {
       "item": "minecraft:leather"

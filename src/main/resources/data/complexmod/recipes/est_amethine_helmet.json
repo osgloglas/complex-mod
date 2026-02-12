@@ -1,0 +1,22 @@
+{
+    "type": "complexmod:emerald_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#   #",
+        "#   #",
+        "     ",
+        "  T  "
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:amethine_ingot"
+        },
+        "T": {
+            "item": "complexmod:amethine_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:amethine_helmet",
+        "count": 1
+    }
+}

@@ -1,13 +1,13 @@
 {
     "type": "complexmod:amethine_crystal_stencil_shaped",
     "pattern": [
-        "B      ",
+        "BB     ",
         "BBB    ",
         " BS    ",
         "   S   ",
         "    S  ",
         "     S ",
-        "      S"
+        "T     S"
     ],
     "key": {
         "B": {
@@ -15,6 +15,9 @@
         },
         "S": {
             "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "complexmod:bedrock_template"
         }
     },
     "result": {

@@ -4,15 +4,21 @@
   "key": {
     "#": {
       "item": "complexmod:amethine_ingot"
+    },
+    "H": {
+      "item": "complexmod:superheated_blaze_essence_bucket"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
     }
   },
   "pattern": [
     "###",
-    "###",
-    "###"
+    "#H#",
+    "DDD"
   ],
   "result": {
-    "item": "complexmod:amethine_block",
+    "item": "complexmod:amethine_crystal_furnace",
     "count": 1
   },
   "show_notification": true

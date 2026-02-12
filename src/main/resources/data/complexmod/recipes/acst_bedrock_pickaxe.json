@@ -7,7 +7,7 @@
         " B S   ",
         " B  S  ",
         " B   S ",
-        "      S"
+        "T     S"
     ],
     "key": {
         "B": {
@@ -15,6 +15,9 @@
         },
         "S": {
             "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "complexmod:bedrock_template"
         }
     },
     "result": {

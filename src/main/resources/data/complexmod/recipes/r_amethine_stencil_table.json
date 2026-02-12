@@ -3,19 +3,18 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "complexmod:emerald_stencil_table"
     },
-    "L": {
-      "item": "minecraft:leather"
+    "D": {
+      "item": "complexmod:amethine_block"
     }
   },
   "pattern": [
-    "###",
-    "#L#",
-    "###"
+    "#",
+    "D"
   ],
   "result": {
-    "item": "complexmod:iron_furnace_stack",
+    "item": "complexmod:amethine_crystal_stencil_table",
     "count": 1
   },
   "show_notification": true

@@ -1,0 +1,22 @@
+{
+    "type": "complexmod:emerald_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#   #",
+        "#   #",
+        "     ",
+        "  T  "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "T": {
+            "item": "minecraft:netherite_upgrade_smithing_template"
+        }
+    },
+    "result": {
+        "item": "minecraft:netherite_helmet",
+        "count": 1
+    }
+}

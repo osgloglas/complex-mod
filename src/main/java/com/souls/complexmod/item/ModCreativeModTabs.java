@@ -131,6 +131,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.TIMELESS_LEAVES.get());
                         output.accept(ModBlocks.TIMELESS_SAPLING.get());
                         output.accept(ModBlocks.TIMELESS_LOG.get());
+                        output.accept(ModBlocks.TIMELESS_PLANKS.get());
                         output.accept(ModBlocks.TIMELESS_STRIPPED_LOG.get());
                         output.accept(ModBlocks.TIMELESS_WOOD.get());
                         output.accept(ModBlocks.BEDROCK_BLOCK.get());

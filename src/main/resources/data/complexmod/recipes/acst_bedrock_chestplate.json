@@ -1,27 +1,24 @@
 {
     "type": "complexmod:amethine_crystal_stencil_shaped",
     "pattern": [
-        "B      ",
-        "BB     ",
-        "B S    ",
-        "B  S   ",
-        "    S  ",
-        "     S ",
-        "T     S"
+        "       ",
+        " # T # ",
+        " ## ## ",
+        " ##### ",
+        " ##### ",
+        " ##### ",
+        "       "
     ],
     "key": {
-        "B": {
+        "#": {
             "item": "complexmod:bedrock_ingot"
-        },
-        "S": {
-            "item": "minecraft:stick"
         },
         "T": {
             "item": "complexmod:bedrock_template"
         }
     },
     "result": {
-        "item": "complexmod:bedrock_hoe",
+        "item": "complexmod:bedrock_chestplate",
         "count": 1
     }
 }

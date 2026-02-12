@@ -3,19 +3,19 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "complexmod:amethine_ingot"
     },
-    "L": {
+    "H": {
       "item": "minecraft:leather"
     }
   },
   "pattern": [
     "###",
-    "#L#",
+    "#H#",
     "###"
   ],
   "result": {
-    "item": "complexmod:iron_furnace_stack",
+    "item": "complexmod:amethine_crystal_furnace_stack",
     "count": 1
   },
   "show_notification": true

@@ -1,0 +1,22 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "  T  ",
+        "     ",
+        " # # ",
+        " # # ",
+        "## ##"
+    ],
+    "key": {
+        "#": {
+            "item": "complexmod:purposdalite_ingot"
+        },
+        "T": {
+            "item": "complexmod:purposdalite_template"
+        }
+    },
+    "result": {
+        "item": "complexmod:purposdalite_boots",
+        "count": 1
+    }
+}

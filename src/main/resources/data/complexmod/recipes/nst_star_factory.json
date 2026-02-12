@@ -1,0 +1,25 @@
+{
+    "type": "complexmod:netherite_stencil_shaped",
+    "pattern": [
+        "#####",
+        "#DDD#",
+        "#DBD#",
+        "#DDD#",
+        "#####"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "B": {
+            "item": "complexmod:mini_sun"
+        },
+        "D": {
+            "item": "minecraft:emerald_block"
+        }
+    },
+    "result": {
+        "item": "complexmod:star_factory",
+        "count": 1
+    }
+}
