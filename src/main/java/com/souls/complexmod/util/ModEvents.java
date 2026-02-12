@@ -15,6 +15,7 @@ import net.minecraft.world.item.AxeItem;
 
 import java.util.UUID;
 
+import com.souls.complexmod.block.ModBlocks;
 import com.souls.complexmod.block.enchantment.ModEnchantments;
 import com.souls.complexmod.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
@@ -39,10 +40,7 @@ public class ModEvents {
         }
 
         //check if stone is being worked on
-        if  (state.is(Blocks.STONE) || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DEEPSLATE_COPPER_ORE) || state.is(Blocks.IRON_ORE) || state.is(Blocks.DEEPSLATE_IRON_ORE)
-                || state.is(Blocks.GOLD_ORE) || state.is(Blocks.DEEPSLATE_GOLD_ORE) || state.is(Blocks.REDSTONE_ORE) || state.is(Blocks.DEEPSLATE_REDSTONE_ORE)
-                || state.is(Blocks.LAPIS_ORE) || state.is(Blocks.DEEPSLATE_LAPIS_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.DEEPSLATE_DIAMOND_ORE)
-                || state.is(Blocks.EMERALD_ORE) || state.is(Blocks.DEEPSLATE_EMERALD_ORE)) {
+        if  (state.is(Blocks.STONE)) {
             boolean hasDrill = player.getInventory().contains(new ItemStack(ModItems.HAND_DRILL.get()));
             boolean hasWedge = player.getInventory().contains(new ItemStack(ModItems.WEDGE.get()));
 
@@ -62,6 +60,76 @@ public class ModEvents {
                     || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
                     || player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
                     || player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
+
+            if (!hasDrill || !hasWedge || !holdingMallet) {
+                event.setNewSpeed(0.0F);
+            }
+        }
+
+        //check if low ores are being worked on
+        if (state.is(Blocks.COPPER_ORE) || state.is(Blocks.DEEPSLATE_COPPER_ORE) || state.is(Blocks.IRON_ORE) || state.is(Blocks.DEEPSLATE_IRON_ORE)) {
+            boolean hasDrill = player.getInventory().contains(new ItemStack(ModItems.HAND_DRILL.get()));
+            boolean hasWedge = player.getInventory().contains(new ItemStack(ModItems.WEDGE.get()));
+
+            boolean holdingMallet = player.getMainHandItem().is(ModItems.STONE_MALLET.get())
+                    || player.getOffhandItem().is(ModItems.STONE_MALLET.get())
+                    || player.getMainHandItem().is(Items.IRON_PICKAXE)
+                    || player.getOffhandItem().is(Items.IRON_PICKAXE)
+                    || player.getMainHandItem().is(Items.DIAMOND_PICKAXE)
+                    || player.getOffhandItem().is(Items.DIAMOND_PICKAXE)
+                    || player.getMainHandItem().is(Items.NETHERITE_PICKAXE)
+                    || player.getOffhandItem().is(Items.NETHERITE_PICKAXE)
+                    || player.getMainHandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                    || player.getOffhandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                    || player.getMainHandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                    || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                    || player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
+                    || player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
+
+            if (!hasDrill || !hasWedge || !holdingMallet) {
+                event.setNewSpeed(0.0F);
+            }
+        }
+
+        //check if high ores are being worked on
+        if (state.is(Blocks.GOLD_ORE) || state.is(Blocks.DEEPSLATE_GOLD_ORE) || state.is(Blocks.REDSTONE_ORE) || state.is(Blocks.DEEPSLATE_REDSTONE_ORE)
+                || state.is(Blocks.LAPIS_ORE) || state.is(Blocks.DEEPSLATE_LAPIS_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.DEEPSLATE_DIAMOND_ORE)
+                || state.is(Blocks.EMERALD_ORE) || state.is(Blocks.DEEPSLATE_EMERALD_ORE)) {
+            boolean hasDrill = player.getInventory().contains(new ItemStack(ModItems.HAND_DRILL.get()));
+            boolean hasWedge = player.getInventory().contains(new ItemStack(ModItems.WEDGE.get()));
+
+            boolean holdingMallet = player.getMainHandItem().is(Items.IRON_PICKAXE)
+                || player.getOffhandItem().is(Items.IRON_PICKAXE)
+                || player.getMainHandItem().is(Items.DIAMOND_PICKAXE)
+                || player.getOffhandItem().is(Items.DIAMOND_PICKAXE)
+                || player.getMainHandItem().is(Items.NETHERITE_PICKAXE)
+                || player.getOffhandItem().is(Items.NETHERITE_PICKAXE)
+                || player.getMainHandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                || player.getMainHandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                || player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
+
+            if (!hasDrill || !hasWedge || !holdingMallet) {
+                event.setNewSpeed(0.0F);
+            }
+        }
+
+        if (state.is(Blocks.ANCIENT_DEBRIS)) {
+            boolean hasDrill = player.getInventory().contains(new ItemStack(ModItems.HAND_DRILL.get()));
+            boolean hasWedge = player.getInventory().contains(new ItemStack(ModItems.WEDGE.get()));
+
+            boolean holdingMallet = player.getMainHandItem().is(Items.DIAMOND_PICKAXE)
+                || player.getOffhandItem().is(Items.DIAMOND_PICKAXE)
+                || player.getMainHandItem().is(Items.NETHERITE_PICKAXE)
+                || player.getOffhandItem().is(Items.NETHERITE_PICKAXE)
+                || player.getMainHandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.AMETHINE_PICKAXE.get())
+                || player.getMainHandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.PURPOSDALITE_PICKAXE.get())
+                || player.getMainHandItem().is(ModItems.BEDROCK_PICKAXE.get())
+                || player.getOffhandItem().is(ModItems.BEDROCK_PICKAXE.get());
 
             if (!hasDrill || !hasWedge || !holdingMallet) {
                 event.setNewSpeed(0.0F);

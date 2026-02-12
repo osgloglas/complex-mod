@@ -6,6 +6,7 @@
         "east": "complexmod:block/netherite_furnace_stack",
         "west": "complexmod:block/netherite_furnace_stack",
         "up": "complexmod:block/netherite_furnace_stack_output",
-        "down": "complexmod:block/netherite_furnace_stack"
+        "down": "complexmod:block/netherite_furnace_stack",
+        "particle": "complexmod:block/netherite_furnace_top"
     }
 }

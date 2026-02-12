@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:mixed_slag_source",
+        "complexmod:flowing_mixed_slag",
+        "complexmod:netherite_slag_source",
+        "complexmod:flowing_netherite_slag",
+        "complexmod:bedrock_slag_source",
+        "complexmod:flowing_bedrock_slag"
+    ]
+}

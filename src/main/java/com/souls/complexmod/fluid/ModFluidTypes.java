@@ -14,16 +14,16 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModFluidTypes {
-        public static final ResourceLocation MIXED_SLAG_STILL_RL =
+        public static final ResourceLocation MIXED_SLAG_STILL_RL = 
             new ResourceLocation(ComplexMod.MOD_ID, "block/mixed_slag");
-        public static final ResourceLocation MIXED_SLAG_FLOWING_RL =
+        public static final ResourceLocation MIXED_SLAG_FLOWING_RL = 
             new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_mixed_slag");
 
         public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, ComplexMod.MOD_ID);
 
         public static final RegistryObject<FluidType> MIXED_SLAG_TYPE =
-            register("mixed_slag_type", 
+            register("mixed_slag_type", MIXED_SLAG_STILL_RL, MIXED_SLAG_FLOWING_RL,
                     FluidType.Properties.create()
                             .density(3000)
                             .viscosity(3000)
@@ -40,7 +40,7 @@ public class ModFluidTypes {
             new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_netherite_slag");
 
         public static final RegistryObject<FluidType> NETHERITE_SLAG_TYPE =
-            register("netherite_slag_type", 
+            register("netherite_slag_type", NETHERITE_SLAG_STILL_RL, NETHERITE_SLAG_FLOWING_RL, 
                     FluidType.Properties.create()
                             .density(3000)
                             .viscosity(3000)
@@ -57,7 +57,7 @@ public class ModFluidTypes {
             new ResourceLocation(ComplexMod.MOD_ID, "block/flowing_bedrock_slag");
 
         public static final RegistryObject<FluidType> BEDROCK_SLAG_TYPE =
-            register("bedrock_slag_type", 
+            register("bedrock_slag_type", BEDROCK_SLAG_STILL_RL, BEDROCK_SLAG_FLOWING_RL,
                     FluidType.Properties.create()
                             .density(3000)
                             .viscosity(3000)
@@ -68,8 +68,8 @@ public class ModFluidTypes {
                             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA) 
                             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA));
 
-    private static RegistryObject<FluidType> register(String name, FluidType.Properties properties) {
-        return FLUID_TYPES.register(name, () -> new BaseFluidType(MIXED_SLAG_STILL_RL, MIXED_SLAG_FLOWING_RL, null, 0x685C34, new Vector3f(0.2f, 0.2f, 0.2f), properties));
+    private static RegistryObject<FluidType> register(String name, ResourceLocation resourceStill, ResourceLocation resourceFlowing, FluidType.Properties properties) {
+        return FLUID_TYPES.register(name, () -> new BaseFluidType(resourceStill, resourceFlowing, null, 0x777777, new Vector3f(0.2f, 0.2f, 0.2f), properties));
     }
 
     public static void register (IEventBus eventBus) {

@@ -6,6 +6,7 @@
         "east": "complexmod:block/particle_collector",
         "west": "complexmod:block/particle_collector",
         "up": "complexmod:block/particle_collector_top",
-        "down": "complexmod:block/particle_collector"
+        "down": "complexmod:block/particle_collector",
+        "particle": "complexmod:block/particle_collector"
     }
 }

@@ -6,6 +6,7 @@
         "east": "complexmod:block/stencil_table_side",
         "west": "complexmod:block/stencil_table_side",
         "up": "complexmod:block/stencil_table_top",
-        "down": "complexmod:block/stencil_table_bottom"
+        "down": "complexmod:block/stencil_table_bottom",
+        "particle": "complexmod:block/stencil_table_top"
     }
 }

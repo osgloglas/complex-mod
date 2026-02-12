@@ -6,6 +6,7 @@
         "east": "complexmod:block/furnace_stack",
         "west": "complexmod:block/furnace_stack",
         "up": "complexmod:block/furnace_stack_top",
-        "down": "complexmod:block/furnace_stack"
+        "down": "complexmod:block/furnace_stack",
+        "particle": "complexmod:block/furnace_stack_top"
     }
 }

@@ -77,7 +77,7 @@ public class BaseFluidType extends FluidType {
 
             @Override
             public int getTintColor() {
-                return color;
+                return 0xFF000000 | color;
             }
 
             @Override

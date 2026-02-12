@@ -6,6 +6,7 @@
         "east": "complexmod:block/diamond_furnace_side",
         "west": "complexmod:block/diamond_furnace_side",
         "up": "complexmod:block/diamond_furnace_top",
-        "down": "complexmod:block/diamond_furnace_top"
+        "down": "complexmod:block/diamond_furnace_top",
+        "particle": "complexmod:block/diamond_furnace_top"
     }
 }

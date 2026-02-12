@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": {
+      "model": "minecraft:block/water",
+      "forge_marker": 1,
+      "fluid": "complexmod:mixed_slag_source"
+    }
+  }
+}

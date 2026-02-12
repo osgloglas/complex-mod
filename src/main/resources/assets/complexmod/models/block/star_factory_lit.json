@@ -6,6 +6,7 @@
         "east": "complexmod:block/star_factory_side",
         "west": "complexmod:block/star_factory_side",
         "up": "complexmod:block/star_factory_top",
-        "down": "complexmod:block/star_factory_top"
+        "down": "complexmod:block/star_factory_top",
+        "particle": "complexmod:block/star_factory"
     }
 }

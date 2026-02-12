@@ -6,6 +6,7 @@
         "east": "complexmod:block/amethine_furnace_side",
         "west": "complexmod:block/amethine_furnace_side",
         "up": "complexmod:block/amethine_furnace_top",
-        "down": "complexmod:block/amethine_furnace_top"
+        "down": "complexmod:block/amethine_furnace_top",
+        "particle": "complexmod:block/amethine_furnace_top"
     }
 }

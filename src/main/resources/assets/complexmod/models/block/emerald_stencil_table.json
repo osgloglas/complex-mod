@@ -6,6 +6,7 @@
         "east": "complexmod:block/emerald_stencil_table",
         "west": "complexmod:block/emerald_stencil_table",
         "up": "complexmod:block/emerald_stencil_table_top",
-        "down": "minecraft:block/iron_block"
+        "down": "minecraft:block/iron_block",
+        "particle": "complexmod:block/emerald_stencil_table_top"
     }
 }

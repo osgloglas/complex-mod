@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
@@ -121,21 +122,21 @@ public class ModBlocks {
     public static final RegistryObject<EmeraldStencilTableBlock> EMERALD_STENCIL_TABLE = registerBlock("emerald_stencil_table",
             () -> new EmeraldStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteFurnaceBlock> NETHERITE_FURNACE = registerBlock("netherite_furnace",
-            () -> new NetheriteFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new NetheriteFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteFurnaceStackBlock> NETHERITE_FURNACE_STACK = registerBlock("netherite_furnace_stack",
-            () -> new NetheriteFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new NetheriteFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteStencilTableBlock> NETHERITE_STENCIL_TABLE = registerBlock("netherite_stencil_table",
-            () -> new NetheriteStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new NetheriteStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<ParticleCollectorBlock> PARTICLE_COLLECTOR = registerBlock("particle_collector",
-            () -> new ParticleCollectorBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new ParticleCollectorBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalFurnaceBlock> AMETHINE_CRYSTAL_FURNACE = registerBlock("amethine_crystal_furnace",
-            () -> new AmethineCrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new AmethineCrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalFurnaceStackBlock> AMETHINE_CRYSTAL_FURNACE_STACK = registerBlock("amethine_crystal_furnace_stack",
-            () -> new AmethineCrystalFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new AmethineCrystalFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalStencilTableBlock> AMETHINE_CRYSTAL_STENCIL_TABLE = registerBlock("amethine_crystal_stencil_table",
-            () -> new AmethineCrystalStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new AmethineCrystalStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<StarFactoryBlock> STAR_FACTORY = registerBlock("star_factory",
-            () -> new StarFactoryBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+            () -> new StarFactoryBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",

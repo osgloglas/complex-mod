@@ -94,8 +94,8 @@ public class ComplexMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             //menus
-            //ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.cutout());
-            //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.MIXED_SLAG_SOURCE.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MIXED_SLAG.get(), RenderType.solid());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TIMELESS_SAPLING.get(), RenderType.cutout());
         }
     }

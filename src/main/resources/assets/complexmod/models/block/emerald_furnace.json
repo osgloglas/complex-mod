@@ -6,6 +6,7 @@
         "east": "complexmod:block/emerald_furnace_side",
         "west": "complexmod:block/emerald_furnace_side",
         "up": "complexmod:block/emerald_furnace_top",
-        "down": "complexmod:block/emerald_furnace_top"
+        "down": "complexmod:block/emerald_furnace_top",
+        "particle": "complexmod:block/emerald_furnace_top"
     }
 }

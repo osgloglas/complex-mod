@@ -2,28 +2,19 @@ package com.souls.complexmod.block.custom;
 
 import javax.annotation.Nullable;
 
-import com.google.common.graph.Network;
 import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
 import com.souls.complexmod.block.entity.ModBlockEntities;
 import com.souls.complexmod.fluid.ModFluids;
 import com.souls.complexmod.item.ModItems;
-import com.souls.complexmod.util.ClientHooks;
-
-import io.netty.buffer.Unpooled;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -37,11 +28,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkHooks;
 
 public class FurnaceStackBlock extends Block implements EntityBlock {
