@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:timeless_log",
+        "complexmod:timeless_stripped_log",
+        "complexmod:timeless_wood",
+        "complexmod:timeless_planks",
+        "complexmod:timeless_slab",
+        "complexmod:timeless_stairs",
+        "complexmod:timeless_fence",
+        "complexmod:timeless_fence_gate",
+        "complexmod:timeless_door",
+        "complexmod:timeless_trapdoor",
+        "complexmod:timeless_button",
+        "complexmod:timeless_pressure_plate"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:amethine_crystal_furnace",
+        "complexmod:amethine_crystal_furnace_stack",
+        "complexmod:amethine_crystal_stencil_table"
+    ]
+}

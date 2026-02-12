@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:netherite_furnace",
+        "complexmod:netherite_furnace_stack",
+        "complexmod:netherite_stencil_table",
+        "complexmod:star_factory",
+        "complexmod:amethine_block",
+        "complexmod:purposdalite_block",
+        "complexmod:bedrock_block"
+    ]
+}

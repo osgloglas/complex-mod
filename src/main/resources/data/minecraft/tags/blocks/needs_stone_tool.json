@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:furnace_stack",
+        "complexmod:stencil_table",
+        "complexmod:iron_furnace",
+        "complexmod:iron_furnace_stack",
+        "complexmod:iron_stencil_table"
+    ]
+}

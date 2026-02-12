@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "complexmod:diamond_furnace",
+        "complexmod:diamond_furnace_stack",
+        "complexmod:diamond_stencil_table",
+        "complexmod:emerald_furnace",
+        "complexmod:emerald_furnace_stack",
+        "complexmod:emerald_stencil_table",
+        "complexmod:particle_collector"
+    ]
+}

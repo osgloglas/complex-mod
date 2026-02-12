@@ -1,5 +1,28 @@
 {
+    "replace": false,
     "values": [
-        "complexmod:furnace_stack"
+        "complexmod:furnace_stack",
+        "complexmod:stencil_table",
+        "complexmod:iron_furnace",
+        "complexmod:iron_furnace_stack",
+        "complexmod:iron_stencil_table",
+        "complexmod:diamond_furnace",
+        "complexmod:diamond_furnace_stack",
+        "complexmod:diamond_stencil_table",
+        "complexmod:emerald_furnace",
+        "complexmod:emerald_furnace_stack",
+        "complexmod:emerald_stencil_table",
+        "complexmod:netherite_furnace",
+        "complexmod:netherite_furnace_stack",
+        "complexmod:netherite_stencil_table",
+        "complexmod:amethine_crystal_furnace",
+        "complexmod:amethine_crystal_furnace_stack",
+        "complexmod:amethine_crystal_stencil_table",
+        "complexmod:particle_collector",
+        "complexmod:star_factory",
+        "complexmod:amethine_block",
+        "complexmod:purposdalite_block",
+        "complexmod:bedrock_block",
+        "complexmod:timeless_wall"
     ]
 }
