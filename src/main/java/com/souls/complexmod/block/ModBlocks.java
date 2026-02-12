@@ -63,7 +63,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PURPOSDALITE_BLOCK = registerBlock("purposdalite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIMELESS_LEAVES = registerBlock("timeless_leaves",
-            () -> new TimelessLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).requiresCorrectToolForDrops()));
+            () -> new TimelessLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> TIMELESS_LOG = registerBlock("timeless_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIMELESS_SAPLING = registerBlock("timeless_sapling",
@@ -106,23 +106,27 @@ public class ModBlocks {
     public static final RegistryObject<StencilTableBlock> STENCIL_TABLE = registerBlock("stencil_table",
             () -> new StencilTableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<IronFurnaceBlock> IRON_FURNACE = registerBlock("iron_furnace",
-            () -> new IronFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+            () -> new IronFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(IronFurnaceBlock.LIT) ? 13 : 0)));
     public static final RegistryObject<IronFurnaceStackBlock> IRON_FURNACE_STACK = registerBlock("iron_furnace_stack",
             () -> new IronFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<IronStencilTableBlock> IRON_STENCIL_TABLE = registerBlock("iron_stencil_table",
             () -> new IronStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<DiamondFurnaceBlock> DIAMOND_FURNACE = registerBlock("diamond_furnace",
-            () -> new DiamondFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            () -> new DiamondFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(DiamondFurnaceBlock.LIT) ? 13 : 0)));
     public static final RegistryObject<DiamondStencilTableBlock> DIAMOND_STENCIL_TABLE = registerBlock("diamond_stencil_table",
             () -> new DiamondStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<EmeraldFurnaceBlock> EMERALD_FURNACE = registerBlock("emerald_furnace",
-            () -> new EmeraldFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
+            () -> new EmeraldFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(EmeraldFurnaceBlock.LIT) ? 13 : 0)));
     public static final RegistryObject<EmeraldFurnaceStackBlock> EMERALD_FURNACE_STACK = registerBlock("emerald_furnace_stack",
             () -> new EmeraldFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<EmeraldStencilTableBlock> EMERALD_STENCIL_TABLE = registerBlock("emerald_stencil_table",
             () -> new EmeraldStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteFurnaceBlock> NETHERITE_FURNACE = registerBlock("netherite_furnace",
-            () -> new NetheriteFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
+            () -> new NetheriteFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(NetheriteFurnaceBlock.LIT) ? 13 : 0)));
     public static final RegistryObject<NetheriteFurnaceStackBlock> NETHERITE_FURNACE_STACK = registerBlock("netherite_furnace_stack",
             () -> new NetheriteFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<NetheriteStencilTableBlock> NETHERITE_STENCIL_TABLE = registerBlock("netherite_stencil_table",
@@ -130,13 +134,15 @@ public class ModBlocks {
     public static final RegistryObject<ParticleCollectorBlock> PARTICLE_COLLECTOR = registerBlock("particle_collector",
             () -> new ParticleCollectorBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalFurnaceBlock> AMETHINE_CRYSTAL_FURNACE = registerBlock("amethine_crystal_furnace",
-            () -> new AmethineCrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
+            () -> new AmethineCrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(AmethineCrystalFurnaceBlock.LIT) ? 13 : 0)));
     public static final RegistryObject<AmethineCrystalFurnaceStackBlock> AMETHINE_CRYSTAL_FURNACE_STACK = registerBlock("amethine_crystal_furnace_stack",
             () -> new AmethineCrystalFurnaceStackBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<AmethineCrystalStencilTableBlock> AMETHINE_CRYSTAL_STENCIL_TABLE = registerBlock("amethine_crystal_stencil_table",
             () -> new AmethineCrystalStencilTableBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<StarFactoryBlock> STAR_FACTORY = registerBlock("star_factory",
-            () -> new StarFactoryBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()));
+            () -> new StarFactoryBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(25.0F, 1200.0F).requiresCorrectToolForDrops()
+                        .lightLevel(state -> state.getValue(StarFactoryBlock.LIT) ? 15 : 0)));
 
     //fluids
     public static final RegistryObject<LiquidBlock> MIXED_SLAG_BLOCK = BLOCKS.register("mixed_slag_block",
