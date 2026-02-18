@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:emerald_furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:netherite_furnace_stack"
+        },
+        "title": "This is Silly",
+        "description": "Craft a netherite furnace stack",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "netherite_furnace_stack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:netherite_furnace_stack"]
+                    }
+                ]
+            }
+        }
+    }
+}

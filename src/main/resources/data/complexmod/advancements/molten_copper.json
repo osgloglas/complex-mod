@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:root_advancement",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_copper_bucket"
+        },
+        "title": "Molten Copper?",
+        "description": "Acquire a molten copper bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_copper_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_copper_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

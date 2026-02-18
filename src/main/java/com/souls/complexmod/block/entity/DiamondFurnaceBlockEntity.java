@@ -28,6 +28,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -192,6 +193,8 @@ public class DiamondFurnaceBlockEntity extends BlockEntity implements MenuProvid
 
         this.itemHandler.extractItem(INPUT_1_SLOT, 1, false);
         this.itemHandler.extractItem(INPUT_2_SLOT, 1, false);
+
+        this.itemHandler.setStackInSlot(INPUT_2_SLOT, new ItemStack(Items.BUCKET));
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(resultItem.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + resultItem.getCount()));

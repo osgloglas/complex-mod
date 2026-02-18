@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:root_advancement",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_iron_bucket"
+        },
+        "title": "Molten Iron?",
+        "description": "Acquire a molten iron bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_iron_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_iron_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

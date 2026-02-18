@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:root_advancement",
+    "display": {
+        "icon": {
+            "item": "complexmod:iron_furnace"
+        },
+        "title": "Ain't it an Iron Furnace",
+        "description": "Craft an iron furnace",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "iron_furnace": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:iron_furnace"]
+                    }
+                ]
+            }
+        }
+    }
+}

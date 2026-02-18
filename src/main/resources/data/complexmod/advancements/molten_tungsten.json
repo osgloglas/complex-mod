@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:diamond_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_tungsten_bucket"
+        },
+        "title": "Molten Tungsten??",
+        "description": "Acquire a molten tungsten bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_tungsten_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_tungsten_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@
         "item": "minecraft:netherite_scrap"
     },
     "input_fuel": {
-        "item": "minecraft:lava_bucket"
+        "item": "complexmod:blaze_essence_bucket"
     },
     "output": {
         "item": "complexmod:molten_tungsten_bucket",

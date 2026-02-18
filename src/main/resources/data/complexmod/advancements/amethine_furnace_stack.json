@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:netherite_furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:amethine_crystal_furnace_stack"
+        },
+        "title": "Are We Done Stacking Yet?",
+        "description": "Craft an amethine crystal furnace stack",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "amethine_furnace_stack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:amethine_crystal_furnace_stack"]
+                    }
+                ]
+            }
+        }
+    }
+}

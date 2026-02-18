@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:molten_iron_3",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_iron_bucket_3380"
+        },
+        "title": "Ahh That's Hot!",
+        "description": "Acquire a ultraheated molten iron bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_iron_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_iron_bucket_3380"]
+                    }
+                ]
+            }
+        }
+    }
+}

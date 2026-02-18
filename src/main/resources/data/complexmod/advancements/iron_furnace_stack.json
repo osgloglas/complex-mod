@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:iron_furnace_stack"
+        },
+        "title": "More Stacking!",
+        "description": "Craft an iron furnace stack",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "iron_furnace_stack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:iron_furnace_stack"]
+                    }
+                ]
+            }
+        }
+    }
+}

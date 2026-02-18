@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:iron_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_diamond_bucket"
+        },
+        "title": "Molten Diamond?",
+        "description": "Acquire a molten diamond bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_diamond_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_diamond_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:iron_furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:emerald_furnace_stack"
+        },
+        "title": "We Skipped Diamond?",
+        "description": "Craft an emerald furnace stack",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "emerald_furnace_stack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:emerald_furnace_stack"]
+                    }
+                ]
+            }
+        }
+    }
+}

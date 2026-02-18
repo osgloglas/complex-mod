@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:root_advancement",
+    "display": {
+        "icon": {
+            "item": "complexmod:furnace_stack"
+        },
+        "title": "Double the Smelting",
+        "description": "Craft a furnace stack",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "furnace_stack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:furnace_stack"]
+                    }
+                ]
+            }
+        }
+    }
+}

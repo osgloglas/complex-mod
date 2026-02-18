@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:molten_iron_4",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_iron_bucket_4290"
+        },
+        "title": "The Sun?",
+        "description": "Acquire a starforged molten iron bucket",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_iron_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_iron_bucket_4290"]
+                    }
+                ]
+            }
+        }
+    }
+}

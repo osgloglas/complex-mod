@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:iron_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:diamond_furnace"
+        },
+        "title": "Shiny Furnace",
+        "description": "Craft a diamond furnace",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "diamond_furnace": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:diamond_furnace"]
+                    }
+                ]
+            }
+        }
+    }
+}

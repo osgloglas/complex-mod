@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:diamond_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:emerald_furnace"
+        },
+        "title": "An Even Shinier Furnace!",
+        "description": "Craft an emerald furnace",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "emerald_furnace": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:emerald_furnace"]
+                    }
+                ]
+            }
+        }
+    }
+}
