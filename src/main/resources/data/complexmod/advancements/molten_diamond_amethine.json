@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:netherite_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:superheated_diamond_amethine_bucket"
+        },
+        "title": "Superheated Diamond AND Amethine?",
+        "description": "Acquire a superheated diamond amethine bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "superheated_diamond_amethine_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:superheated_diamond_amethine_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

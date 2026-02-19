@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:netherite_stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:amethine_crystal_stencil_table"
+        },
+        "title": "Again... Why?",
+        "description": "Craft an amethine crystal stencil table",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "amethine_crystal_stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:amethine_crystal_stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

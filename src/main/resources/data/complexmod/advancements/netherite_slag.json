@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:emerald_furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:netherite_slag_bucket"
+        },
+        "title": "I Didn't Know There Was More!",
+        "description": "Acquire a netherite slag bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "netherite_slag_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:netherite_slag_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

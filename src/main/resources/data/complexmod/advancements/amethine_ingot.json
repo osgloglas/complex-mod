@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:molten_amethyst",
+    "display": {
+        "icon": {
+            "item": "complexmod:amethine_ingot"
+        },
+        "title": "It's Harder Than Netherite!",
+        "description": "Craft an amethine ingot",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "amethine_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:amethine_ingot"]
+                    }
+                ]
+            }
+        }
+    }
+}

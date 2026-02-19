@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:root_advancement",
+    "display": {
+        "icon": {
+            "item": "complexmod:stencil_table"
+        },
+        "title": "Hmm, More Crafting?",
+        "description": "Craft a stencil table",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

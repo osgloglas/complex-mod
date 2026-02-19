@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:iron_stencil_table"
+        },
+        "title": "I Sense a Theme Here",
+        "description": "Craft an iron stencil table",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "iron_stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:iron_stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

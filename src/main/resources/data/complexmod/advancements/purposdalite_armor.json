@@ -1,0 +1,35 @@
+{
+    "parent": "complexmod:purposdalite_ingot",
+    "display": {
+        "icon": {
+            "item": "complexmod:purposdalite_chestplate"
+        },
+        "title": "Now I'm Stronger... But At What Cost?",
+        "description": "Craft purposdalite armor",
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "purposdalite_armor": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:purposdalite_chestplate"]
+                    },
+                    {
+                        "items": ["complexmod:purposdalite_leggings"]
+                    },
+                    {
+                        "items": ["complexmod:purposdalite_helmet"]
+                    },
+                    {
+                        "items": ["complexmod:purposdalite_boots"]
+                    }
+                ]
+            }
+        }
+    }
+}

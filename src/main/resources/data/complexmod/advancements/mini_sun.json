@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:star_factory",
+    "display": {
+        "icon": {
+            "item": "complexmod:mini_sun"
+        },
+        "title": "Ah... The Sun",
+        "description": "Craft a mini sun! (tm, totally)",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "mini_sun": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:mini_sun"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:iron_stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:diamond_stencil_table"
+        },
+        "title": "Shiny Stencil Table",
+        "description": "Craft a diamond stencil table",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "diamond_stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:diamond_stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

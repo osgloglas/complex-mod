@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:mixed_slag_bucket"
+        },
+        "title": "Liquid Gold (Not Really)",
+        "description": "Acquire a mixed slag bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "mixed_slag_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:mixed_slag_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:emerald_stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:netherite_stencil_table"
+        },
+        "title": "I Feel Like I'm Missing Something...",
+        "description": "Craft a netherite stencil table",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "netherite_stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:netherite_stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

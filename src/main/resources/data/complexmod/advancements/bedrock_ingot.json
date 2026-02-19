@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:superheated_purposdalite",
+    "display": {
+        "icon": {
+            "item": "complexmod:bedrock_ingot"
+        },
+        "title": "Oh, That's Why I Superheated That",
+        "description": "Craft a bedrock ingot",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "bedrock_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:bedrock_ingot"]
+                    }
+                ]
+            }
+        }
+    }
+}

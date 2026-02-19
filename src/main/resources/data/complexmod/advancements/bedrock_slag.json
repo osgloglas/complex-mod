@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:amethine_furnace_stack",
+    "display": {
+        "icon": {
+            "item": "complexmod:bedrock_slag_bucket"
+        },
+        "title": "Uhh... What?",
+        "description": "Acquire a bedrock slag bucket",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "bedrock_slag_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:bedrock_slag_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

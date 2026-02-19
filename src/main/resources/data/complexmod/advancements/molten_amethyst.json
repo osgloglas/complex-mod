@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:emerald_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:molten_amethyst_bucket"
+        },
+        "title": "Molten Amethyst?",
+        "description": "Acquire a molten amethyst bucket",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "molten_amethyst_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:molten_amethyst_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}

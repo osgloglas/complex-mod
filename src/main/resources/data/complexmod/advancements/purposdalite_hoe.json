@@ -1,0 +1,30 @@
+{
+    "parent": "complexmod:purposdalite_ingot",
+    "display": {
+        "icon": {
+            "item": "complexmod:purposdalite_hoe"
+        },
+        "title": "I Hope You Evaluate Your Life Choices",
+        "description": "Use up a purposdalite hoe",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "purposdalite_hoe": {
+            "trigger": "minecraft:item_durability_changed",
+            "conditions": {
+                "item": {
+                    "items": ["complexmod:purposdalite_hoe"]
+                },
+                "durability": {
+                    "max": 0
+                },
+                "delta": {
+                    "max": -1
+                }
+            }
+        }
+    }
+}

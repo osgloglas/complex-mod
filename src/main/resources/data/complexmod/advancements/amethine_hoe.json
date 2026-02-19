@@ -1,0 +1,30 @@
+{
+    "parent": "complexmod:amethine_ingot",
+    "display": {
+        "icon": {
+            "item": "complexmod:amethine_hoe"
+        },
+        "title": "Insane Dedication",
+        "description": "Use up an amethine hoe",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "amethine_hoe": {
+            "trigger": "minecraft:item_durability_changed",
+            "conditions": {
+                "item": {
+                    "items": ["complexmod:amethine_hoe"]
+                },
+                "durability": {
+                    "max": 0
+                },
+                "delta": {
+                    "max": -1
+                }
+            }
+        }
+    }
+}

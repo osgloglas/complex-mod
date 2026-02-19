@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:diamond_stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:emerald_stencil_table"
+        },
+        "title": "This Grid is Too Big...",
+        "description": "Craft an emerald stencil table",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "emerald_stencil_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:emerald_stencil_table"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:particle_collector",
+    "display": {
+        "icon": {
+            "item": "complexmod:star_factory"
+        },
+        "title": "You Did WHAT?!",
+        "description": "Craft a star factory, it uses the sun as power!",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "star_factory": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:star_factory"]
+                    }
+                ]
+            }
+        }
+    }
+}

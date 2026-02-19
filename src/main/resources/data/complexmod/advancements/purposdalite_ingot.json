@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:molten_diamond_amethine",
+    "display": {
+        "icon": {
+            "item": "complexmod:purposdalite_ingot"
+        },
+        "title": "Why?",
+        "description": "Craft a purposdalite ingot",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "purposdalite_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:purposdalite_ingot"]
+                    }
+                ]
+            }
+        }
+    }
+}

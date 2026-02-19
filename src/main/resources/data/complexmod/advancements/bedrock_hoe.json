@@ -1,0 +1,30 @@
+{
+    "parent": "complexmod:bedrock_ingot",
+    "display": {
+        "icon": {
+            "item": "complexmod:bedrock_hoe"
+        },
+        "title": "Why... Just Why?",
+        "description": "Use up a bedrock hoe",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "bedrock_hoe": {
+            "trigger": "minecraft:item_durability_changed",
+            "conditions": {
+                "item": {
+                    "items": ["complexmod:bedrock_hoe"]
+                },
+                "durability": {
+                    "max": 0
+                },
+                "delta": {
+                    "max": -1
+                }
+            }
+        }
+    }
+}

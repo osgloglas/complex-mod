@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:netherite_stencil_table",
+    "display": {
+        "icon": {
+            "item": "complexmod:particle_collector"
+        },
+        "title": "This Science Scares Me...",
+        "description": "Craft a particle collector, it uses the power of the sun!",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "particle_collector": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:particle_collector"]
+                    }
+                ]
+            }
+        }
+    }
+}

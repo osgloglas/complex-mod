@@ -1,0 +1,35 @@
+{
+    "parent": "complexmod:bedrock_ingot",
+    "display": {
+        "icon": {
+            "item": "complexmod:bedrock_chestplate"
+        },
+        "title": "That Was Expensive...",
+        "description": "Craft bedrock armor",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "bedrock_armor": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:bedrock_chestplate"]
+                    },
+                    {
+                        "items": ["complexmod:bedrock_leggings"]
+                    },
+                    {
+                        "items": ["complexmod:bedrock_helmet"]
+                    },
+                    {
+                        "items": ["complexmod:bedrock_boots"]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parent": "complexmod:amethine_furnace",
+    "display": {
+        "icon": {
+            "item": "complexmod:superheated_purposdalite_bucket"
+        },
+        "title": "Why am I Superheating this?",
+        "description": "Figure out how to make a superheated purposdalite bucket",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "superheated_purposdalite_bucket": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["complexmod:superheated_purposdalite_bucket"]
+                    }
+                ]
+            }
+        }
+    }
+}
