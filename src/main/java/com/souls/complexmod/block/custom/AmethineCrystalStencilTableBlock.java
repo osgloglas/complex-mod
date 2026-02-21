@@ -7,9 +7,11 @@ import com.souls.complexmod.block.entity.DiamondStencilTableBlockEntity;
 import com.souls.complexmod.block.entity.EmeraldStencilTableBlockEntity;
 import com.souls.complexmod.block.entity.ModBlockEntities;
 import com.souls.complexmod.block.entity.NetheriteStencilTableBlockEntity;
+import com.souls.complexmod.block.entity.StencilTableBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -73,5 +75,21 @@ public class AmethineCrystalStencilTableBlock extends Block implements EntityBlo
         BlockEntityTicker<? super A> ticker) {
         // TODO Auto-generated method stub
         return givenType == expectedType ? (BlockEntityTicker<E>) ticker : null;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+
+            if (blockEntity instanceof AmethineCrystalStencilTableBlockEntity be) {
+                var inventory = be.getItemHandler();
+
+                for (int i = 0; i < inventory.getSlots(); i++) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), inventory.getStackInSlot(i));
+                }
+            }
+        }
+        super.onRemove(state, level, pos, newState, isMoving);
     }
 }

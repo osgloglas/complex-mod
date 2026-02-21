@@ -94,14 +94,6 @@ public class StencilTableBlockEntity extends BlockEntity implements MenuProvider
         lazyItemHandler.invalidate();
     }
 
-    public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
-        }
-        Containers.dropContents(this.level, this.worldPosition, inventory);
-    }
-
     //save and load
     @Override
     public void load(CompoundTag nbt) {
