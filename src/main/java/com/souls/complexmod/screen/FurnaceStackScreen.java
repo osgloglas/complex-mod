@@ -3,18 +3,13 @@ package com.souls.complexmod.screen;
 import org.jetbrains.annotations.NotNull;
 
 import com.souls.complexmod.ComplexMod;
-import com.souls.complexmod.block.entity.FurnaceStackBlockEntity;
 import com.souls.complexmod.menu.FurnaceStackMenu;
 
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class FurnaceStackScreen extends AbstractContainerScreen<FurnaceStackMenu> {
     private static final ResourceLocation TEXTURE =
